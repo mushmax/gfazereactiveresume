@@ -31,20 +31,20 @@ msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {คอลัมน์} other {คอลัมน์}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
-msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>ผมสร้าง Reactive Resume ด้วยตัวเองเป็นส่วนใหญ่ในเวลาว่าง และได้รับความช่วยเหลือมากมายจากนักพัฒนาโอเพนซอร์สคนอื่นๆ</0><1>ถ้าเกิดว่าคุณชอบแอปนี้และอยากสนับสนุนให้มันฟรีตลอดไป โปรดบริจาคเงินช่วยตามกำลังด้วยนะครับ</1>"
+msgid "<0>I built GFAZE Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
+msgstr "<0>ผมสร้าง GFAZE Resume ด้วยตัวเองเป็นส่วนใหญ่ในเวลาว่าง และได้รับความช่วยเหลือมากมายจากนักพัฒนาโอเพนซอร์สคนอื่นๆ</0><1>ถ้าเกิดว่าคุณชอบแอปนี้และอยากสนับสนุนให้มันฟรีตลอดไป โปรดบริจาคเงินช่วยตามกำลังด้วยนะครับ</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>ผมมั่นใจว่าแอปยังไม่สมบูรณ์ดี แต่ผมก็อยากให้มันเป็นอย่างนั้น</0><1>ถ้าคุณเจอปัญหาใดๆ ระหว่างที่สร้างเรซูเม่ หรือมีไอเดียดีๆ ที่จะช่วยให้คุณและคนอื่นๆ สร้างเรซูเม่ได้ง่ายขึ้น ให้เปิด issue มาที่ repository ของแอปหรือส่งอีเมลหาผมได้เลยครับ</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
-msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr "<0>หมายเหตุ: </0>การใช้ OpenAI API หมายความว่า คุณรับรู้และยอมรับ<1>ข้อกำหนดการใช้บริการ</1>และ<2>นโยบายความเป็นส่วนตัว</2>ของ OpenAI โปรดทราบว่า Reactive Resume ไม่รับผิดชอบการใช้บริการที่ไม่เหมาะสมหรือไม่ได้รับการอนุญาต และความรับผิดชอบเป็นของผู้ใช้แต่เพียงผู้เดียว"
+msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that GFAZE Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
+msgstr "<0>หมายเหตุ: </0>การใช้ OpenAI API หมายความว่า คุณรับรู้และยอมรับ<1>ข้อกำหนดการใช้บริการ</1>และ<2>นโยบายความเป็นส่วนตัว</2>ของ OpenAI โปรดทราบว่า GFAZE Resume ไม่รับผิดชอบการใช้บริการที่ไม่เหมาะสมหรือไม่ได้รับการอนุญาต และความรับผิดชอบเป็นของผู้ใช้แต่เพียงผู้เดียว"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
-msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
-msgstr "<0>ชุมชนของเราใช้เวลามากในการเขียนคู่มือใช้งาน Reactive Resume ขึ้นมา และผมมั่นใจว่าคู่มือจะช่วยให้คุณเริ่มใช้งานแอปได้สะดวกขึ้น</0><1>นอกจากนี้ ยังมีตัวอย่างอีกเยอะมากเพื่อให้คุณเริ่มใช้งานเป็น และฟีเจอร์ที่คุณอาจไม่รู้มาก่อน ซึ่งจะช่วยทำให้คุณสร้างเรซูเม่ที่สมบูรณ์แบบออกมาได้</1>"
+msgid "<0>The community has spent a lot of time writing the documentation for GFAZE Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
+msgstr "<0>ชุมชนของเราใช้เวลามากในการเขียนคู่มือใช้งาน GFAZE Resume ขึ้นมา และผมมั่นใจว่าคู่มือจะช่วยให้คุณเริ่มใช้งานแอปได้สะดวกขึ้น</0><1>นอกจากนี้ ยังมีตัวอย่างอีกเยอะมากเพื่อให้คุณเริ่มใช้งานเป็น และฟีเจอร์ที่คุณอาจไม่รู้มาก่อน ซึ่งจะช่วทำให้คุณสร้างเรซูเม่ที่สมบูรณ์แบบออกมาได้</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
@@ -460,8 +460,8 @@ msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "ไม่เห็นภาษาของคุณเหรอ? <0>ช่วยแปลแอป</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
-msgid "Donate to Reactive Resume"
-msgstr "บริจาคให้กับ Reactive Resume"
+msgid "Donate to GFAZE Resume"
+msgstr "บริจาคให้กับ GFAZE Resume"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."

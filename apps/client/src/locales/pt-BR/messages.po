@@ -31,20 +31,20 @@ msgid "{value, plural, one {Column} other {Columns}}"
 msgstr "{value, plural, one {Coluna} other {Collunas}}"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:20
-msgid "<0>I built Reactive Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
-msgstr "<0>Eu criei o Reactive Resume basicamente sozinho durante meu tempo livre, contando com muita ajuda de outros grandes contribuidores de código aberto.</0><1>Se você gosta do aplicativo e deseja apoiar mantê-lo gratuito para sempre, doe o que puder.</1>"
+msgid "<0>I built GFAZE Resume mostly by myself during my spare time, with a lot of help from other great open-source contributors.</0><1>If you like the app and want to support keeping it free forever, please donate whatever you can afford to give.</1>"
+msgstr "<0>Eu criei o GFAZE Resume basicamente sozinho durante meu tempo livre, contando com muita ajuda de outros grandes contribuidores de código aberto.</0><1>Se você gosta do aplicativo e deseja apoiar mantê-lo gratuito para sempre, doe o que puder.</1>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:51
 msgid "<0>I'm sure the app is not perfect, but I'd like for it to be.</0><1>If you faced any issues while creating your resume, or have an idea that would help you and other users in creating your resume more easily, drop an issue on the repository or send me an email about it.</1>"
 msgstr "<0>Tenho certeza de que o aplicativo não é perfeito, mas gostaria que fosse.</0> <1>Se você enfrentou algum problema ao criar seu currículo ou tem uma ideia que ajudaria você e outros usuários a criar seu currículo com mais facilidade, deixe um problema no repositório ou envie-me um e-mail sobre isso.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:201
-msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that Reactive Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
-msgstr "<0>Nota:</0> Ao utilizar a API OpenAI, você reconhece e aceita os <1>termos de uso</1> e <2>política de privacidade</2> definidos pela OpenAI. Observe que o Reactive Resume não se responsabiliza por qualquer utilização inadequada ou não autorizada do serviço, e quaisquer repercussões ou responsabilidades resultantes são exclusivamente do usuário."
+msgid "<0>Note: </0>By utilizing the OpenAI API, you acknowledge and accept the <1>terms of use</1> and <2>privacy policy</2> outlined by OpenAI. Please note that GFAZE Resume bears no responsibility for any improper or unauthorized utilization of the service, and any resulting repercussions or liabilities solely rest on the user."
+msgstr "<0>Nota:</0> Ao utilizar a API OpenAI, você reconhece e aceita os <1>termos de uso</1> e <2>política de privacidade</2> definidos pela OpenAI. Observe que o GFAZE Resume não se responsabiliza por qualquer utilização inadequada ou não autorizada do serviço, e quaisquer repercussões ou responsabilidades resultantes são exclusivamente do usuário."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:85
-msgid "<0>The community has spent a lot of time writing the documentation for Reactive Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
-msgstr "<0>A comunidade passou muito tempo escrevendo a documentação do Reactive Resume e tenho certeza de que isso ajudará você a começar a usar o aplicativo.</0> <1>Também há muitos exemplos para ajudá-lo a começar e recursos que você talvez não conheça e que podem ajudá-lo a construir seu currículo perfeito.</1>"
+msgid "<0>The community has spent a lot of time writing the documentation for GFAZE Resume, and I'm sure it will help you get started with the app.</0><1>There are also a lot of examples to help you get started, and features that you might not know about which could help you build your perfect resume.</1>"
+msgstr "<0>A comunidade passou muito tempo escrevendo a documentação do GFAZE Resume e tenho certeza de que isso ajudará você a começar a usar o aplicativo.</0> <1>Também há muitos exemplos para ajudá-lo a começar e recursos que você talvez não conheça e que podem ajudá-lo a construir seu currículo perfeito.</1>"
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:140
 msgid "<0>Two-factor authentication is currently disabled.</0> You can enable it by adding an authenticator app to your account."
@@ -460,8 +460,8 @@ msgid "Don't see your language? <0>Help translate the app.</0>"
 msgstr "Não está vendo seu idioma? <0>Ajude a traduzir o aplicativo.</0>"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:40
-msgid "Donate to Reactive Resume"
-msgstr "Doe para a Reactive Resume"
+msgid "Donate to GFAZE Resume"
+msgstr "Doe para a GFAZE Resume"
 
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
@@ -1170,12 +1170,12 @@ msgstr "Aponte um problema"
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
-msgid "Reactive Resume"
-msgstr "Reactive Resume"
+msgid "GFAZE Resume"
+msgstr "GFAZE Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "O Reactive Resume ajudou pessoas a conseguir empregos nestas grandes empresas:"
+msgid "GFAZE Resume has helped people land jobs at these great companies:"
+msgstr "O GFAZE Resume ajudou pessoas a conseguir empregos nestas grandes empresas:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."

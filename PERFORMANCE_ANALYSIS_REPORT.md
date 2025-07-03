@@ -1,8 +1,8 @@
-# Performance Analysis Report - Reactive Resume
+# Performance Analysis Report - GFAZE Resume
 
 ## Executive Summary
 
-This report documents performance inefficiencies identified in the Reactive Resume codebase, a React frontend with NestJS backend application. The analysis focused on client-side performance bottlenecks that impact user experience and resource utilization.
+This report documents performance inefficiencies identified in the GFAZE Resume codebase, a React frontend with NestJS backend application. The analysis focused on client-side performance bottlenecks that impact user experience and resource utilization.
 
 ## Identified Performance Issues
 
