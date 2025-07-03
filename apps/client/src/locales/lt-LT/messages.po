@@ -1175,19 +1175,19 @@ msgstr "\"GFAZE Resume\""
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
 msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "\"Reactive Resume\" padėjo žmonėms gauti darbą šiose puikiose įmonėse:"
+msgstr "\"GFAZE Resume\" padėjo žmonėms gauti darbą šiose puikiose įmonėse:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
 msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "\"Reactive Resume\" yra nemokamas atvirojo kodo projektas, kurį daugiausia sukūriau aš, ir jūsų parama būtų labai dėkinga. Jei esate linkęs prisidėti ir tik tuo atveju, jei galite sau tai leisti, apsvarstykite galimybę paaukoti per bet kurią iš išvardytų platformų. Be to, aukos Reactive Resume per Open Collective yra neapmokestinamos, nes projektą fiskališkai organizuoja Open Collective Europe."
+msgstr "\"GFAZE Resume\" yra nemokamas atvirojo kodo projektas, kurį daugiausia sukūriau aš, ir jūsų parama būtų labai dėkinga. Jei esate linkęs prisidėti ir tik tuo atveju, jei galite sau tai leisti, apsvarstykite galimybę paaukoti per bet kurią iš išvardytų platformų. Be to, aukos GFAZE Resume per Open Collective yra neapmokestinamos, nes projektą fiskališkai organizuoja Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "\"Reactive Resume\" yra daugiau nei trejus metus trukusio sunkaus darbo projektas, o kartu su juo - daugybė pakartotinai įgyvendintų idėjų ir funkcijų, kurios buvo sukurtos iki (beveik) tobulumo."
+msgstr "\"GFAZE Resume\" yra daugiau nei trejus metus trukusio sunkaus darbo projektas, o kartu su juo - daugybė pakartotinai įgyvendintų idėjų ir funkcijų, kurios buvo sukurtos iki (beveik) tobulumo."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "\"Reactive Resume\" klesti dėl savo gyvybingos bendruomenės. Šis projektas už savo pažangą skolingas daugybei žmonių, kurie skyrė savo laiką ir įgūdžius. Toliau džiaugiamės programuotojais, kurie tobulino funkcijas per GitHub, ir kalbininkus, kurių vertimai „Crowdin“ padarė jį prieinamą platesnei auditorijai."
+msgstr "\"GFAZE Resume\" klesti dėl savo gyvybingos bendruomenės. Šis projektas už savo pažangą skolingas daugybei žmonių, kurie skyrė savo laiką ir įgūdžius. Toliau džiaugiamės programuotojais, kurie tobulino funkcijas per GitHub, ir kalbininkus, kurių vertimai „Crowdin" padarė jį prieinamą platesnei auditorijai."."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
@@ -1458,7 +1458,7 @@ msgstr "Palaikykite programėlę paaukodami tai, ką galite!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr "\"Reactive Resume\" palaikymas"
+msgstr "\"GFAZE Resume\" palaikymas"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1616,7 +1616,7 @@ msgstr "Atnaujinti esamą gyvenimo aprašymą"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Įkelkite failą iš vieno iš priimtų šaltinių, kad išanalizuoti esamus duomenis ir importuoti jį į \"Reactive Resume\", kad būtų lengviau redaguoti."
+msgstr "Įkelkite failą iš vieno iš priimtų šaltinių, kad išanalizuoti esamus duomenis ir importuoti jį į \"GFAZE Resume\", kad būtų lengviau redaguoti."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"

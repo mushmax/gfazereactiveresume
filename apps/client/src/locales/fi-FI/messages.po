@@ -549,11 +549,11 @@ msgstr "Virheet"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how GFAZE Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr "Vaikka et pystyisikään antamaan taloudellista panostusta, voit silti tehdä eron antamalla GitHub-varastolle tähti, levittämällä sanaa ystävillesi tai lähettämällä nopean viestin kertoaksesi, miten Reactive Resume on auttanut sinua. Palaute ja tuki ovat aina tervetulleita ja erittäin arvostettuja!"
+msgstr "Vaikka et pystyisikään antamaan taloudellista panostusta, voit silti tehdä eron antamalla GitHub-varastolle tähti, levittämällä sanaa ystävillesi tai lähettämällä nopean viestin kertoaksesi, miten GFAZE Resume on auttanut sinua. Palaute ja tuki ovat aina tervetulleita ja erittäin arvostettuja!"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in GFAZE Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Tutustu saatavilla oleviin mallipohjiin Reactive Resumessa ja katsele niiden avulla luotuja ansioluetteloita. Ne voivat toimia myös esimerkkeinä auttaakseen seuraavan ansioluettelosi luomisessa."
+msgstr "Tutustu saatavilla oleviin mallipohjiin GFAZE Resumessa ja katsele niiden avulla luotuja ansioluetteloita. Ne voivat toimia myös esimerkkeinä auttaakseen seuraavan ansioluettelosi luomisessa."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
@@ -714,7 +714,7 @@ msgstr "Julkaise ansioluettelosi julkisesti"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
 msgid "I always love to hear from the users of GFAZE Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr "Rakastan aina kuulla Reactive Resume -sovelluksen käyttäjiltä palautetta tai tukea. Tässä on joitakin viestejä, jotka olen saanut. Jos sinulla on palautetta, voit vapaasti lähettää minulle sähköpostia osoitteeseen <0>{sähköposti}</0>."
+msgstr "Rakastan aina kuulla GFAZE Resume -sovelluksen käyttäjiltä palautetta tai tukea. Tässä on joitakin viestejä, jotka olen saanut. Jos sinulla on palautetta, voit vapaasti lähettää minulle sähköpostia osoitteeseen <0>{sähköposti}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
@@ -1457,8 +1457,8 @@ msgid "Support the app by donating what you can!"
 msgstr "Tue sovellusta lahjoittamalla mitä voit!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "Reaktiivisen ansioluettelon tukeminen"
+msgid "Supporting GFAZE Resume"
+msgstr "GFAZE Resume:n tukeminen"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1616,7 +1616,7 @@ msgstr "Päivitä olemassa oleva ansioluettelo"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Lataa tiedosto yhdestä hyväksytystä lähteestä analysoidaksesi olemassa olevat tiedot ja tuodaksesi ne Reactiiviseen ansioluetteloon helpompaa muokkausta varten."
+msgstr "Lataa tiedosto yhdestä hyväksytystä lähteestä analysoidaksesi olemassa olevat tiedot ja tuodaksesi ne GFAZE Resume:en helpompaa muokkausta varten."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
@@ -1741,7 +1741,7 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "Sinulla on mahdollisuus <0>hankkia oma OpenAI API-avain</0>. Tämä avain antaa sinulle mahdollisuuden hyödyntää API:a haluamallasi tavalla. Vaihtoehtoisesti, jos haluat poistaa tekoälyominaisuudet kokonaan Reactive Resumesta, voit yksinkertaisesti poistaa avaimen asetuksistasi."
+msgstr "Sinulla on mahdollisuus <0>hankkia oma OpenAI API-avain</0>. Tämä avain antaa sinulle mahdollisuuden hyödyntää API:a haluamallasi tavalla. Vaihtoehtoisesti, jos haluat poistaa tekoälyominaisuudet kokonaan GFAZE Resumesta, voit yksinkertaisesti poistaa avaimen asetuksistasi."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."

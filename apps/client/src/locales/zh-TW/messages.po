@@ -1178,16 +1178,16 @@ msgid "GFAZE Resume has helped people land jobs at these great companies:"
 msgstr "GFAZE Resume 已經幫助許多人在這些很棒的公司找到工作："
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Reactive Resume 是一個免費且開放原始碼的專案，主要由我親手打造，非常感謝您的支持。如果您有貢獻的意願，也只有在您負擔得起的情況下，請考慮透過任何一個列出的平台捐款。此外，透過 Open Collective 對 Reactive Resume 的捐款是免稅的，因為該專案是由 Open Collective Europe 負責財務管理。"
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "GFAZE Resume 是一個免費且開放原始碼的專案，主要由我親手打造，非常感謝您的支持。如果您有貢獻的意願，也只有在您負擔得起的情況下，請考慮透過任何一個列出的平台捐款。此外，透過 Open Collective 對 GFAZE Resume 的捐款是免稅的，因為該專案是由 Open Collective Europe 負責財務管理。"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Reactive Resume 是一個經過 3 年多努力的熱情專案，隨著這個過程誕生了一系列反覆琢磨的想法和功能，已經 (趨近) 完美。"
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "GFAZE Resume 是一個經過 3 年多努力的熱情專案，隨著這個過程誕生了一系列反覆琢磨的想法和功能，已經 (趨近) 完美。"
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Reactive Resume 的茁壯成長有賴於其充滿活力的社群。這個專案的進展要歸功於許多投入時間與技術的個人。以下，我們讚揚在 GitHub 上強化其功能的程式設計師，以及在 Crowdin 上進行翻譯的語言學家，他們的努力讓更多人可以使用 Reactive Resume。"
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "GFAZE Resume 的茁壯成長有賴於其充滿活力的社群。這個專案的進展要歸功於許多投入時間與技術的個人。以下，我們讚揚在 GitHub 上強化其功能的程式設計師，以及在 Crowdin 上進行翻譯的語言學家，他們的努力讓更多人可以使用 GFAZE Resume。"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
@@ -1457,8 +1457,8 @@ msgid "Support the app by donating what you can!"
 msgstr "請盡您所能捐款支持此應用程式！"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "支持 Reactive Resume"
+msgid "Supporting GFAZE Resume"
+msgstr "支持 GFAZE Resume"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"

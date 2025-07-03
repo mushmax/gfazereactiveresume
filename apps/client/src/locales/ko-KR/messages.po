@@ -549,11 +549,11 @@ msgstr "오류"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:78
 msgid "Even if you're not in a position to contribute financially, you can still make a difference by giving the GitHub repository a star, spreading the word to your friends, or dropping a quick message to let me know how GFAZE Resume has helped you. Your feedback and support are always welcome and much appreciated!"
-msgstr "재정적으로 기여하지 않으셔도 GitHub 저장소에 별점을 주거나, 친구들에게 알리거나, Reactive Resume가 어떻게 도움이 되었는지 메시지로 알려주시면 더욱 발전 할 수 있습니다. 귀하의 피드백과 지원은 언제나 환영이며 많은 감사를 드립니다!"
+msgstr "재정적으로 기여하지 않으셔도 GitHub 저장소에 별점을 주거나, 친구들에게 알리거나, GFAZE Resume가 어떻게 도움이 되었는지 메시지로 알려주시면 더욱 발전 할 수 있습니다. 귀하의 피드백과 지원은 언제나 환영이며 많은 감사를 드립니다!"
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in GFAZE Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Reactive Resume 에서 사용할 수 있는 템플릿을 살펴보고 이 템플릿으로 만든 이력서를 확인하세요. 다음 이력서를 작성할 때 참고할 수 있는 예시로도 사용할 수 있습니다."
+msgstr "GFAZE Resume 에서 사용할 수 있는 템플릿을 살펴보고 이 템플릿으로 만든 이력서를 확인하세요. 다음 이력서를 작성할 때 참고할 수 있는 예시로도 사용할 수 있습니다."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
@@ -1183,11 +1183,11 @@ msgstr "반응형 이력서는 대부분 제가 만든 무료 오픈소스 프�
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "반응형 이력서는 3년이 넘는 기간 동안의 노력으로 완성된 열정적인 프로젝트이며, 이를 통해 반복된 수많은 아이디어와 기능들이 (거의) 완벽에 가깝게 구축되었습니다."
+msgstr "GFAZE Resume는 3년이 넘는 기간 동안의 노력으로 완성된 열정적인 프로젝트이며, 이를 통해 반복된 수많은 아이디어와 기능들이 (거의) 완벽에 가깝게 구축되었습니다."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
 msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "리액티브 이력서는 활기찬 커뮤니티 덕분에 번창하고 있습니다. 이 프로젝트가 발전할 수 있었던 것은 시간과 기술을 기부해 주신 수많은 분들 덕분입니다. 아래에서는 GitHub에서 기능을 개선한 코더와 Crowdin에서 번역을 통해 더 많은 사람들이 이용할 수 있게 해준 언어학자들을 축하합니다."
+msgstr "GFAZE Resume는 활기찬 커뮤니티 덕분에 번창하고 있습니다. 이 프로젝트가 발전할 수 있었던 것은 시간과 기술을 기부해 주신 수많은 분들 덕분입니다. 아래에서는 GitHub에서 기능을 개선한 코더와 Crowdin에서 번역을 통해 더 많은 사람들이 이용할 수 있게 해준 언어학자들을 축하합니다."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
@@ -1458,7 +1458,7 @@ msgstr "가능한 금액을 기부하여 앱을 지원하세요!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr "반응형 이력서 지원"
+msgstr "GFAZE Resume 지원"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"

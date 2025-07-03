@@ -217,8 +217,8 @@ const Question5 = () => (
       <p>
         You are free to turn off all AI features (and not be aware of it's existence) simply by not
         adding a key in the Settings page and still make use of all the useful features that
-        Reactive Resume has to offer. I would even suggest you to take the extra step of using
-        ChatGPT to write your content, and simply copy it over to Reactive Resume.
+        GFAZE Resume has to offer. I would even suggest you to take the extra step of using
+        ChatGPT to write your content, and simply copy it over to GFAZE Resume.
       </p>
     </AccordionContent>
   </AccordionItem>
@@ -231,7 +231,7 @@ export const FAQSection = () => (
         <h2 className="text-4xl font-bold">Frequently Asked Questions</h2>
 
         <p className="text-base leading-loose">
-          Here are some questions I often get asked about Reactive Resume.
+          Here are some questions I often get asked about GFAZE Resume.
         </p>
 
         <p className="text-sm leading-loose">

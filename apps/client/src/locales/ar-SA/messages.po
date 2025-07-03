@@ -1616,7 +1616,7 @@ msgstr "تحديث استئناف موجود"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into GFAZE Resume for easier editing."
-msgstr "قم بتحميل ملف من أحد المصادر المقبولة لتحليل البيانات الموجودة واستيرادها إلى Reactive Resume لتسهيل التحرير."
+msgstr "قم بتحميل ملف من أحد المصادر المقبولة لتحليل البيانات الموجودة واستيرادها إلى GFAZE Resume لتسهيل التحرير."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
@@ -1741,11 +1741,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "لديك خيار <0>الحصول على مفتاح API OpenAI الخاص بك </0>. هذا المفتاح يمكّنك من استخدام API كما تراه مناسباً. بدلاً من ذلك، إذا كنت ترغب في تعطيل ميزات الذكاء الاصطناعي في الاستئناف التفاعلي تماماً، يمكنك ببساطة إزالة المفتاح من الإعدادات الخاصة بك."
+msgstr "لديك خيار <0>الحصول على مفتاح API OpenAI الخاص بك </0>. هذا المفتاح يمكّنك من استخدام API كما تراه مناسباً. بدلاً من ذلك، إذا كنت ترغب في تعطيل ميزات الذكاء الاصطناعي في GFAZE Resume تماماً، يمكنك ببساطة إزالة المفتاح من الإعدادات الخاصة بك."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "كان يجب أن تتلقى رسالة بريد إلكتروني من <0>Reactive Resume</0> مع رابط للتحقق من حسابك."
+msgstr "كان يجب أن تتلقى رسالة بريد إلكتروني من <0>GFAZE Resume</0> مع رابط للتحقق من حسابك."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54

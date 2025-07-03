@@ -1745,7 +1745,7 @@ msgstr "<0>ನಿಮ್ಮ ಸ್ವಂತ OpenAI API ಕೀಲಿಯನ್ನ�
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>GFAZE Resume</0> with a link to verify your account."
-msgstr "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪರಿಶೀಲಿಸಲು ಲಿಂಕ್‌ನೊಂದಿಗೆ <0>Reactive Resume</0> ಇಮೇಲ್ ಅನ್ನು ನೀವು ಸ್ವೀಕರಿಸಿರಬೇಕು."
+msgstr "ನಿಮ್ಮ ಖಾತೆಯನ್ನು ಪರಿಶೀಲಿಸಲು ಲಿಂಕ್‌ನೊಂದಿಗೆ <0>GFAZE Resume</0> ಇಮೇಲ್ ಅನ್ನು ನೀವು ಸ್ವೀಕರಿಸಿರಬೇಕು."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54

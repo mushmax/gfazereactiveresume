@@ -1178,15 +1178,15 @@ msgid "GFAZE Resume has helped people land jobs at these great companies:"
 msgstr "GFAZE Resume a ajutat oamenii să obțină locuri de muncă la aceste companii grozave:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "Resume Reactiv este un proiect gratuit și open-source creat mai ales de mine, iar sprijinul dumneavoastră ar fi foarte apreciat. Dacă înclinați să contribuiți, și numai dacă vă puteți permite, luați în considerare efectuarea unei donații prin oricare dintre platformele listate. În plus, donațiile către Resume Reactiv prin Open Collective sunt scutite de impozite, deoarece proiectul este găzduit din punct de vedere fiscal de Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "Resume Reactiv este un proiect pasional de peste 3 ani de muncă asiduă, și cu aceasta vin o serie de idei și caracteristici reiterate care au fost construite într-un mod (aproape) perfecționat."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
 msgstr "Reactiv Resume prosperă datorită comunității sale dinamice. Acest proiect își datorează progresul unui număr mare de persoane care și-au dedicat timpul și abilitățile. Mai jos sărbătorim codătorii care și-au îmbunătățit caracteristicile pe GitHub și pe lingviștii ale căror traduceri pe Crowdin au făcut-o accesibilă unui public mai larg."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
@@ -1457,7 +1457,7 @@ msgid "Support the app by donating what you can!"
 msgstr "Sprijină aplicația donând cât poți!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
+msgid "Supporting GFAZE Resume"
 msgstr "Continuare suport pentru reactivare"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
@@ -1615,7 +1615,7 @@ msgid "Update an existing resume"
 msgstr "Actualizați un CV existent"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
-msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
+msgid "Upload a file from one of the accepted sources to parse existing data and import it into GFAZE Resume for easier editing."
 msgstr "Încărcați un fișier dintr-una dintre sursele acceptate pentru a analiza datele existente și importați-l în Reactive Resume pentru o editare mai ușoară."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
@@ -1740,11 +1740,11 @@ msgid "You don't have permission to access this page."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
+msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in GFAZE Resume altogether, you can simply remove the key from your settings."
 msgstr "Aveți opțiunea de a vă obține propria cheie API OpenAI. Această cheie vă permite să utilizați API-ul după cum doriți. Alternativ, dacă doriţi să dezactivaţi caracteristicile AI în Reactiv Resume complet, puteţi pur şi simplu elimina cheia din setări."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
-msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
+msgid "You should have received an email from <0>GFAZE Resume</0> with a link to verify your account."
 msgstr "Ar fi trebuit să primești un e-mail de la <0>Reactivează</0> cu un link pentru a-ți verifica contul."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49

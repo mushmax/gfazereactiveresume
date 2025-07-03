@@ -23,7 +23,7 @@ const testimonials: Testimonial[][] = [
     {
       name: "S. Bhaije",
       quote:
-        "Hi Amruth! First off, many thanks for making RxResume! This is one of the best resume-building tools I have ever found. Have also recommended it to many of my university friends...",
+        "Hi Amruth! First off, many thanks for making GFAZE Resume! This is one of the best resume-building tools I have ever found. Have also recommended it to many of my university friends...",
     },
     {
       name: "K. Lietzau",
@@ -40,7 +40,7 @@ const testimonials: Testimonial[][] = [
     {
       name: "P. Jignesh",
       quote:
-        "Hey, I am a Mechanical engineer, not understand coding, messy AI, and computer systems, But wait, what drags me here is your creativity, Your website RxResume is all good! using it and the efforts you made to keep this free is remarkable. keeping doing great work.",
+        "Hey, I am a Mechanical engineer, not understand coding, messy AI, and computer systems, But wait, what drags me here is your creativity, Your website GFAZE Resume is all good! using it and the efforts you made to keep this free is remarkable. keeping doing great work.",
     },
   ],
   [
@@ -57,7 +57,7 @@ const testimonials: Testimonial[][] = [
     {
       name: "M. Fritza",
       quote:
-        "Hello sir, I just wanted to write a thank you message for developing RxResume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
+        "Hello sir, I just wanted to write a thank you message for developing GFAZE Resume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
     },
   ],
 ];

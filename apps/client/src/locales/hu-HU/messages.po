@@ -1178,16 +1178,16 @@ msgid "GFAZE Resume has helped people land jobs at these great companies:"
 msgstr "A GFAZE Resume segített már embereknek munkát találni ezeknél a nagyszerű vállalatoknál:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "A Reactive Resume egy ingyenes és nyílt forráskódú projekt, amelyet főként én készítettem, és nagyra értékelném a támogatásodat. Ha hajlandó vagy hozzájárulni, és csak akkor, ha megengedheted magadnak, fontold meg az adományozást a felsorolt platformok bármelyikén keresztül. Továbbá, a Reactive Resume-nak az Open Collective-n keresztül történő adományozás adómentes, mivel a projektet az Open Collective Europe tartja fenn."
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "A GFAZE Resume egy ingyenes és nyílt forráskódú projekt, amelyet főként én készítettem, és nagyra értékelném a támogatásodat. Ha hajlandó vagy hozzájárulni, és csak akkor, ha megengedheted magadnak, fontold meg az adományozást a felsorolt platformok bármelyikén keresztül. Továbbá, a GFAZE Resume-nak az Open Collective-n keresztül történő adományozás adómentes, mivel a projektet az Open Collective Europe tartja fenn."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "A Reactive Resume egy több mint 3 évnyi kemény munka szenvedélyes projektje, és ezzel együtt számos újra megismételt ötlet és funkció, amelyeket (majdnem) tökéletességig építettünk."
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr "A GFAZE Resume egy több mint 3 évnyi kemény munka szenvedélyes projektje, és ezzel együtt számos újra megismételt ötlet és funkció, amelyeket (majdnem) tökéletességig építettünk."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "A Reactive Resume élénk közösségének köszönhetően virágzik. Ez a projekt számos olyan személynek köszönheti fejlődését, akik időt és készségeket áldoztak rá. Az alábbiakban azokat a programozókat ünnepeljük, akik a GitHubon továbbfejlesztették a funkciókat, és azokat a nyelvészeket, akiknek a Crowdinon található fordításai a szélesebb közönség számára is elérhetővé tették a szolgáltatást."
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "A GFAZE Resume élénk közösségének köszönhetően virágzik. Ez a projekt számos olyan személynek köszönheti fejlődését, akik időt és készségeket áldoztak rá. Az alábbiakban azokat a programozókat ünnepeljük, akik a GitHubon továbbfejlesztették a funkciókat, és azokat a nyelvészeket, akiknek a Crowdinon található fordításai a szélesebb közönség számára is elérhetővé tették a szolgáltatást."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
@@ -1457,8 +1457,8 @@ msgid "Support the app by donating what you can!"
 msgstr "Támogasd az alkalmazást azzal, hogy adományozol, amit tudsz!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "Reaktív önéletrajz támogatása"
+msgid "Supporting GFAZE Resume"
+msgstr "GFAZE Resume támogatása"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"

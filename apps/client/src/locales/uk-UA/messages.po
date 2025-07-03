@@ -553,7 +553,7 @@ msgstr "Навіть якщо ви не в змозі фінансувати с�
 
 #: apps/client/src/pages/home/sections/templates/index.tsx:12
 msgid "Explore the templates available in GFAZE Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
-msgstr "Досліджуйте доступні шаблони в Reactive Resume та перегляньте оновлення, зроблені з ними. Вони також можуть стати прикладами керівництва вашого наступного резюме."
+msgstr "Досліджуйте доступні шаблони в GFAZE Resume та перегляньте оновлення, зроблені з ними. Вони також можуть стати прикладами керівництва вашого наступного резюме."
 
 #: apps/client/src/pages/builder/sidebars/right/index.tsx:121
 #: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
@@ -1458,7 +1458,7 @@ msgstr "Підтримайте додаток, пожертвувавши те, 
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
 msgid "Supporting Reactive Resume"
-msgstr "Оновлення передплати з реактивного"
+msgstr "Підтримка GFAZE Resume"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1616,7 +1616,7 @@ msgstr "Оновити існуючий резюме"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
 msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Вивантажити файл з одного з прийнятих джерел до аналізу наявних даних і імпортувати його до Реактивного відродження для полегшення."
+msgstr "Вивантажити файл з одного з прийнятих джерел до аналізу наявних даних і імпортувати його до GFAZE Resume для полегшення."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
@@ -1741,11 +1741,11 @@ msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
 msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "У вас є можливість <0>отримати власний ключ API OpenAI </0>. Цей ключ дає вам можливість використовувати API як ви бачите на підході. Або ж, якщо ви хочете вимкнути функцію ШІ в самих умовах реактивного відновлення, ви можете просто видалити ключ у ваших налаштуваннях."
+msgstr "У вас є можливість <0>отримати власний ключ API OpenAI </0>. Цей ключ дає вам можливість використовувати API як ви бачите на підході. Або ж, якщо ви хочете вимкнути функцію ШІ в GFAZE Resume, ви можете просто видалити ключ у ваших налаштуваннях."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
 msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "Ви мали отримати електронний лист від <0>Реактивного відновлення</0> з посиланням для підтвердження вашого облікового запису."
+msgstr "Ви мали отримати електронний лист від <0>GFAZE Resume</0> з посиланням для підтвердження вашого облікового запису."
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54

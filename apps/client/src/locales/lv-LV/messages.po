@@ -713,8 +713,8 @@ msgid "Host your resume publicly"
 msgstr "Publiski izvietojiet savu CV"
 
 #: apps/client/src/pages/home/sections/testimonials/index.tsx:70
-msgid "I always love to hear from the users of Reactive Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
-msgstr "Man vienmēr patīk saņemt atsauksmes vai atbalstu no Reactive Resume lietotājiem. Šeit ir daži no saņemtajiem ziņojumiem. Ja jums ir kādas atsauksmes, rakstiet man uz e-pasta adresi <0>{email}</0>."
+msgid "I always love to hear from the users of GFAZE Resume with feedback or support. Here are some of the messages I've received. If you have any feedback, feel free to drop me an email at <0>{email}</0>."
+msgstr "Man vienmēr patīk saņemt atsauksmes vai atbalstu no GFAZE Resume lietotājiem. Šeit ir daži no saņemtajiem ziņojumiem. Ja jums ir kādas atsauksmes, rakstiet man uz e-pasta adresi <0>{email}</0>."
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:83
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:53
@@ -1170,16 +1170,16 @@ msgstr "Izvirzīt jautājumu"
 #: apps/client/src/pages/home/page.tsx:24
 #: apps/client/src/pages/public/page.tsx:74
 #: apps/client/src/pages/public/page.tsx:95
-msgid "Reactive Resume"
-msgstr "Reaktīvais CV"
+msgid "GFAZE Resume"
+msgstr "GFAZE Resume"
 
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "Reactive Resume ir palīdzējis cilvēkiem atrast darbu šajos lieliskajos uzņēmumos:"
+msgid "GFAZE Resume has helped people land jobs at these great companies:"
+msgstr "GFAZE Resume ir palīdzējis cilvēkiem atrast darbu šajos lieliskajos uzņēmumos:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Reactive Resume ir bezmaksas un atvērtā koda projekts, ko galvenokārt izstrādāju es, un jūsu atbalsts būtu ļoti vērtīgs. Ja vēlaties dot savu ieguldījumu, un tikai tad, ja varat to atļauties, apsveriet iespēju veikt ziedojumu, izmantojot kādu no minētajām platformām. Turklāt ziedojumi Reactive Resume ar Open Collective starpniecību ir atbrīvoti no nodokļiem, jo projektu finansiāli uztur Open Collective Europe."
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr "GFAZE Resume ir bezmaksas un atvērtā koda projekts, ko galvenokārt izstrādāju es, un jūsu atbalsts būtu ļoti vērtīgs. Ja vēlaties dot savu ieguldījumu, un tikai tad, ja varat to atļauties, apsveriet iespēju veikt ziedojumu, izmantojot kādu no minētajām platformām. Turklāt ziedojumi GFAZE Resume ar Open Collective starpniecību ir atbrīvoti no nodokļiem, jo projektu finansiāli uztur Open Collective Europe."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
 msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."

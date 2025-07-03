@@ -1178,16 +1178,16 @@ msgid "GFAZE Resume has helped people land jobs at these great companies:"
 msgstr "GFAZE Resume telah membantu orang mendapatkan pekerjaan di syarikat-syarikat hebat ini:"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
 msgstr "GFAZE Resume adalah projek sumber terbuka dan percuma yang kebanyakannya dihasilkan oleh saya, dan sokongan anda akan amat dihargai. Jika anda ingin menyumbang, dan hanya jika anda mampu, pertimbangkan untuk membuat sumbangan melalui mana-mana platform yang disenaraikan. Selain itu, sumbangan kepada GFAZE Resume melalui Kolektif Terbuka adalah dikecualikan cukai, kerana projek ini dihoskan secara kewangan oleh Kolektif Terbuka Eropah."
 
 #: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
 msgstr "GFAZE Resume adalah projek minat selama lebih daripada 3 tahun kerja keras, dan dengan itu datang beberapa idea dan ciri-ciri yang telah dibangunkan sehingga (hampir) ke sempurnaan."
 
 #: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Reactive Resume berkembang pesat berkat komuniti yang aktif. Projek ini berhutang kepada ramai individu yang telah mendedikasikan masa dan kemahiran mereka. Di bawah ini, kami merayakan coder yang telah meningkatkan ciri-ciri projek ini di GitHub dan penterjemah yang telah menterjemahkan di Crowdin untuk membolehkannya diakses oleh audiens yang lebih luas."
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr "GFAZE Resume berkembang pesat berkat komuniti yang aktif. Projek ini berhutang kepada ramai individu yang telah mendedikasikan masa dan kemahiran mereka. Di bawah ini, kami merayakan coder yang telah meningkatkan ciri-ciri projek ini di GitHub dan penterjemah yang telah menterjemahkan di Crowdin untuk membolehkannya diakses oleh audiens yang lebih luas."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
@@ -1457,7 +1457,7 @@ msgid "Support the app by donating what you can!"
 msgstr "Menyokong aplikasi dengan menderma sebanyak yang anda mampu!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
+msgid "Supporting GFAZE Resume"
 msgstr "Sokongan Resume Reaktif"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
@@ -1615,8 +1615,8 @@ msgid "Update an existing resume"
 msgstr "Kemas kini resume sedia ada"
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
-msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Muat naik fail dari salah satu sumber yang diterima untuk menganalisis data sedia ada dan import ke Reactive Resume untuk penyuntingan yang lebih mudah."
+msgid "Upload a file from one of the accepted sources to parse existing data and import it into GFAZE Resume for easier editing."
+msgstr "Muat naik fail dari salah satu sumber yang diterima untuk menganalisis data sedia ada dan import ke GFAZE Resume untuk penyuntingan yang lebih mudah."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
 msgid "URL"
@@ -1740,7 +1740,7 @@ msgid "You don't have permission to access this page."
 msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
+msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in GFAZE Resume altogether, you can simply remove the key from your settings."
 msgstr "Anda mempunyai pilihan untuk <0>mendapatkan kunci API OpenAI anda sendiri</0>. Kunci ini membolehkan anda menggunakan API sebagaimana yang anda lihat sesuai. Atau, jika anda ingin menyahdayakan ciri-ciri KI dalam Resume Reaktif sepenuhnya, anda boleh membuang kunci itu dari tetapan anda."
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
