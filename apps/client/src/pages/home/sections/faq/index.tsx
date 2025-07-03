@@ -28,23 +28,23 @@ const Question1 = () => (
 
       <p>
         While I could have charged everyone a hefty sum and retired even before I began, I decided
-        to build the first version of GFAZE Resume in 2019. Since then, it's gone through
-        multiple iterations as I've learned a lot of better coding practices over the years.
+        to build the first version of GFAZE Resume in 2019. Since then, it's gone through multiple
+        iterations as I've learned a lot of better coding practices over the years.
       </p>
 
       <p>
-        At the time of writing, GFAZE Resume is probably one of the only handful of resume
-        builders out there available to the world for free and without an annoying paywall at the
-        end. While being free is often associated with software that's not of good quality, I strive
-        to prove them wrong and build a product that people love using and are benefitted by it.
+        At the time of writing, GFAZE Resume is probably one of the only handful of resume builders
+        out there available to the world for free and without an annoying paywall at the end. While
+        being free is often associated with software that's not of good quality, I strive to prove
+        them wrong and build a product that people love using and are benefitted by it.
       </p>
 
       <p>
         My dream has always been to build something that at least a handful people use on a daily
-        basis, and I'm extremely proud to say that GFAZE Resume, over it's years of development,
-        has <strong>helped over half a million people build their resume</strong>, and I hope it
-        only increases from here and reaches more people who are in need of a good resume to
-        kickstart their career.
+        basis, and I'm extremely proud to say that GFAZE Resume, over it's years of development, has{" "}
+        <strong>helped over half a million people build their resume</strong>, and I hope it only
+        increases from here and reaches more people who are in need of a good resume to kickstart
+        their career.
       </p>
     </AccordionContent>
   </AccordionItem>
@@ -71,8 +71,8 @@ const Question2 = () => (
       </p>
 
       <p>
-        But if you do feel like supporting the developer and the future development of GFAZE
-        Resume, please donate (<em>only if you have some extra money lying around</em>) on my{" "}
+        But if you do feel like supporting the developer and the future development of GFAZE Resume,
+        please donate (<em>only if you have some extra money lying around</em>) on my{" "}
         <a href="https://github.com/sponsors/AmruthPillai/">GitHub Sponsors page</a>. You can choose
         to donate one-time or sponsor a recurring donation.
       </p>
@@ -216,9 +216,9 @@ const Question5 = () => (
 
       <p>
         You are free to turn off all AI features (and not be aware of it's existence) simply by not
-        adding a key in the Settings page and still make use of all the useful features that
-        GFAZE Resume has to offer. I would even suggest you to take the extra step of using
-        ChatGPT to write your content, and simply copy it over to GFAZE Resume.
+        adding a key in the Settings page and still make use of all the useful features that GFAZE
+        Resume has to offer. I would even suggest you to take the extra step of using ChatGPT to
+        write your content, and simply copy it over to GFAZE Resume.
       </p>
     </AccordionContent>
   </AccordionItem>

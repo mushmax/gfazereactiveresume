@@ -226,9 +226,7 @@ export const ImportDialog = () => {
                       </SelectTrigger>
                       <SelectContent>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
-                        <SelectItem value="reactive-resume-json">
-                          GFAZE Resume (.json)
-                        </SelectItem>
+                        <SelectItem value="reactive-resume-json">GFAZE Resume (.json)</SelectItem>
                         {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
                         <SelectItem value="reactive-resume-v3-json">
                           GFAZE Resume v3 (.json)
