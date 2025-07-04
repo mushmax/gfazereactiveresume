@@ -11,16 +11,7 @@ export const Icon = ({ size = 32, className }: Props) => {
 
   let src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
-  switch (isDarkMode) {
-    case false: {
-      src = "/icon/dark.svg";
-      break;
-    }
-    case true: {
-      src = "/icon/light.svg";
-      break;
-    }
-  }
+  src = "/logo/gfaze_logo.png";
 
   return (
     <img
@@ -28,7 +19,7 @@ export const Icon = ({ size = 32, className }: Props) => {
       width={size}
       height={size}
       alt="GFAZE Resume"
-      className={cn("rounded-sm", className)}
+      className={cn("rounded-full", className)}
     />
   );
 };

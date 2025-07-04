@@ -14,7 +14,7 @@ export const Logo = ({ size = 32, className }: Props) => {
       width={size}
       height={size}
       alt="GFAZE Resume"
-      className={cn("rounded-sm", className)}
+      className={cn("rounded-full", className)}
     />
   );
 };
