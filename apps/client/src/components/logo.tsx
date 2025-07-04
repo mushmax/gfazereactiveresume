@@ -17,8 +17,8 @@ export const Logo = ({ size = 32, className }: Props) => {
       />
       <img
         src="/logo/gigafaze-logo-new.jpg"
-        width={size * 0.8}
-        height={size * 0.8}
+        width={size * 0.6}
+        height={size * 0.6}
         alt="GigaFaze"
         className="rounded-sm"
       />
