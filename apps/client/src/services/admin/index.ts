@@ -23,6 +23,7 @@ export type AdminUser = {
   username: string;
   role: "USER" | "ADMIN" | "SUPER_ADMIN";
   emailVerified: boolean;
+  enabled: boolean;
   createdAt: string;
   updatedAt: string;
 };
@@ -67,6 +68,11 @@ export const adminService = {
 
   async updateUserPassword(id: string, newPassword: string) {
     const response = await axios.patch(`/admin/users/${id}/password`, { newPassword });
+    return response.data;
+  },
+
+  async updateUserStatus(id: string, enabled: boolean): Promise<AdminUser> {
+    const response = await axios.patch(`/admin/users/${id}/status`, { enabled });
     return response.data;
   },
 

@@ -107,6 +107,22 @@ export const useUpdateUserPassword = () => {
   return { updateUserPasswordFn, loading, error };
 };
 
+export const useUpdateUserStatus = () => {
+  const {
+    error,
+    isPending: loading,
+    mutateAsync: updateUserStatusFn,
+  } = useMutation({
+    mutationFn: ({ id, enabled }: { id: string; enabled: boolean }) =>
+      adminService.updateUserStatus(id, enabled),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ADMIN_USERS_KEY });
+    },
+  });
+
+  return { updateUserStatusFn, loading, error };
+};
+
 export const useAdminStats = () => {
   const {
     error,

@@ -77,6 +77,11 @@ export class AdminController {
     return this.userService.updateUserRole(id, roleData.role);
   }
 
+  @Patch("users/:id/status")
+  async toggleUserStatus(@Param("id") id: string, @Body() statusData: { enabled: boolean }) {
+    return this.userService.updateUserStatus(id, statusData.enabled);
+  }
+
   @Delete("users/:id")
   @Roles("SUPER_ADMIN")
   async deleteUser(@Param("id") id: string) {

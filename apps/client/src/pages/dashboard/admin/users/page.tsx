@@ -29,9 +29,11 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  Switch,
 } from "@reactive-resume/ui";
 import { useState } from "react";
 
+import type { AdminUser } from "@/client/services/admin";
 import {
   useAdminUsers,
   useCreateUser,
@@ -39,6 +41,7 @@ import {
   useUpdateUser,
   useUpdateUserPassword,
   useUpdateUserRole,
+  useUpdateUserStatus,
 } from "@/client/services/admin/hooks";
 
 const getRoleBadgeVariant = (role: string) => {
@@ -86,6 +89,7 @@ export const AdminUsersPage = () => {
   const { updateUserFn, loading: updateLoading } = useUpdateUser();
   const { updateUserRoleFn, loading: updateRoleLoading } = useUpdateUserRole();
   const { updateUserPasswordFn, loading: updatePasswordLoading } = useUpdateUserPassword();
+  const { updateUserStatusFn, loading: statusLoading } = useUpdateUserStatus();
   const { deleteUserFn, loading: deleteLoading } = useDeleteUser();
 
   const handleCreateUser = async () => {
@@ -99,7 +103,9 @@ export const AdminUsersPage = () => {
         password: "",
         role: "USER",
       });
-    } catch {}
+    } catch {
+      void 0;
+    }
   };
 
   const handleEditUser = (user: {
@@ -149,7 +155,9 @@ export const AdminUsersPage = () => {
 
       setIsEditDialogOpen(false);
       setSelectedUser(null);
-    } catch {}
+    } catch {
+      void 0;
+    }
   };
 
   const handleDeleteUser = (user: {
@@ -170,7 +178,17 @@ export const AdminUsersPage = () => {
       await deleteUserFn(selectedUser.id);
       setIsDeleteDialogOpen(false);
       setSelectedUser(null);
-    } catch {}
+    } catch {
+      void 0;
+    }
+  };
+
+  const handleToggleUserStatus = async (user: AdminUser) => {
+    try {
+      await updateUserStatusFn({ id: user.id, enabled: !user.enabled });
+    } catch {
+      void 0;
+    }
   };
 
   return (
@@ -353,12 +371,27 @@ export const AdminUsersPage = () => {
                       </td>
                       <td className="p-4">{new Date(user.createdAt).toLocaleDateString()}</td>
                       <td className="p-4">
-                        <Badge variant={user.emailVerified ? "success" : "secondary"}>
-                          {user.emailVerified ? t`Verified` : t`Pending`}
-                        </Badge>
+                        <div className="flex flex-col gap-1">
+                          <Badge variant={user.emailVerified ? "success" : "secondary"}>
+                            {user.emailVerified ? t`Verified` : t`Pending`}
+                          </Badge>
+                          <Badge variant={user.enabled ? "success" : "error"}>
+                            {user.enabled ? t`Enabled` : t`Disabled`}
+                          </Badge>
+                        </div>
                       </td>
                       <td className="p-4 text-right">
-                        <div className="flex justify-end space-x-2">
+                        <div className="flex items-center justify-end space-x-2">
+                          <div className="flex items-center space-x-2">
+                            <span className="text-muted-foreground text-sm">
+                              {user.enabled ? t`Enabled` : t`Disabled`}
+                            </span>
+                            <Switch
+                              checked={user.enabled}
+                              disabled={statusLoading}
+                              onCheckedChange={() => handleToggleUserStatus(user)}
+                            />
+                          </div>
                           <Button
                             variant="outline"
                             size="sm"

@@ -188,6 +188,13 @@ export class UserService {
     });
   }
 
+  async updateUserStatus(id: string, enabled: boolean): Promise<User> {
+    return this.prisma.user.update({
+      where: { id },
+      data: { enabled },
+    });
+  }
+
   private async hashPassword(password: string): Promise<string> {
     const bcrypt = await import("bcryptjs");
     return bcrypt.hash(password, 10);
