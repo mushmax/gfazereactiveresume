@@ -91,6 +91,22 @@ export const useDeleteUser = () => {
   return { deleteUserFn, loading, error };
 };
 
+export const useUpdateUserPassword = () => {
+  const {
+    error,
+    isPending: loading,
+    mutateAsync: updateUserPasswordFn,
+  } = useMutation({
+    mutationFn: ({ id, newPassword }: { id: string; newPassword: string }) =>
+      adminService.updateUserPassword(id, newPassword),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({ queryKey: ADMIN_USERS_KEY });
+    },
+  });
+
+  return { updateUserPasswordFn, loading, error };
+};
+
 export const useAdminStats = () => {
   const {
     error,

@@ -1,5 +1,17 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Put,
+  Query,
+  UseGuards,
+} from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
+import { AdminUpdateUserPasswordDto } from "@reactive-resume/dto";
 
 import { Roles } from "../auth/decorators/roles.decorator";
 import { JwtGuard } from "../auth/guards/jwt.guard";
@@ -48,6 +60,15 @@ export class AdminController {
     },
   ) {
     return this.userService.updateUserById(id, updateData);
+  }
+
+  @Patch("users/:id/password")
+  async updateUserPassword(
+    @Param("id") id: string,
+    @Body() { newPassword }: AdminUpdateUserPasswordDto,
+  ) {
+    await this.userService.updateUserPassword(id, newPassword);
+    return { message: "User password has been successfully updated." };
   }
 
   @Put("users/:id/role")

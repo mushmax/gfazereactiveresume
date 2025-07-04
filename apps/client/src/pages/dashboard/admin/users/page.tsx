@@ -37,6 +37,7 @@ import {
   useCreateUser,
   useDeleteUser,
   useUpdateUser,
+  useUpdateUserPassword,
   useUpdateUserRole,
 } from "@/client/services/admin/hooks";
 
@@ -77,12 +78,14 @@ export const AdminUsersPage = () => {
     email: "",
     username: "",
     role: "USER" as "USER" | "ADMIN" | "SUPER_ADMIN",
+    password: "",
   });
 
   const { users, loading: usersLoading, error: usersError } = useAdminUsers();
   const { createUserFn, loading: createLoading } = useCreateUser();
   const { updateUserFn, loading: updateLoading } = useUpdateUser();
   const { updateUserRoleFn, loading: updateRoleLoading } = useUpdateUserRole();
+  const { updateUserPasswordFn, loading: updatePasswordLoading } = useUpdateUserPassword();
   const { deleteUserFn, loading: deleteLoading } = useDeleteUser();
 
   const handleCreateUser = async () => {
@@ -96,8 +99,7 @@ export const AdminUsersPage = () => {
         password: "",
         role: "USER",
       });
-    } catch {
-    }
+    } catch {}
   };
 
   const handleEditUser = (user: {
@@ -113,6 +115,7 @@ export const AdminUsersPage = () => {
       email: user.email,
       username: user.username,
       role: user.role as "USER" | "ADMIN" | "SUPER_ADMIN",
+      password: "",
     });
     setIsEditDialogOpen(true);
   };
@@ -137,10 +140,16 @@ export const AdminUsersPage = () => {
         });
       }
 
+      if (editFormData.password && editFormData.password.trim() !== "") {
+        await updateUserPasswordFn({
+          id: selectedUser.id,
+          newPassword: editFormData.password,
+        });
+      }
+
       setIsEditDialogOpen(false);
       setSelectedUser(null);
-    } catch {
-    }
+    } catch {}
   };
 
   const handleDeleteUser = (user: {
@@ -161,8 +170,7 @@ export const AdminUsersPage = () => {
       await deleteUserFn(selectedUser.id);
       setIsDeleteDialogOpen(false);
       setSelectedUser(null);
-    } catch {
-    }
+    } catch {}
   };
 
   return (
@@ -450,19 +458,39 @@ export const AdminUsersPage = () => {
                 </SelectContent>
               </Select>
             </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="edit-password" className="text-right">
+                {t`New Password (optional)`}
+              </Label>
+              <Input
+                id="edit-password"
+                type="password"
+                className="col-span-3"
+                placeholder={t`Leave empty to keep current password`}
+                value={editFormData.password || ""}
+                onChange={(e) => {
+                  setEditFormData({ ...editFormData, password: e.target.value });
+                }}
+              />
+            </div>
           </div>
           <div className="flex justify-end space-x-2">
             <Button
               variant="outline"
-              disabled={updateLoading || updateRoleLoading}
+              disabled={updateLoading || updateRoleLoading || updatePasswordLoading}
               onClick={() => {
                 setIsEditDialogOpen(false);
               }}
             >
               {t`Cancel`}
             </Button>
-            <Button disabled={updateLoading || updateRoleLoading} onClick={handleUpdateUser}>
-              {updateLoading || updateRoleLoading ? t`Updating...` : t`Update User`}
+            <Button
+              disabled={updateLoading || updateRoleLoading || updatePasswordLoading}
+              onClick={handleUpdateUser}
+            >
+              {updateLoading || updateRoleLoading || updatePasswordLoading
+                ? t`Updating...`
+                : t`Update User`}
             </Button>
           </div>
         </DialogContent>

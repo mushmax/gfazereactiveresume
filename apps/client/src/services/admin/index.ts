@@ -65,6 +65,11 @@ export const adminService = {
     await axios.delete(`/admin/users/${id}`);
   },
 
+  async updateUserPassword(id: string, newPassword: string) {
+    const response = await axios.patch(`/admin/users/${id}/password`, { newPassword });
+    return response.data;
+  },
+
   async getStats(): Promise<AdminStats> {
     const response = await axios.get("/admin/stats");
     return response.data;
