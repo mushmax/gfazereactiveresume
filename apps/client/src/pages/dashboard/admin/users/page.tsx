@@ -1,6 +1,14 @@
 import { t } from "@lingui/macro";
 import { Plus, Trash, UserGear } from "@phosphor-icons/react";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
   Badge,
   Button,
   Card,
@@ -24,7 +32,13 @@ import {
 } from "@reactive-resume/ui";
 import { useState } from "react";
 
-import { useAdminUsers, useCreateUser } from "@/client/services/admin/hooks";
+import {
+  useAdminUsers,
+  useCreateUser,
+  useDeleteUser,
+  useUpdateUser,
+  useUpdateUserRole,
+} from "@/client/services/admin/hooks";
 
 const getRoleBadgeVariant = (role: string) => {
   switch (role) {
@@ -42,6 +56,15 @@ const getRoleBadgeVariant = (role: string) => {
 
 export const AdminUsersPage = () => {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState<{
+    id: string;
+    name: string;
+    email: string;
+    username: string;
+    role: string;
+  } | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,9 +72,18 @@ export const AdminUsersPage = () => {
     password: "",
     role: "USER" as "USER" | "ADMIN" | "SUPER_ADMIN",
   });
+  const [editFormData, setEditFormData] = useState({
+    name: "",
+    email: "",
+    username: "",
+    role: "USER" as "USER" | "ADMIN" | "SUPER_ADMIN",
+  });
 
   const { users, loading: usersLoading, error: usersError } = useAdminUsers();
   const { createUserFn, loading: createLoading } = useCreateUser();
+  const { updateUserFn, loading: updateLoading } = useUpdateUser();
+  const { updateUserRoleFn, loading: updateRoleLoading } = useUpdateUserRole();
+  const { deleteUserFn, loading: deleteLoading } = useDeleteUser();
 
   const handleCreateUser = async () => {
     try {
@@ -64,6 +96,71 @@ export const AdminUsersPage = () => {
         password: "",
         role: "USER",
       });
+    } catch {
+    }
+  };
+
+  const handleEditUser = (user: {
+    id: string;
+    name: string;
+    email: string;
+    username: string;
+    role: string;
+  }) => {
+    setSelectedUser(user);
+    setEditFormData({
+      name: user.name,
+      email: user.email,
+      username: user.username,
+      role: user.role as "USER" | "ADMIN" | "SUPER_ADMIN",
+    });
+    setIsEditDialogOpen(true);
+  };
+
+  const handleUpdateUser = async () => {
+    if (!selectedUser) return;
+
+    try {
+      await updateUserFn({
+        id: selectedUser.id,
+        data: {
+          name: editFormData.name,
+          email: editFormData.email,
+          username: editFormData.username,
+        },
+      });
+
+      if (editFormData.role !== selectedUser.role) {
+        await updateUserRoleFn({
+          id: selectedUser.id,
+          role: editFormData.role,
+        });
+      }
+
+      setIsEditDialogOpen(false);
+      setSelectedUser(null);
+    } catch {
+    }
+  };
+
+  const handleDeleteUser = (user: {
+    id: string;
+    name: string;
+    email: string;
+    username: string;
+    role: string;
+  }) => {
+    setSelectedUser(user);
+    setIsDeleteDialogOpen(true);
+  };
+
+  const confirmDeleteUser = async () => {
+    if (!selectedUser) return;
+
+    try {
+      await deleteUserFn(selectedUser.id);
+      setIsDeleteDialogOpen(false);
+      setSelectedUser(null);
     } catch {
     }
   };
@@ -254,10 +351,22 @@ export const AdminUsersPage = () => {
                       </td>
                       <td className="p-4 text-right">
                         <div className="flex justify-end space-x-2">
-                          <Button variant="outline" size="sm">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => {
+                              handleEditUser(user);
+                            }}
+                          >
                             <UserGear className="size-4" />
                           </Button>
-                          <Button variant="outline" size="sm">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => {
+                              handleDeleteUser(user);
+                            }}
+                          >
                             <Trash className="size-4" />
                           </Button>
                         </div>
@@ -270,6 +379,116 @@ export const AdminUsersPage = () => {
           </div>
         </CardContent>
       </Card>
+
+      {/* Edit User Dialog */}
+      <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>{t`Edit User`}</DialogTitle>
+            <DialogDescription>
+              {t`Update user information and role permissions.`}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="edit-name" className="text-right">
+                {t`Name`}
+              </Label>
+              <Input
+                id="edit-name"
+                className="col-span-3"
+                value={editFormData.name}
+                onChange={(e) => {
+                  setEditFormData({ ...editFormData, name: e.target.value });
+                }}
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="edit-email" className="text-right">
+                {t`Email`}
+              </Label>
+              <Input
+                id="edit-email"
+                type="email"
+                className="col-span-3"
+                value={editFormData.email}
+                onChange={(e) => {
+                  setEditFormData({ ...editFormData, email: e.target.value });
+                }}
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="edit-username" className="text-right">
+                {t`Username`}
+              </Label>
+              <Input
+                id="edit-username"
+                className="col-span-3"
+                value={editFormData.username}
+                onChange={(e) => {
+                  setEditFormData({ ...editFormData, username: e.target.value });
+                }}
+              />
+            </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="edit-role" className="text-right">
+                {t`Role`}
+              </Label>
+              <Select
+                value={editFormData.role}
+                onValueChange={(value: "USER" | "ADMIN" | "SUPER_ADMIN") => {
+                  setEditFormData({ ...editFormData, role: value });
+                }}
+              >
+                <SelectTrigger className="col-span-3">
+                  <SelectValue placeholder={t`Select role`} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="USER">{t`User`}</SelectItem>
+                  <SelectItem value="ADMIN">{t`Admin`}</SelectItem>
+                  <SelectItem value="SUPER_ADMIN">{t`Super Admin`}</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          <div className="flex justify-end space-x-2">
+            <Button
+              variant="outline"
+              disabled={updateLoading || updateRoleLoading}
+              onClick={() => {
+                setIsEditDialogOpen(false);
+              }}
+            >
+              {t`Cancel`}
+            </Button>
+            <Button disabled={updateLoading || updateRoleLoading} onClick={handleUpdateUser}>
+              {updateLoading || updateRoleLoading ? t`Updating...` : t`Update User`}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete User Confirmation Dialog */}
+      <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>{t`Delete User`}</AlertDialogTitle>
+            <AlertDialogDescription>
+              {t`Are you sure you want to delete this user? This action cannot be undone and will permanently remove the user and all their data.`}
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel disabled={deleteLoading}>{t`Cancel`}</AlertDialogCancel>
+            <AlertDialogAction
+              disabled={deleteLoading}
+              className="bg-red-600 hover:bg-red-700"
+              onClick={confirmDeleteUser}
+            >
+              {deleteLoading ? t`Deleting...` : t`Delete User`}
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 };
