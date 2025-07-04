@@ -4,16 +4,12 @@ import { Link } from "react-router";
 
 import { Logo } from "@/client/components/logo";
 
-import { DonationBanner } from "./donation-banner";
-
 export const Header = () => (
   <motion.header
     className="fixed inset-x-0 top-0 z-20"
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.3 } }}
   >
-    <DonationBanner />
-
     <div className="bg-gradient-to-b from-background to-transparent py-3">
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-x-3">
@@ -21,7 +17,9 @@ export const Header = () => (
             <Logo size={48} />
           </Link>
           <div className="hidden sm:block">
-            <h1 className="text-lg font-bold text-primary">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
+            <div className="border-2 border-blue-600 bg-white px-4 py-2 rounded">
+              <h1 className="text-lg font-bold text-blue-600">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
+            </div>
           </div>
         </div>
 
