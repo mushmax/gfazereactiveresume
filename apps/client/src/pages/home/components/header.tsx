@@ -1,3 +1,4 @@
+import { t } from "@lingui/macro";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 
@@ -15,9 +16,14 @@ export const Header = () => (
 
     <div className="bg-gradient-to-b from-background to-transparent py-3">
       <div className="container flex items-center justify-between">
-        <Link to="/">
-          <Logo size={48} />
-        </Link>
+        <div className="flex items-center gap-x-3">
+          <Link to="/">
+            <Logo size={48} />
+          </Link>
+          <div className="hidden sm:block">
+            <h1 className="text-lg font-bold text-primary">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
+          </div>
+        </div>
 
         <div />
       </div>
