@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, UnauthorizedException } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { PassportStrategy } from "@nestjs/passport";
 import type { Request } from "express";
@@ -25,6 +25,10 @@ export class JwtStrategy extends PassportStrategy(Strategy, "jwt") {
   }
 
   async validate(payload: Payload) {
-    return this.userService.findOneById(payload.id);
+    const user = await this.userService.findOneById(payload.id);
+    if (!user.enabled) {
+      throw new UnauthorizedException("Account is disabled");
+    }
+    return user;
   }
 }
