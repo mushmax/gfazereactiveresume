@@ -11,17 +11,18 @@ export const Header = () => (
     animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.3 } }}
   >
     <div className="bg-gradient-to-b from-background to-transparent py-3">
-      <div className="container flex items-center justify-center">
-        <div className="flex items-center gap-x-3">
+      <div className="container flex items-center justify-between">
+        <div className="flex items-center">
           <Link to="/">
             <Logo size={48} />
           </Link>
-          <div className="hidden sm:block">
-            <div className="border-2 border-blue-800 bg-white px-6 py-3 rounded">
-              <h1 className="text-lg font-bold text-blue-800">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
-            </div>
+        </div>
+        <div className="hidden sm:block">
+          <div className="border-2 border-blue-800 bg-white px-6 py-3 rounded">
+            <h1 className="text-lg font-bold text-blue-800">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
           </div>
         </div>
+        <div />
       </div>
     </div>
   </motion.header>
