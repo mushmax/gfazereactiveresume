@@ -254,6 +254,7 @@
     "node": ">=22.13.1"
   },
   "prisma": {
-    "schema": "tools/prisma/schema.prisma"
+    "schema": "tools/prisma/schema.prisma",
+    "seed": "node tools/prisma/seed.js"
   }
 }

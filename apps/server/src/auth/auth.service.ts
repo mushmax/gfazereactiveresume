@@ -87,6 +87,10 @@ export class AuthService {
     });
   }
 
+  async findUserById(id: string) {
+    return this.userService.findOneById(id);
+  }
+
   async validateRefreshToken(payload: Payload, token: string) {
     const user = await this.userService.findOneById(payload.id);
     const storedRefreshToken = user.secrets?.refreshToken;
