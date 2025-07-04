@@ -3,14 +3,59 @@ import { FileText, TrendUp, UserCheck, Users } from "@phosphor-icons/react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@reactive-resume/ui";
 import React from "react";
 
+import { useAdminStats } from "@/client/services/admin/hooks";
+
 export const AdminStatsPage = () => {
-  const stats = {
-    totalUsers: 156,
-    totalAdmins: 3,
-    totalSuperAdmins: 1,
-    recentUsers: 12,
-    totalResumes: 423,
-  };
+  const { stats, loading, error } = useAdminStats();
+
+  if (loading) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">{t`System Statistics`}</h1>
+          <p className="text-muted-foreground">{t`Overview of system usage and user activity`}</p>
+        </div>
+        <div className="flex items-center justify-center p-8">
+          <div className="text-center">
+            <div className="text-lg">{t`Loading statistics...`}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">{t`System Statistics`}</h1>
+          <p className="text-muted-foreground">{t`Overview of system usage and user activity`}</p>
+        </div>
+        <div className="flex items-center justify-center p-8">
+          <div className="text-center text-red-600">
+            <div className="text-lg">{t`Error loading statistics`}</div>
+            <p className="text-sm">{t`Please try refreshing the page.`}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!stats) {
+    return (
+      <div className="space-y-6">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">{t`System Statistics`}</h1>
+          <p className="text-muted-foreground">{t`Overview of system usage and user activity`}</p>
+        </div>
+        <div className="flex items-center justify-center p-8">
+          <div className="text-center">
+            <div className="text-lg">{t`No statistics available`}</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const StatCard = ({
     title,

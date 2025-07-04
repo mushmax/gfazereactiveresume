@@ -24,6 +24,8 @@ import {
 } from "@reactive-resume/ui";
 import { useState } from "react";
 
+import { useAdminUsers, useCreateUser } from "@/client/services/admin/hooks";
+
 const getRoleBadgeVariant = (role: string) => {
   switch (role) {
     case "SUPER_ADMIN": {
@@ -40,26 +42,31 @@ const getRoleBadgeVariant = (role: string) => {
 
 export const AdminUsersPage = () => {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
-  const [users] = useState([
-    {
-      id: "1",
-      name: t`Max Admin`,
-      email: "max@gigadrive.com",
-      username: "maxadmin",
-      role: "SUPER_ADMIN",
-      createdAt: t`2025-01-04`,
-      emailVerified: true,
-    },
-    {
-      id: "2",
-      name: t`John Doe`,
-      email: "john@example.com",
-      username: "johndoe",
-      role: "USER",
-      createdAt: t`2025-01-03`,
-      emailVerified: true,
-    },
-  ]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    username: "",
+    password: "",
+    role: "USER" as "USER" | "ADMIN" | "SUPER_ADMIN",
+  });
+
+  const { users, loading: usersLoading, error: usersError } = useAdminUsers();
+  const { createUserFn, loading: createLoading } = useCreateUser();
+
+  const handleCreateUser = async () => {
+    try {
+      await createUserFn(formData);
+      setIsCreateDialogOpen(false);
+      setFormData({
+        name: "",
+        email: "",
+        username: "",
+        password: "",
+        role: "USER",
+      });
+    } catch {
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -87,31 +94,66 @@ export const AdminUsersPage = () => {
                 <Label htmlFor="name" className="text-right">
                   {t`Name`}
                 </Label>
-                <Input id="name" className="col-span-3" />
+                <Input
+                  id="name"
+                  className="col-span-3"
+                  value={formData.name}
+                  onChange={(e) => {
+                    setFormData({ ...formData, name: e.target.value });
+                  }}
+                />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="email" className="text-right">
                   {t`Email`}
                 </Label>
-                <Input id="email" type="email" className="col-span-3" />
+                <Input
+                  id="email"
+                  type="email"
+                  className="col-span-3"
+                  value={formData.email}
+                  onChange={(e) => {
+                    setFormData({ ...formData, email: e.target.value });
+                  }}
+                />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="username" className="text-right">
                   {t`Username`}
                 </Label>
-                <Input id="username" className="col-span-3" />
+                <Input
+                  id="username"
+                  className="col-span-3"
+                  value={formData.username}
+                  onChange={(e) => {
+                    setFormData({ ...formData, username: e.target.value });
+                  }}
+                />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="password" className="text-right">
                   {t`Password`}
                 </Label>
-                <Input id="password" type="password" className="col-span-3" />
+                <Input
+                  id="password"
+                  type="password"
+                  className="col-span-3"
+                  value={formData.password}
+                  onChange={(e) => {
+                    setFormData({ ...formData, password: e.target.value });
+                  }}
+                />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="role" className="text-right">
                   {t`Role`}
                 </Label>
-                <Select>
+                <Select
+                  value={formData.role}
+                  onValueChange={(value: "USER" | "ADMIN" | "SUPER_ADMIN") => {
+                    setFormData({ ...formData, role: value });
+                  }}
+                >
                   <SelectTrigger className="col-span-3">
                     <SelectValue placeholder={t`Select role`} />
                   </SelectTrigger>
@@ -126,17 +168,16 @@ export const AdminUsersPage = () => {
             <div className="flex justify-end space-x-2">
               <Button
                 variant="outline"
+                disabled={createLoading}
                 onClick={() => {
                   setIsCreateDialogOpen(false);
                 }}
               >
                 {t`Cancel`}
               </Button>
-              <Button
-                onClick={() => {
-                  setIsCreateDialogOpen(false);
-                }}
-              >{t`Create User`}</Button>
+              <Button disabled={createLoading} onClick={handleCreateUser}>
+                {createLoading ? t`Creating...` : t`Create User`}
+              </Button>
             </div>
           </DialogContent>
         </Dialog>
@@ -164,34 +205,66 @@ export const AdminUsersPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {users.map((user) => (
-                  <tr key={user.id} className="hover:bg-muted/50 border-b">
-                    <td className="p-4 font-medium">{user.name}</td>
-                    <td className="p-4">{user.email}</td>
-                    <td className="p-4">{user.username}</td>
-                    <td className="p-4">
-                      <Badge variant={getRoleBadgeVariant(user.role)}>
-                        {user.role.replace("_", " ")}
-                      </Badge>
-                    </td>
-                    <td className="p-4">{user.createdAt}</td>
-                    <td className="p-4">
-                      <Badge variant={user.emailVerified ? "success" : "secondary"}>
-                        {user.emailVerified ? t`Verified` : t`Pending`}
-                      </Badge>
-                    </td>
-                    <td className="p-4 text-right">
-                      <div className="flex justify-end space-x-2">
-                        <Button variant="outline" size="sm">
-                          <UserGear className="size-4" />
-                        </Button>
-                        <Button variant="outline" size="sm">
-                          <Trash className="size-4" />
-                        </Button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                {(() => {
+                  if (usersLoading) {
+                    return (
+                      <tr>
+                        <td colSpan={7} className="p-8 text-center">
+                          {t`Loading users...`}
+                        </td>
+                      </tr>
+                    );
+                  }
+
+                  if (usersError) {
+                    return (
+                      <tr>
+                        <td colSpan={7} className="p-8 text-center text-red-600">
+                          {t`Error loading users. Please try again.`}
+                        </td>
+                      </tr>
+                    );
+                  }
+
+                  if (users.length === 0) {
+                    return (
+                      <tr>
+                        <td colSpan={7} className="p-8 text-center">
+                          {t`No users found.`}
+                        </td>
+                      </tr>
+                    );
+                  }
+
+                  return users.map((user) => (
+                    <tr key={user.id} className="hover:bg-muted/50 border-b">
+                      <td className="p-4 font-medium">{user.name}</td>
+                      <td className="p-4">{user.email}</td>
+                      <td className="p-4">{user.username}</td>
+                      <td className="p-4">
+                        <Badge variant={getRoleBadgeVariant(user.role)}>
+                          {user.role.replace("_", " ")}
+                        </Badge>
+                      </td>
+                      <td className="p-4">{new Date(user.createdAt).toLocaleDateString()}</td>
+                      <td className="p-4">
+                        <Badge variant={user.emailVerified ? "success" : "secondary"}>
+                          {user.emailVerified ? t`Verified` : t`Pending`}
+                        </Badge>
+                      </td>
+                      <td className="p-4 text-right">
+                        <div className="flex justify-end space-x-2">
+                          <Button variant="outline" size="sm">
+                            <UserGear className="size-4" />
+                          </Button>
+                          <Button variant="outline" size="sm">
+                            <Trash className="size-4" />
+                          </Button>
+                        </div>
+                      </td>
+                    </tr>
+                  ));
+                })()}
               </tbody>
             </table>
           </div>
