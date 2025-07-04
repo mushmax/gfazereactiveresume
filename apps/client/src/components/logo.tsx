@@ -13,12 +13,12 @@ export const Logo = ({ size = 32, className }: Props) => {
         width={size}
         height={size}
         alt="GFAZE"
-        className="rounded-sm"
+        className="rounded-full"
       />
       <img
-        src="/logo/gigafaze-logo-clean.png"
-        width={size}
-        height={size}
+        src="/logo/gigafaze-logo-new.jpg"
+        width={size * 0.8}
+        height={size * 0.8}
         alt="GigaFaze"
         className="rounded-sm"
       />
