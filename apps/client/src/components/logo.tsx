@@ -7,7 +7,7 @@ type Props = {
 
 export const Logo = ({ size = 32, className }: Props) => {
   return (
-    <div className={cn("flex items-center gap-x-4", className)}>
+    <div className={cn("flex items-center gap-x-6", className)}>
       <img
         src="/logo/gfaze-logo.png"
         width={size}
@@ -20,7 +20,7 @@ export const Logo = ({ size = 32, className }: Props) => {
         width={size * 0.6}
         height={size * 0.6}
         alt="GigaFaze"
-        className="rounded-sm"
+        className="rounded-full"
       />
     </div>
   );
