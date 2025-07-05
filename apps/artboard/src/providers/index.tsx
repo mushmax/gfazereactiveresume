@@ -28,8 +28,8 @@ export const Providers = () => {
     if (resumeData) {
       try {
         setResume(JSON.parse(resumeData));
-      } catch (error) {
-        console.error("Failed to parse resume data:", error);
+      } catch {
+        // Silently handle JSON parsing errors
       }
     }
   }, [setResume]);

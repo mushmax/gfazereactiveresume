@@ -102,8 +102,11 @@ export class PrinterService {
 
       const nodeEnv = this.configService.get<string>("NODE_ENV");
       const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
-      
-      if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) && isDockerEnvironment) {
+
+      if (
+        [publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) &&
+        isDockerEnvironment
+      ) {
         // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in Docker environment
         // This is required because the browser is running in a container and the client is running on the host machine.
         url = url.replace(
@@ -224,8 +227,11 @@ export class PrinterService {
 
     const nodeEnv = this.configService.get<string>("NODE_ENV");
     const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
-    
-    if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) && isDockerEnvironment) {
+
+    if (
+      [publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) &&
+      isDockerEnvironment
+    ) {
       // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in Docker environment
       // This is required because the browser is running in a container and the client is running on the host machine.
       url = url.replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
