@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const Icon = ({ size = 32, className }: Props) => {
-  const { isDarkMode } = useTheme();
+  const { isDarkMode: _isDarkMode } = useTheme();
 
   let src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 

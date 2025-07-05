@@ -65,13 +65,10 @@ export class DocumentService {
       }),
     ]);
 
-    const typeStats = documentsByType.reduce(
-      (acc, item) => {
-        acc[item.type] = item._count.type;
-        return acc;
-      },
-      {} as Record<DocumentType, number>,
-    );
+    const typeStats = {} as Record<DocumentType, number>;
+    for (const item of documentsByType) {
+      typeStats[item.type] = item._count.type;
+    }
 
     return {
       totalDocuments,
