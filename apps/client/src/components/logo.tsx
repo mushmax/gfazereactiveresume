@@ -6,15 +6,22 @@ type Props = {
 };
 
 export const Logo = ({ size = 32, className }: Props) => {
-  const src = "/logo/gfaze_logo.png";
-
   return (
-    <img
-      src={src}
-      width={size}
-      height={size}
-      alt="GFAZE Resume"
-      className={cn("rounded-full", className)}
-    />
+    <div className={cn("flex items-center gap-x-6", className)}>
+      <img
+        src="/logo/gfaze-logo.png"
+        width={size}
+        height={size}
+        alt="GFAZE"
+        className="rounded-full"
+      />
+      <img
+        src="/logo/gigafaze-logo-new.jpg"
+        width={size * 0.6}
+        height={size * 0.6}
+        alt="GigaFaze"
+        className="rounded-full"
+      />
+    </div>
   );
 };
