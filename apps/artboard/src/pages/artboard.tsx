@@ -6,18 +6,16 @@ import webfontloader from "webfontloader";
 import { useArtboardStore } from "../store/artboard";
 
 export const ArtboardPage = () => {
-  const name = useArtboardStore((state) => state.resume?.basics?.name || "Resume");
-  const metadata = useArtboardStore((state) => state.resume?.metadata);
+  const name = useArtboardStore((state) => state.resume.basics.name || "Resume");
+  const metadata = useArtboardStore((state) => state.resume.metadata);
 
   const fontString = useMemo(() => {
-    if (!metadata?.typography?.font) return "Inter:400,600:latin";
-    
     const family = metadata.typography.font.family;
     const variants = metadata.typography.font.variants.join(",");
     const subset = metadata.typography.font.subset;
 
     return `${family}:${variants}:${subset}`;
-  }, [metadata?.typography?.font]);
+  }, [metadata.typography.font]);
 
   useEffect(() => {
     webfontloader.load({
@@ -33,14 +31,12 @@ export const ArtboardPage = () => {
 
   // Font Size & Line Height
   useEffect(() => {
-    if (!metadata) return;
-    
-    const fontSize = metadata.typography?.font?.size || 14;
-    const lineHeight = metadata.typography?.lineHeight || 1.5;
-    const margin = metadata.page?.margin || 18;
-    const textColor = metadata.theme?.text || "#000000";
-    const primaryColor = metadata.theme?.primary || "#dc2626";
-    const backgroundColor = metadata.theme?.background || "#ffffff";
+    const fontSize = metadata.typography.font.size || 14;
+    const lineHeight = metadata.typography.lineHeight || 1.5;
+    const margin = metadata.page.margin || 18;
+    const textColor = metadata.theme.text || "#000000";
+    const primaryColor = metadata.theme.primary || "#dc2626";
+    const backgroundColor = metadata.theme.background || "#ffffff";
 
     document.documentElement.style.setProperty("font-size", `${fontSize}px`);
     document.documentElement.style.setProperty("line-height", `${lineHeight}`);
@@ -56,8 +52,6 @@ export const ArtboardPage = () => {
 
   // Typography Options
   useEffect(() => {
-    if (!metadata?.typography) return;
-    
     // eslint-disable-next-line unicorn/prefer-spread
     const elements = Array.from(document.querySelectorAll(`[data-page]`));
 
@@ -71,7 +65,7 @@ export const ArtboardPage = () => {
     <>
       <Helmet>
         <title>{name} | GFAZE Resume</title>
-        {metadata?.css?.visible && (
+        {metadata.css.visible && (
           <style id="custom-css" lang="css">
             {metadata.css.value}
           </style>

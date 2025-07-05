@@ -129,14 +129,19 @@ export class PrinterService {
         });
       }
 
-      if (!resume.data || !resume.data.metadata || !resume.data.metadata.layout) {
-        this.logger.error('Invalid resume data structure for PDF generation', { resumeId: resume.id, hasData: !!resume.data });
-        throw new InternalServerErrorException('Invalid resume data structure for PDF generation');
+      if (!resume.data?.metadata?.layout) {
+        this.logger.error("Invalid resume data structure for PDF generation", {
+          resumeId: resume.id,
+          hasData: !!resume.data,
+        });
+        throw new InternalServerErrorException("Invalid resume data structure for PDF generation");
       }
 
       if (!resume.data.metadata.template) {
-        this.logger.warn('Resume data missing template, setting default template', { resumeId: resume.id });
-        resume.data.metadata.template = 'azurill';
+        this.logger.warn("Resume data missing template, setting default template", {
+          resumeId: resume.id,
+        });
+        resume.data.metadata.template = "azurill";
       }
 
       // Set the data of the resume to be printed in the browser's session storage
@@ -144,41 +149,46 @@ export class PrinterService {
 
       await page.evaluateOnNewDocument((data) => {
         window.localStorage.setItem("resume", JSON.stringify(data));
-        
-        window.addEventListener('DOMContentLoaded', () => {
-          window.dispatchEvent(new StorageEvent('storage', {
-            key: 'resume',
-            newValue: JSON.stringify(data),
-            storageArea: window.localStorage
-          }));
-          
-          window.dispatchEvent(new CustomEvent('resume-data-updated'));
+
+        window.addEventListener("DOMContentLoaded", () => {
+          window.dispatchEvent(
+            new StorageEvent("storage", {
+              key: "resume",
+              newValue: JSON.stringify(data),
+              storageArea: window.localStorage,
+            }),
+          );
+
+          window.dispatchEvent(new CustomEvent("resume-data-updated"));
         });
       }, resume.data);
 
       await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
 
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
 
       try {
-        await page.waitForFunction(() => {
-          const resumeData = window.localStorage.getItem("resume");
-          if (!resumeData) {
-            return false;
-          }
-          try {
-            const parsed = JSON.parse(resumeData);
-            return parsed && parsed.metadata && parsed.metadata.layout;
-          } catch (error) {
-            return false;
-          }
-        }, { timeout: 15000 });
+        await page.waitForFunction(
+          () => {
+            const resumeData = window.localStorage.getItem("resume");
+            if (!resumeData) {
+              return false;
+            }
+            try {
+              const parsed = JSON.parse(resumeData);
+              return parsed?.metadata?.layout;
+            } catch {
+              return false;
+            }
+          },
+          { timeout: 15_000 },
+        );
       } catch (error) {
-        this.logger.error('Timeout waiting for resume data in artboard', { error: error.message });
-        throw new InternalServerErrorException('Artboard failed to load resume data');
+        this.logger.error("Timeout waiting for resume data in artboard", { error: error.message });
+        throw new InternalServerErrorException("Artboard failed to load resume data");
       }
 
-      await page.waitForSelector('[data-page="1"]', { timeout: 20000 });
+      await page.waitForSelector('[data-page="1"]', { timeout: 20_000 });
 
       const pagesBuffer: Buffer[] = [];
 
@@ -292,9 +302,13 @@ export class PrinterService {
       });
     }
 
-    if (!resume.data || !resume.data.metadata || !resume.data.metadata.layout) {
-      this.logger.error('Invalid resume data structure for preview generation', { resumeId: resume.id });
-      throw new InternalServerErrorException('Invalid resume data structure for preview generation');
+    if (!resume.data?.metadata?.layout) {
+      this.logger.error("Invalid resume data structure for preview generation", {
+        resumeId: resume.id,
+      });
+      throw new InternalServerErrorException(
+        "Invalid resume data structure for preview generation",
+      );
     }
 
     // Set the data of the resume to be printed in the browser's session storage
@@ -306,10 +320,13 @@ export class PrinterService {
 
     await page.goto(`${url}/artboard/preview`, { waitUntil: "networkidle0" });
 
-    await page.waitForFunction(() => {
-      const resumeData = window.localStorage.getItem("resume");
-      return resumeData && JSON.parse(resumeData).metadata;
-    }, { timeout: 10000 });
+    await page.waitForFunction(
+      () => {
+        const resumeData = window.localStorage.getItem("resume");
+        return resumeData && JSON.parse(resumeData).metadata;
+      },
+      { timeout: 10_000 },
+    );
 
     // Save the JPEG to storage and return the URL
     // Store the URL in cache for future requests, under the previously generated hash digest
