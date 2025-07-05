@@ -15,7 +15,7 @@ async function main() {
     return;
   }
 
-  const password = process.env.ADMIN_PASSWORD || "DefaultPassword123";
+  const password = process.env.maxadmin || "DefaultPassword123";
   const hashedPassword = await bcryptjs.hash(password, 10);
 
   const maxadminUser = await prisma.user.create({
