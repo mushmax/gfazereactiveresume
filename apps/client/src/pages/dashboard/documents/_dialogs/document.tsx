@@ -180,11 +180,13 @@ export const DocumentDialog = () => {
           {
             label: t`Create Sample Resume`,
             action: () => {
+              void 0;
             },
           },
           {
             label: t`Create Resume with AI`,
             action: () => {
+              void 0;
             },
           },
         ];
@@ -194,11 +196,13 @@ export const DocumentDialog = () => {
           {
             label: t`Create Sample Cover Letter`,
             action: () => {
+              void 0;
             },
           },
           {
             label: t`Create Cover Letter with AI`,
             action: () => {
+              void 0;
             },
           },
         ];
@@ -208,6 +212,7 @@ export const DocumentDialog = () => {
           {
             label: t`Create Sample Resignation Letter`,
             action: () => {
+              void 0;
             },
           },
         ];
@@ -217,6 +222,7 @@ export const DocumentDialog = () => {
           {
             label: t`Create Sample Website`,
             action: () => {
+              void 0;
             },
           },
         ];
