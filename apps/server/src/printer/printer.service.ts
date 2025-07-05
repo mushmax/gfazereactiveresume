@@ -100,7 +100,6 @@ export class PrinterService {
 
       let url = publicUrl;
 
-      const nodeEnv = this.configService.get<string>("NODE_ENV");
       const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
 
       if (
@@ -225,7 +224,6 @@ export class PrinterService {
 
     let url = publicUrl;
 
-    const nodeEnv = this.configService.get<string>("NODE_ENV");
     const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
 
     if (
