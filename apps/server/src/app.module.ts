@@ -10,6 +10,7 @@ import { AuthModule } from "./auth/auth.module";
 import { ConfigModule } from "./config/config.module";
 import { ContributorsModule } from "./contributors/contributors.module";
 import { DatabaseModule } from "./database/database.module";
+import { DocumentModule } from "./document/document.module";
 import { FeatureModule } from "./feature/feature.module";
 import { HealthModule } from "./health/health.module";
 import { MailModule } from "./mail/mail.module";
@@ -31,6 +32,7 @@ import { UserModule } from "./user/user.module";
     // Feature Modules
     AuthModule.register(),
     UserModule,
+    DocumentModule,
     ResumeModule,
     StorageModule,
     PrinterModule,
