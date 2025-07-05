@@ -19,6 +19,12 @@ enum Visibility {
   private
 }
 
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
+
 model User {
   id               String   @id @default(cuid())
   name             String
@@ -28,9 +34,11 @@ model User {
   locale           String   @default("en-US")
   emailVerified    Boolean  @default(false)
   twoFactorEnabled Boolean  @default(false)
+  enabled          Boolean  @default(true)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
   provider         Provider
+  role             Role     @default(USER)
   secrets          Secrets?
   resumes          Resume[]
 }

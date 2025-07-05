@@ -10,6 +10,8 @@ import { VerifyEmailPage } from "../pages/auth/verify-email/page";
 import { VerifyOtpPage } from "../pages/auth/verify-otp/page";
 import { BuilderLayout } from "../pages/builder/layout";
 import { builderLoader, BuilderPage } from "../pages/builder/page";
+import { AdminStatsPage } from "../pages/dashboard/admin/stats/page";
+import { AdminUsersPage } from "../pages/dashboard/admin/users/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
@@ -18,6 +20,7 @@ import { HomePage } from "../pages/home/page";
 import { ErrorPage } from "../pages/public/error";
 import { publicLoader, PublicResumePage } from "../pages/public/page";
 import { Providers } from "../providers";
+import { AdminGuard } from "./guards/admin";
 import { AuthGuard } from "./guards/auth";
 import { GuestGuard } from "./guards/guest";
 import { authLoader } from "./loaders/auth";
@@ -65,6 +68,11 @@ export const routes = createRoutesFromElements(
           <Route element={<DashboardLayout />}>
             <Route path="resumes" element={<ResumesPage />} />
             <Route path="settings" element={<SettingsPage />} />
+
+            <Route path="admin" element={<AdminGuard />}>
+              <Route path="users" element={<AdminUsersPage />} />
+              <Route path="stats" element={<AdminStatsPage />} />
+            </Route>
 
             <Route index element={<Navigate replace to="/dashboard/resumes" />} />
           </Route>

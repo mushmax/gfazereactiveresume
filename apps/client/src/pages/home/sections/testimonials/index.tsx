@@ -18,12 +18,12 @@ const testimonials: Testimonial[][] = [
     {
       name: "N. Elnour",
       quote:
-        "This is really a thank you for Reactive Resume. Drafting resumes was never a strength of mine, so your app really made the whole process easy and smooth!",
+        "This is really a thank you for GFAZE Resume. Drafting resumes was never a strength of mine, so your app really made the whole process easy and smooth!",
     },
     {
       name: "S. Bhaije",
       quote:
-        "Hi Amruth! First off, many thanks for making RxResume! This is one of the best resume-building tools I have ever found. Have also recommended it to many of my university friends...",
+        "Hi Amruth! First off, many thanks for making GFAZE Resume! This is one of the best resume-building tools I have ever found. Have also recommended it to many of my university friends...",
     },
     {
       name: "K. Lietzau",
@@ -40,24 +40,24 @@ const testimonials: Testimonial[][] = [
     {
       name: "P. Jignesh",
       quote:
-        "Hey, I am a Mechanical engineer, not understand coding, messy AI, and computer systems, But wait, what drags me here is your creativity, Your website RxResume is all good! using it and the efforts you made to keep this free is remarkable. keeping doing great work.",
+        "Hey, I am a Mechanical engineer, not understand coding, messy AI, and computer systems, But wait, what drags me here is your creativity, Your website GFAZE Resume is all good! using it and the efforts you made to keep this free is remarkable. keeping doing great work.",
     },
   ],
   [
     {
       name: "A. Rehman",
       quote:
-        "Hey Amruth, I have loved your Reactive Resume Website. Thank you so much for making this kind of thing.",
+        "Hey Amruth, I have loved your GFAZE Resume Website. Thank you so much for making this kind of thing.",
     },
     {
       name: "S. Innocent",
       quote:
-        "First of all, I appreciate your effort for making reactive resume a free tool for the community. Very much better than many premium resume builder...",
+        "First of all, I appreciate your effort for making GFAZE Resume a free tool for the community. Very much better than many premium resume builder...",
     },
     {
       name: "M. Fritza",
       quote:
-        "Hello sir, I just wanted to write a thank you message for developing RxResume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
+        "Hello sir, I just wanted to write a thank you message for developing GFAZE Resume. It's easy to use, intuitive and it's much more practical than many others that made you pay up after spending an hour to create your CV. I'll be sure to buy you a coffee after I get my first job. I wish you everything best in life!",
     },
   ],
 ];
@@ -68,7 +68,7 @@ export const TestimonialsSection = () => (
       <h1 className="text-4xl font-bold">{t`Testimonials`}</h1>
       <p className="mx-auto max-w-2xl leading-relaxed">
         <Trans>
-          I always love to hear from the users of Reactive Resume with feedback or support. Here are
+          I always love to hear from the users of GFAZE Resume with feedback or support. Here are
           some of the messages I've received. If you have any feedback, feel free to drop me an
           email at{" "}
           <a href={email} className="underline">

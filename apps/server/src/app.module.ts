@@ -6,6 +6,7 @@ import { ServeStaticModule } from "@nestjs/serve-static";
 import { RavenInterceptor, RavenModule } from "nest-raven";
 import { ZodValidationPipe } from "nestjs-zod";
 
+import { AdminModule } from "./admin/admin.module";
 import { AuthModule } from "./auth/auth.module";
 import { ConfigModule } from "./config/config.module";
 import { ContributorsModule } from "./contributors/contributors.module";
@@ -31,6 +32,7 @@ import { UserModule } from "./user/user.module";
     // Feature Modules
     AuthModule.register(),
     UserModule,
+    AdminModule,
     ResumeModule,
     StorageModule,
     PrinterModule,

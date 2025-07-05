@@ -1,5 +1,5 @@
 import { Injectable, InternalServerErrorException } from "@nestjs/common";
-import { Prisma, User } from "@prisma/client";
+import { Prisma, Role, User } from "@prisma/client";
 import { UserWithSecrets } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import { PrismaService } from "nestjs-prisma";
@@ -90,5 +90,113 @@ export class UserService {
       this.storageService.deleteFolder(id),
       this.prisma.user.delete({ where: { id } }),
     ]);
+  }
+
+  async findAllUsers(page = 1, limit = 10): Promise<{ users: UserWithSecrets[]; total: number }> {
+    const skip = (page - 1) * limit;
+
+    const [users, total] = await Promise.all([
+      this.prisma.user.findMany({
+        skip,
+        take: limit,
+        include: { secrets: true },
+        orderBy: { createdAt: "desc" },
+      }),
+      this.prisma.user.count(),
+    ]);
+
+    return { users, total };
+  }
+
+  async updateUserRole(id: string, role: string): Promise<User> {
+    return this.prisma.user.update({
+      where: { id },
+      data: { role: role as Role },
+    });
+  }
+
+  async createUserAsAdmin(data: {
+    name: string;
+    email: string;
+    username: string;
+    password: string;
+    role?: string;
+    locale?: string;
+  }): Promise<UserWithSecrets> {
+    const hashedPassword = await this.hashPassword(data.password);
+
+    return this.prisma.user.create({
+      data: {
+        name: data.name,
+        email: data.email,
+        username: data.username,
+        locale: data.locale ?? "en-US",
+        provider: "email",
+        role: (data.role ?? "USER") as Role,
+        emailVerified: true,
+        secrets: {
+          create: {
+            password: hashedPassword,
+            lastSignedIn: new Date(),
+          },
+        },
+      },
+      include: { secrets: true },
+    });
+  }
+
+  async getUserStats(): Promise<{
+    totalUsers: number;
+    totalAdmins: number;
+    totalSuperAdmins: number;
+    recentUsers: number;
+    totalResumes: number;
+  }> {
+    const [totalUsers, totalAdmins, totalSuperAdmins, recentUsers, totalResumes] =
+      await Promise.all([
+        this.prisma.user.count(),
+        this.prisma.user.count({ where: { role: "ADMIN" } }),
+        this.prisma.user.count({ where: { role: "SUPER_ADMIN" } }),
+        this.prisma.user.count({
+          where: {
+            createdAt: {
+              gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000), // Last 30 days
+            },
+          },
+        }),
+        this.prisma.resume.count(),
+      ]);
+
+    return {
+      totalUsers,
+      totalAdmins,
+      totalSuperAdmins,
+      recentUsers,
+      totalResumes,
+    };
+  }
+
+  async updateUserById(id: string, data: Prisma.UserUpdateArgs["data"]): Promise<User> {
+    return this.prisma.user.update({ where: { id }, data });
+  }
+
+  async updateUserPassword(id: string, newPassword: string): Promise<User> {
+    const hashedPassword = await this.hashPassword(newPassword);
+    return this.prisma.user.update({
+      where: { id },
+      data: { secrets: { update: { password: hashedPassword } } },
+    });
+  }
+
+  async updateUserStatus(id: string, enabled: boolean): Promise<User> {
+    return this.prisma.user.update({
+      where: { id },
+      data: { enabled },
+    });
+  }
+
+  private async hashPassword(password: string): Promise<string> {
+    const bcrypt = await import("bcryptjs");
+    return bcrypt.hash(password, 10);
   }
 }

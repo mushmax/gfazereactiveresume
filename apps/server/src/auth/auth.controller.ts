@@ -51,7 +51,12 @@ export class AuthController {
 
   private async exchangeToken(id: string, email: string, isTwoFactorAuth = false) {
     try {
-      const payload = payloadSchema.parse({ id, isTwoFactorAuth });
+      const user = await this.authService.findUserById(id);
+      const payload = payloadSchema.parse({
+        id,
+        isTwoFactorAuth,
+        role: user.role || "USER",
+      });
 
       const accessToken = this.authService.generateToken("access", payload);
       const refreshToken = this.authService.generateToken("refresh", payload);
