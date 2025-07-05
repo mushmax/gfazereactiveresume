@@ -100,8 +100,11 @@ export class PrinterService {
 
       let url = publicUrl;
 
-      if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
-        // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
+      const nodeEnv = this.configService.get<string>("NODE_ENV");
+      const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
+      
+      if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) && isDockerEnvironment) {
+        // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in Docker environment
         // This is required because the browser is running in a container and the client is running on the host machine.
         url = url.replace(
           /localhost(:\d+)?/,
@@ -219,14 +222,17 @@ export class PrinterService {
 
     let url = publicUrl;
 
-    if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url))) {
-      // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in development
+    const nodeEnv = this.configService.get<string>("NODE_ENV");
+    const isDockerEnvironment = process.env.DOCKER_ENVIRONMENT === "true";
+    
+    if ([publicUrl, storageUrl].some((url) => /https?:\/\/localhost(:\d+)?/.test(url)) && isDockerEnvironment) {
+      // Switch client URL from `http[s]://localhost[:port]` to `http[s]://host.docker.internal[:port]` in Docker environment
       // This is required because the browser is running in a container and the client is running on the host machine.
       url = url.replace(/localhost(:\d+)?/, (_match, port) => `host.docker.internal${port ?? ""}`);
 
       await page.setRequestInterception(true);
 
-      // Intercept requests of `localhost` to `host.docker.internal` in development
+      // Intercept requests of `localhost` to `host.docker.internal` in Docker environment
       page.on("request", (request) => {
         if (request.url().startsWith(storageUrl)) {
           const modifiedUrl = request
