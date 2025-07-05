@@ -21,6 +21,35 @@ export const BuilderLayout = () => {
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
+  const transformedLayout = useMemo(() => {
+    if (!layout || !Array.isArray(layout)) return [];
+    
+    return layout.map((page) => {
+      if (!Array.isArray(page)) return [];
+      
+      return page.map((column) => {
+        if (!Array.isArray(column)) return [];
+        
+        return column
+          .filter((section: any) => {
+            if (typeof section === 'string') return true;
+            if (typeof section === 'object' && section !== null && 'id' in section && 'visible' in section) {
+              return section.visible === true;
+            }
+            return false;
+          })
+          .map((section: any) => {
+            if (typeof section === 'string') return section;
+            if (typeof section === 'object' && section !== null && 'id' in section) {
+              return section.id;
+            }
+            return null;
+          })
+          .filter((item) => item !== null && item !== undefined);
+      });
+    });
+  }, [layout]);
+
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return;
@@ -59,12 +88,12 @@ export const BuilderLayout = () => {
         wrapperClass="!w-screen !h-screen"
         contentClass="grid items-start justify-center space-x-12 pointer-events-none"
         contentStyle={{
-          width: `${layout.length * (pageSizeMap[format].width * MM_TO_PX + 42)}px`,
-          gridTemplateColumns: `repeat(${layout.length}, 1fr)`,
+          width: `${transformedLayout.length * (pageSizeMap[format].width * MM_TO_PX + 42)}px`,
+          gridTemplateColumns: `repeat(${transformedLayout.length}, 1fr)`,
         }}
       >
         <AnimatePresence>
-          {layout.map((columns, pageIndex) => (
+          {transformedLayout.map((columns, pageIndex) => (
             <motion.div
               key={pageIndex}
               layout

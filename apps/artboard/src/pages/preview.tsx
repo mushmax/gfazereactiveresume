@@ -12,9 +12,38 @@ export const PreviewLayout = () => {
 
   const Template = useMemo(() => getTemplate(template), [template]);
 
+  const transformedLayout = useMemo(() => {
+    if (!layout || !Array.isArray(layout)) return [];
+    
+    return layout.map((page) => {
+      if (!Array.isArray(page)) return [];
+      
+      return page.map((column) => {
+        if (!Array.isArray(column)) return [];
+        
+        return column
+          .filter((section: any) => {
+            if (typeof section === 'string') return true;
+            if (typeof section === 'object' && section !== null && 'id' in section && 'visible' in section) {
+              return section.visible === true;
+            }
+            return false;
+          })
+          .map((section: any) => {
+            if (typeof section === 'string') return section;
+            if (typeof section === 'object' && section !== null && 'id' in section) {
+              return section.id;
+            }
+            return null;
+          })
+          .filter((item) => item !== null && item !== undefined);
+      });
+    });
+  }, [layout]);
+
   return (
     <>
-      {layout.map((columns, pageIndex) => (
+      {transformedLayout.map((columns, pageIndex) => (
         <Page key={pageIndex} mode="preview" pageNumber={pageIndex + 1}>
           <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
         </Page>
