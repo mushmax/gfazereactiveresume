@@ -28,9 +28,9 @@ import { User } from "@/server/user/decorators/user.decorator";
 
 import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
+import { PrinterService } from "../printer/printer.service";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
-import { PrinterService } from "../printer/printer.service";
 import { ResumeService } from "./resume.service";
 
 @ApiTags("Resume")
