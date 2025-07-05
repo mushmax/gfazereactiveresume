@@ -115,6 +115,7 @@ export const Providers = () => {
             setResume(transformedData);
           }
         } catch {
+          return;
         }
       }
     };

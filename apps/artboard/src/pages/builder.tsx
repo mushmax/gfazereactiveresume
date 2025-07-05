@@ -22,30 +22,28 @@ export const BuilderLayout = () => {
   const Template = useMemo(() => getTemplate(template), [template]);
 
   const transformedLayout = useMemo(() => {
-    if (!layout || !Array.isArray(layout)) return [];
-    
     return layout.map((page) => {
       if (!Array.isArray(page)) return [];
-      
+
       return page.map((column) => {
         if (!Array.isArray(column)) return [];
-        
+
         return column
-          .filter((section: any) => {
-            if (typeof section === 'string') return true;
-            if (typeof section === 'object' && section !== null && 'id' in section && 'visible' in section) {
-              return section.visible === true;
-            }
-            return false;
+          .filter((section: string | Record<string, unknown>) => {
+            if (typeof section === "string") return true;
+            return (
+              typeof section === "object" &&
+              "visible" in section &&
+              (section as { visible: boolean }).visible
+            );
           })
-          .map((section: any) => {
-            if (typeof section === 'string') return section;
-            if (typeof section === 'object' && section !== null && 'id' in section) {
-              return section.id;
-            }
-            return null;
+          .map((section: string | Record<string, unknown>) => {
+            if (typeof section === "string") return section;
+            return typeof section === "object" && "id" in section
+              ? (section as { id: string }).id
+              : null;
           })
-          .filter((item) => item !== null && item !== undefined);
+          .filter((item): item is string => typeof item === "string");
       });
     });
   }, [layout]);
