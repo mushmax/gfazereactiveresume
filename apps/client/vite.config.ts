@@ -21,6 +21,7 @@ export default defineConfig({
     host: true,
     port: 5173,
     fs: { allow: [searchForWorkspaceRoot(process.cwd())] },
+    allowedHosts: ["repository-workspace-app-tunnel-qebyhn8u.devinapps.com"],
   },
 
   optimizeDeps: {
