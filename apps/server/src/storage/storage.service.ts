@@ -14,7 +14,7 @@ import { Config } from "../config/schema";
 // and where `fileName` is a unique identifier (cuid) for the file.
 
 type ImageUploadType = "pictures" | "previews";
-type DocumentUploadType = "resumes";
+type DocumentUploadType = "resumes" | "documents";
 export type UploadType = ImageUploadType | DocumentUploadType;
 
 const PUBLIC_ACCESS_POLICY = {
@@ -29,6 +29,7 @@ const PUBLIC_ACCESS_POLICY = {
         "arn:aws:s3:::{{bucketName}}/*/pictures/*",
         "arn:aws:s3:::{{bucketName}}/*/previews/*",
         "arn:aws:s3:::{{bucketName}}/*/resumes/*",
+        "arn:aws:s3:::{{bucketName}}/*/documents/*",
       ],
     },
   ],
@@ -55,7 +56,7 @@ export class StorageService implements OnModuleInit {
     if (skipBucketCheck) {
       this.logger.warn("Skipping the verification of whether the storage bucket exists.");
       this.logger.warn(
-        "Make sure that the following paths are publicly accessible: `/{pictures,previews,resumes}/*`",
+        "Make sure that the following paths are publicly accessible: `/{pictures,previews,resumes,documents}/*`",
       );
 
       return;
@@ -116,8 +117,58 @@ export class StorageService implements OnModuleInit {
     type: UploadType,
     buffer: Buffer,
     filename: string = createId(),
+    mimeType?: string,
   ): Promise<string> {
-    const extension = type === "resumes" ? "pdf" : "jpg";
+    let extension: string;
+    let contentType: string;
+
+    switch (type) {
+      case "pictures":
+      case "previews": {
+        extension = "jpg";
+        contentType = "image/jpeg";
+
+        break;
+      }
+      case "resumes": {
+        extension = "pdf";
+        contentType = "application/pdf";
+
+        break;
+      }
+      case "documents": {
+        switch (mimeType) {
+          case "application/pdf": {
+            extension = "pdf";
+            contentType = "application/pdf";
+
+            break;
+          }
+          case "application/msword": {
+            extension = "doc";
+            contentType = "application/msword";
+
+            break;
+          }
+          case "application/vnd.openxmlformats-officedocument.wordprocessingml.document": {
+            extension = "docx";
+            contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+
+            break;
+          }
+          default: {
+            extension = "pdf";
+            contentType = "application/pdf";
+          }
+        }
+        break;
+      }
+      default: {
+        extension = "pdf";
+        contentType = "application/pdf";
+      }
+    }
+
     const storageUrl = this.configService.getOrThrow<string>("STORAGE_URL");
 
     let normalizedFilename = slugify(filename);
@@ -128,9 +179,9 @@ export class StorageService implements OnModuleInit {
 
     const metadata =
       extension === "jpg"
-        ? { "Content-Type": "image/jpeg" }
+        ? { "Content-Type": contentType }
         : {
-            "Content-Type": "application/pdf",
+            "Content-Type": contentType,
             "Content-Disposition": `attachment; filename=${normalizedFilename}.${extension}`,
           };
 
@@ -151,9 +202,23 @@ export class StorageService implements OnModuleInit {
     }
   }
 
-  async deleteObject(userId: string, type: UploadType, filename: string): Promise<void> {
-    const extension = type === "resumes" ? "pdf" : "jpg";
-    const path = `${userId}/${type}/${filename}.${extension}`;
+  async deleteObject(
+    userId: string,
+    type: UploadType,
+    filename: string,
+    extension?: string,
+  ): Promise<void> {
+    let fileExtension: string;
+
+    if (extension) {
+      fileExtension = extension;
+    } else if (type === "pictures" || type === "previews") {
+      fileExtension = "jpg";
+    } else {
+      fileExtension = "pdf"; // Default for resumes and documents
+    }
+
+    const path = `${userId}/${type}/${filename}.${fileExtension}`;
 
     try {
       await this.client.removeObject(this.bucketName, path);

@@ -25,6 +25,12 @@ enum Role {
   SUPER_ADMIN
 }
 
+enum DocumentType {
+  RESUME
+  COVER_LETTER
+  RESIGNATION_LETTER
+  WEBSITE
+}
 model User {
   id               String   @id @default(cuid())
   name             String
@@ -41,6 +47,7 @@ model User {
   role             Role     @default(USER)
   secrets          Secrets?
   resumes          Resume[]
+  documents        Document[]
 }
 
 model Secrets {
@@ -86,4 +93,21 @@ model Statistics {
   updatedAt DateTime @updatedAt
 
   @@unique([resumeId, id])
+}
+
+model Document {
+  id          String       @id @default(cuid())
+  title       String
+  filename    String
+  type        DocumentType
+  fileUrl     String
+  fileSize    Int?
+  mimeType    String?
+  userId      String
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@unique([userId, id])
+  @@index(fields: [userId, type])
 }

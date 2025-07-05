@@ -31,4 +31,32 @@ export class StorageController {
 
     return this.storageService.uploadObject(userId, "pictures", file.buffer, file.filename);
   }
+
+  @Put("document")
+  @UseGuards(TwoFactorGuard)
+  @UseInterceptors(FileInterceptor("file"))
+  async uploadDocument(
+    @User("id") userId: string,
+    @UploadedFile("file") file: Express.Multer.File,
+  ) {
+    const allowedTypes = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+
+    if (!allowedTypes.includes(file.mimetype)) {
+      throw new BadRequestException(
+        "The file you uploaded doesn't seem to be a supported document type. Please upload a PDF, DOC, or DOCX file.",
+      );
+    }
+
+    return this.storageService.uploadObject(
+      userId,
+      "documents",
+      file.buffer,
+      file.filename,
+      file.mimetype,
+    );
+  }
 }

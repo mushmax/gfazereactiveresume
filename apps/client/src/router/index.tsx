@@ -12,6 +12,7 @@ import { BuilderLayout } from "../pages/builder/layout";
 import { builderLoader, BuilderPage } from "../pages/builder/page";
 import { AdminStatsPage } from "../pages/dashboard/admin/stats/page";
 import { AdminUsersPage } from "../pages/dashboard/admin/users/page";
+import { DocumentsPage } from "../pages/dashboard/documents/page";
 import { DashboardLayout } from "../pages/dashboard/layout";
 import { ResumesPage } from "../pages/dashboard/resumes/page";
 import { SettingsPage } from "../pages/dashboard/settings/page";
@@ -67,6 +68,7 @@ export const routes = createRoutesFromElements(
         <Route element={<AuthGuard />}>
           <Route element={<DashboardLayout />}>
             <Route path="resumes" element={<ResumesPage />} />
+            <Route path="documents" element={<DocumentsPage />} />
             <Route path="settings" element={<SettingsPage />} />
 
             <Route path="admin" element={<AdminGuard />}>
