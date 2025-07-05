@@ -10,7 +10,7 @@ import {
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
-import { AuthProvidersDto, LoginDto, RegisterDto, UserWithSecrets } from "@reactive-resume/dto";
+import { AuthProvidersDto, LoginDto, RegisterDto } from "@reactive-resume/dto";
 import { ErrorMessage } from "@reactive-resume/utils";
 import * as bcryptjs from "bcryptjs";
 import { authenticator } from "otplib";
@@ -115,7 +115,7 @@ export class AuthService {
       // Do not `await` this function, otherwise the user will have to wait for the email to be sent before the response is returned
       void this.sendVerificationEmail(user.email);
 
-      return user as UserWithSecrets;
+      return user;
     } catch (error) {
       if (error instanceof PrismaClientKnownRequestError && error.code === "P2002") {
         throw new BadRequestException(ErrorMessage.UserAlreadyExists);
@@ -366,6 +366,6 @@ export class AuthService {
       secrets: { update: { twoFactorBackupCodes: backupCodes } },
     });
 
-    return user as UserWithSecrets;
+    return user;
   }
 }
