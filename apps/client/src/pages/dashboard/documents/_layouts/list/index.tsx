@@ -1,3 +1,4 @@
+import type { DocumentDto } from "@reactive-resume/dto";
 import { sortByDate } from "@reactive-resume/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -41,8 +42,8 @@ export const ListView = ({ type }: ListViewProps) => {
       {documents && (
         <AnimatePresence>
           {documents
-            .sort((a: any, b: any) => sortByDate(a, b, "updatedAt"))
-            .map((document: any, index: number) => (
+            .sort((a: DocumentDto, b: DocumentDto) => sortByDate(a, b, "updatedAt"))
+            .map((document, index: number) => (
               <motion.div
                 key={document.id}
                 initial={{ opacity: 0, y: -50 }}

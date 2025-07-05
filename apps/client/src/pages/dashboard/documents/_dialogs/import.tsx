@@ -62,7 +62,7 @@ type ValidationResult =
 
 export const ImportDocumentDialog = () => {
   const { toast } = useToast();
-  const { isOpen, mode, payload, close } = useDialog("import-document");
+  const { isOpen, mode: _mode, payload, close } = useDialog("import-document");
   const { uploadDocument, loading: uploadLoading } = useUploadDocument();
   const { createDocument, loading: createLoading } = useCreateDocument();
 

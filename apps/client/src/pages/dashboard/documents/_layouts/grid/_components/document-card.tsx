@@ -27,7 +27,7 @@ type DocumentCardProps = {
 
 export const DocumentCard = ({ document }: DocumentCardProps) => {
   const { open } = useDialog<DocumentDto>("document");
-  const { deleteDocument } = useDeleteDocument();
+  const { deleteDocument: _deleteDocument } = useDeleteDocument();
 
   const handleView = () => {
     if (document.fileUrl) {

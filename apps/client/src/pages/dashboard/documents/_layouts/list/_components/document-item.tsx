@@ -26,7 +26,7 @@ type DocumentListItemProps = {
 
 export const DocumentListItem = ({ document }: DocumentListItemProps) => {
   const { open } = useDialog<DocumentDto>("document");
-  const { deleteDocument } = useDeleteDocument();
+  const { deleteDocument: _deleteDocument } = useDeleteDocument();
 
   const handleView = () => {
     if (document.fileUrl) {

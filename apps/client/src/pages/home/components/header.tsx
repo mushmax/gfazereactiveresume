@@ -18,7 +18,7 @@ export const Header = () => (
           </Link>
         </div>
         <div className="hidden sm:block">
-          <div className="border-2 border-blue-950 bg-white px-6 py-3 rounded">
+          <div className="rounded border-2 border-blue-950 bg-white px-6 py-3">
             <h1 className="text-lg font-bold text-blue-950">{t`GFAZE Resume - Powered by GigaFaze`}</h1>
           </div>
         </div>
