@@ -30,12 +30,16 @@ import { OptionalGuard } from "../auth/guards/optional.guard";
 import { TwoFactorGuard } from "../auth/guards/two-factor.guard";
 import { Resume } from "./decorators/resume.decorator";
 import { ResumeGuard } from "./guards/resume.guard";
+import { PrinterService } from "../printer/printer.service";
 import { ResumeService } from "./resume.service";
 
 @ApiTags("Resume")
 @Controller("resume")
 export class ResumeController {
-  constructor(private readonly resumeService: ResumeService) {}
+  constructor(
+    private readonly resumeService: ResumeService,
+    private readonly printerService: PrinterService,
+  ) {}
 
   @Get("schema")
   getSchema() {
@@ -141,6 +145,19 @@ export class ResumeController {
   async printPreview(@Resume() resume: ResumeDto) {
     try {
       const url = await this.resumeService.printPreview(resume);
+
+      return { url };
+    } catch (error) {
+      Logger.error(error);
+      throw new InternalServerErrorException(error);
+    }
+  }
+
+  @Get("/export/:id/docx")
+  @UseGuards(OptionalGuard, ResumeGuard)
+  async exportDocx(@User("id") userId: string | undefined, @Resume() resume: ResumeDto) {
+    try {
+      const url = await this.printerService.generateDocx(resume);
 
       return { url };
     } catch (error) {

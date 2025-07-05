@@ -347,4 +347,396 @@ export class PrinterService {
 
     return previewUrl;
   }
+
+  async generateDocx(resume: ResumeDto) {
+    try {
+      const { Document, Packer, Paragraph, TextRun, HeadingLevel } = await import('docx');
+      
+      if (!resume.data?.metadata?.layout) {
+        this.logger.error("Invalid resume data structure for DOCX generation", {
+          resumeId: resume.id,
+        });
+        throw new InternalServerErrorException("Invalid resume data structure for DOCX generation");
+      }
+
+      const doc = new Document({
+        sections: [{
+          properties: {},
+          children: [
+            new Paragraph({
+              text: resume.data.basics.name || "Resume",
+              heading: HeadingLevel.TITLE,
+              alignment: "center",
+            }),
+            new Paragraph({
+              text: resume.data.basics.headline || "",
+              heading: HeadingLevel.HEADING_2,
+              alignment: "center",
+            }),
+            
+            new Paragraph({
+              children: [
+                new TextRun({ text: "Email: " }),
+                new TextRun({ text: resume.data.basics.email || "", bold: true }),
+                new TextRun({ text: " | Phone: " }),
+                new TextRun({ text: resume.data.basics.phone || "", bold: true }),
+                new TextRun({ text: " | Location: " }),
+                new TextRun({ text: resume.data.basics.location || "", bold: true }),
+              ],
+              alignment: "center",
+            }),
+            
+            ...this.generateAllDocxSections(resume.data),
+          ],
+        }],
+      });
+
+      const buffer = await Packer.toBuffer(doc);
+      
+      const docxUrl = await this.storageService.uploadObject(
+        resume.userId,
+        "resumes",
+        Buffer.from(buffer),
+        `${resume.title}.docx`,
+      );
+
+      this.logger.log(`Successfully generated DOCX for resume ${resume.id}`);
+      return docxUrl;
+      
+    } catch (error) {
+      this.logger.error(`Failed to generate DOCX for resume ${resume.id}`, {
+        error: error.message,
+        stack: error.stack,
+      });
+      throw new InternalServerErrorException(
+        `DOCX generation failed: ${error.message}`,
+      );
+    }
+  }
+
+  private generateAllDocxSections(data: any) {
+    const { Paragraph, TextRun, HeadingLevel } = require('docx');
+    const sections = [];
+
+    if (data.sections.summary?.content) {
+      sections.push(new Paragraph({
+        text: "Summary",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      sections.push(new Paragraph({
+        text: data.sections.summary.content,
+      }));
+      sections.push(new Paragraph({ text: "" })); // spacing
+    }
+
+    if (data.sections.experience?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Experience",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const exp of data.sections.experience.items) {
+        if (!exp.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: exp.position || "", bold: true, size: 24 }),
+            new TextRun({ text: ` at ${exp.company || ""}`, size: 24 }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: exp.date || "", italics: true }),
+            new TextRun({ text: exp.location ? ` | ${exp.location}` : "" }),
+          ],
+        }));
+        if (exp.summary) {
+          sections.push(new Paragraph({
+            text: exp.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.education?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Education",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const edu of data.sections.education.items) {
+        if (!edu.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: edu.area || "", bold: true, size: 24 }),
+            new TextRun({ text: ` at ${edu.institution || ""}`, size: 24 }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: edu.date || "", italics: true }),
+            new TextRun({ text: edu.score ? ` | ${edu.score}` : "" }),
+          ],
+        }));
+        if (edu.summary) {
+          sections.push(new Paragraph({
+            text: edu.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.skills?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Skills",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      const skillNames = data.sections.skills.items
+        .filter((skill: any) => skill.visible)
+        .map((skill: any) => skill.name)
+        .join(", ");
+      sections.push(new Paragraph({
+        text: skillNames,
+      }));
+      sections.push(new Paragraph({ text: "" })); // spacing
+    }
+
+    if (data.sections.languages?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Languages",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const lang of data.sections.languages.items) {
+        if (!lang.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: lang.name || "", bold: true }),
+            new TextRun({ text: lang.level ? ` - ${lang.level}` : "" }),
+          ],
+        }));
+      }
+      sections.push(new Paragraph({ text: "" })); // spacing
+    }
+
+    if (data.sections.projects?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Projects",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const project of data.sections.projects.items) {
+        if (!project.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: project.name || "", bold: true, size: 24 }),
+            new TextRun({ text: project.url ? ` (${project.url})` : "" }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          text: project.date || "",
+          italics: true,
+        }));
+        if (project.summary) {
+          sections.push(new Paragraph({
+            text: project.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.awards?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Awards",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const award of data.sections.awards.items) {
+        if (!award.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: award.title || "", bold: true }),
+            new TextRun({ text: award.awarder ? ` - ${award.awarder}` : "" }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          text: award.date || "",
+          italics: true,
+        }));
+        if (award.summary) {
+          sections.push(new Paragraph({
+            text: award.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.certifications?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Certifications",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const cert of data.sections.certifications.items) {
+        if (!cert.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: cert.name || "", bold: true }),
+            new TextRun({ text: cert.issuer ? ` - ${cert.issuer}` : "" }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          text: cert.date || "",
+          italics: true,
+        }));
+        if (cert.summary) {
+          sections.push(new Paragraph({
+            text: cert.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.publications?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Publications",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const pub of data.sections.publications.items) {
+        if (!pub.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: pub.name || "", bold: true }),
+            new TextRun({ text: pub.publisher ? ` - ${pub.publisher}` : "" }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          text: pub.date || "",
+          italics: true,
+        }));
+        if (pub.summary) {
+          sections.push(new Paragraph({
+            text: pub.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.volunteer?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Volunteer Experience",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const vol of data.sections.volunteer.items) {
+        if (!vol.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: vol.position || "", bold: true }),
+            new TextRun({ text: vol.organization ? ` at ${vol.organization}` : "" }),
+          ],
+        }));
+        sections.push(new Paragraph({
+          text: vol.date || "",
+          italics: true,
+        }));
+        if (vol.summary) {
+          sections.push(new Paragraph({
+            text: vol.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.interests?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "Interests",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      const interests = data.sections.interests.items
+        .filter((interest: any) => interest.visible)
+        .map((interest: any) => interest.name)
+        .join(", ");
+      sections.push(new Paragraph({
+        text: interests,
+      }));
+      sections.push(new Paragraph({ text: "" })); // spacing
+    }
+
+    if (data.sections.references?.items?.length > 0) {
+      sections.push(new Paragraph({
+        text: "References",
+        heading: HeadingLevel.HEADING_1,
+      }));
+      
+      for (const ref of data.sections.references.items) {
+        if (!ref.visible) continue;
+        sections.push(new Paragraph({
+          children: [
+            new TextRun({ text: ref.name || "", bold: true }),
+            new TextRun({ text: ref.position ? ` - ${ref.position}` : "" }),
+          ],
+        }));
+        if (ref.email || ref.phone) {
+          sections.push(new Paragraph({
+            children: [
+              new TextRun({ text: ref.email || "" }),
+              new TextRun({ text: ref.phone ? ` | ${ref.phone}` : "" }),
+            ],
+          }));
+        }
+        if (ref.summary) {
+          sections.push(new Paragraph({
+            text: ref.summary,
+          }));
+        }
+        sections.push(new Paragraph({ text: "" })); // spacing
+      }
+    }
+
+    if (data.sections.custom) {
+      for (const [sectionKey, customSection] of Object.entries(data.sections.custom)) {
+        const section = customSection as any;
+        if (section?.items?.length > 0) {
+          sections.push(new Paragraph({
+            text: section.name || sectionKey,
+            heading: HeadingLevel.HEADING_1,
+          }));
+          
+          for (const item of section.items) {
+            if (!item.visible) continue;
+            sections.push(new Paragraph({
+              children: [
+                new TextRun({ text: item.name || "", bold: true }),
+                new TextRun({ text: item.description ? ` - ${item.description}` : "" }),
+              ],
+            }));
+            if (item.date) {
+              sections.push(new Paragraph({
+                text: item.date,
+                italics: true,
+              }));
+            }
+            if (item.summary) {
+              sections.push(new Paragraph({
+                text: item.summary,
+              }));
+            }
+            sections.push(new Paragraph({ text: "" })); // spacing
+          }
+        }
+      }
+    }
+
+    return sections;
+  }
 }
