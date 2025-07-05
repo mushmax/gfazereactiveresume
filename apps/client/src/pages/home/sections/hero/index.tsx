@@ -21,7 +21,7 @@ export const HeroSection = () => (
       >
         <div className="mt-10 space-y-6">
           <div className="space-y-4">
-            <div className="border-2 border-blue-950 bg-white p-6 rounded-lg max-w-4xl">
+            <div className="max-w-4xl rounded-lg border-2 border-blue-950 bg-white p-6">
               <h1 className="text-4xl font-bold tracking-tight text-blue-950 sm:text-5xl">
                 {t`GFAZE Resume is the most versatile AI Powered Resume Builder offered by GigaFaze to help you land your next dream Job`}
               </h1>

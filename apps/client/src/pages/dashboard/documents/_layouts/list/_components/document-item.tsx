@@ -47,7 +47,7 @@ export const DocumentListItem = ({ document }: DocumentListItemProps) => {
     open("update", { id: "document", item: document });
   };
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     open("delete", { id: "document", item: document });
   };
 
@@ -75,7 +75,7 @@ export const DocumentListItem = ({ document }: DocumentListItemProps) => {
       <ContextMenuTrigger>
         <BaseListItem
           title={document.title}
-          description={t`Updated ${dayjs(document.updatedAt).fromNow()}`}
+          description={`${t`Updated`} ${dayjs(document.updatedAt).fromNow()}`}
           end={
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

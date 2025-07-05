@@ -90,7 +90,7 @@ export const useCreateDocument = () => {
   } = useMutation({
     mutationFn: createDocument,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
+      void queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
     },
   });
 
@@ -107,7 +107,7 @@ export const useUpdateDocument = () => {
   } = useMutation({
     mutationFn: ({ id, data }: { id: string; data: UpdateDocumentDto }) => updateDocument(id, data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
+      void queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
     },
   });
 
@@ -124,7 +124,7 @@ export const useDeleteDocument = () => {
   } = useMutation({
     mutationFn: deleteDocument,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
+      void queryClient.invalidateQueries({ queryKey: DOCUMENTS_KEY });
     },
   });
 
