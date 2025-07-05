@@ -1,10 +1,20 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/macro";
 import { Check, DownloadSimple } from "@phosphor-icons/react";
-import type { JsonResume, LinkedIn, ReactiveResumeV3 } from "@reactive-resume/parser";
+import type {
+  DocData,
+  DocxData,
+  JsonResume,
+  LinkedIn,
+  PdfData,
+  ReactiveResumeV3,
+} from "@reactive-resume/parser";
 import {
+  DocParser,
+  DocxParser,
   JsonResumeParser,
   LinkedInParser,
+  PdfParser,
   ReactiveResumeParser,
   ReactiveResumeV3Parser,
 } from "@reactive-resume/parser";
@@ -47,6 +57,9 @@ enum ImportType {
   "reactive-resume-v3-json" = "reactive-resume-v3-json",
   "json-resume-json" = "json-resume-json",
   "linkedin-data-export-zip" = "linkedin-data-export-zip",
+  "pdf-resume" = "pdf-resume",
+  "docx-resume" = "docx-resume",
+  "doc-resume" = "doc-resume",
 }
 
 const formSchema = z.object({
@@ -64,7 +77,7 @@ type ValidationResult =
   | {
       isValid: true;
       type: ImportType;
-      result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume;
+      result: ResumeData | ReactiveResumeV3 | LinkedIn | JsonResume | PdfData | DocxData | DocData;
     };
 
 export const ImportDialog = () => {
@@ -94,6 +107,9 @@ export const ImportDialog = () => {
   const accept = useMemo(() => {
     if (filetype.includes("json")) return ".json";
     if (filetype.includes("zip")) return ".zip";
+    if (filetype.includes("pdf")) return ".pdf";
+    if (filetype.includes("docx")) return ".docx";
+    if (filetype.includes("doc")) return ".doc";
     return "";
   }, [filetype]);
 
@@ -127,6 +143,30 @@ export const ImportDialog = () => {
 
       if (type === ImportType["linkedin-data-export-zip"]) {
         const parser = new LinkedInParser();
+        const data = await parser.readFile(file);
+        const result = await parser.validate(data);
+
+        setValidationResult({ isValid: true, type, result });
+      }
+
+      if (type === ImportType["pdf-resume"]) {
+        const parser = new PdfParser();
+        const data = await parser.readFile(file);
+        const result = await parser.validate(data);
+
+        setValidationResult({ isValid: true, type, result });
+      }
+
+      if (type === ImportType["docx-resume"]) {
+        const parser = new DocxParser();
+        const data = await parser.readFile(file);
+        const result = await parser.validate(data);
+
+        setValidationResult({ isValid: true, type, result });
+      }
+
+      if (type === ImportType["doc-resume"]) {
+        const parser = new DocParser();
         const data = await parser.readFile(file);
         const result = await parser.validate(data);
 
@@ -177,6 +217,27 @@ export const ImportDialog = () => {
       if (type === ImportType["linkedin-data-export-zip"]) {
         const parser = new LinkedInParser();
         const data = parser.convert(validationResult.result as LinkedIn);
+
+        await importResume({ data });
+      }
+
+      if (type === ImportType["pdf-resume"]) {
+        const parser = new PdfParser();
+        const data = parser.convert(validationResult.result as PdfData);
+
+        await importResume({ data });
+      }
+
+      if (type === ImportType["docx-resume"]) {
+        const parser = new DocxParser();
+        const data = parser.convert(validationResult.result as DocxData);
+
+        await importResume({ data });
+      }
+
+      if (type === ImportType["doc-resume"]) {
+        const parser = new DocParser();
+        const data = parser.convert(validationResult.result as DocData);
 
         await importResume({ data });
       }
@@ -239,6 +300,12 @@ export const ImportDialog = () => {
                         <SelectItem value="linkedin-data-export-zip">
                           LinkedIn Data Export (.zip)
                         </SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+                        <SelectItem value="pdf-resume">PDF Resume (.pdf)</SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+                        <SelectItem value="docx-resume">Word Document (.docx)</SelectItem>
+                        {/* eslint-disable-next-line lingui/no-unlocalized-strings */}
+                        <SelectItem value="doc-resume">Word Document (.doc)</SelectItem>
                       </SelectContent>
                     </Select>
                   </FormControl>
