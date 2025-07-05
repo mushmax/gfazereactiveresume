@@ -6,11 +6,11 @@ import { PrismaService } from "nestjs-prisma";
 export class DocumentService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(data: Prisma.DocumentCreateInput): Promise<Document> {
+  create(data: Prisma.DocumentCreateInput): Promise<Document> {
     return this.prisma.document.create({ data });
   }
 
-  async findAll(userId: string, type?: DocumentType): Promise<Document[]> {
+  findAll(userId: string, type?: DocumentType): Promise<Document[]> {
     const where: Prisma.DocumentWhereInput = { userId };
 
     if (type) {

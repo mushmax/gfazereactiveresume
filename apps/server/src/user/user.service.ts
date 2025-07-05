@@ -108,7 +108,7 @@ export class UserService {
     return { users, total };
   }
 
-  async updateUserRole(id: string, role: string): Promise<User> {
+  updateUserRole(id: string, role: string): Promise<User> {
     return this.prisma.user.update({
       where: { id },
       data: { role: role as Role },
@@ -176,7 +176,7 @@ export class UserService {
     };
   }
 
-  async updateUserById(id: string, data: Prisma.UserUpdateArgs["data"]): Promise<User> {
+  updateUserById(id: string, data: Prisma.UserUpdateArgs["data"]): Promise<User> {
     return this.prisma.user.update({ where: { id }, data });
   }
 
@@ -188,7 +188,7 @@ export class UserService {
     });
   }
 
-  async updateUserStatus(id: string, enabled: boolean): Promise<User> {
+  updateUserStatus(id: string, enabled: boolean): Promise<User> {
     return this.prisma.user.update({
       where: { id },
       data: { enabled },
