@@ -4,6 +4,4 @@ type Props = {
   className?: string;
 };
 
-export const Copyright = ({ className }: Props) => (
-  <div className={cn("hidden", className)} />
-);
+export const Copyright = ({ className }: Props) => <div className={cn("hidden", className)} />;

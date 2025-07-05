@@ -48,7 +48,7 @@ export const DocumentCard = ({ document }: DocumentCardProps) => {
     open("update", { id: "document", item: document });
   };
 
-  const handleDelete = async () => {
+  const handleDelete = () => {
     open("delete", { id: "document", item: document });
   };
 
@@ -111,7 +111,7 @@ export const DocumentCard = ({ document }: DocumentCardProps) => {
           >
             <h4 className="truncate font-medium">{document.title}</h4>
             <p className="text-xs opacity-75">
-              {t`Updated ${dayjs(document.updatedAt).fromNow()}`}
+              {t`Updated`} {dayjs(document.updatedAt).fromNow()}
             </p>
           </div>
         </BaseCard>

@@ -44,7 +44,7 @@ enum ImportType {
 const formSchema = z.object({
   file: z.instanceof(File),
   type: z.nativeEnum(ImportType),
-  title: z.string().min(1, "Title is required"),
+  title: z.string().min(1),
   documentType: z.enum(["RESUME", "COVER_LETTER", "RESIGNATION_LETTER", "WEBSITE"]),
 });
 
@@ -62,7 +62,7 @@ type ValidationResult =
 
 export const ImportDocumentDialog = () => {
   const { toast } = useToast();
-  const { isOpen, mode, payload, close } = useDialog("import-document");
+  const { isOpen, close } = useDialog("import-document");
   const { uploadDocument, loading: uploadLoading } = useUploadDocument();
   const { createDocument, loading: createLoading } = useCreateDocument();
 
@@ -92,7 +92,7 @@ export const ImportDocumentDialog = () => {
       documentType: "RESUME",
     });
     setValidationResult(null);
-  }, [filetype, payload]);
+  }, [filetype]);
 
   const accept = useMemo(() => {
     switch (filetype) {
@@ -111,7 +111,7 @@ export const ImportDocumentDialog = () => {
     }
   }, [filetype]);
 
-  const onValidate = async () => {
+  const onValidate = () => {
     try {
       const { file, type } = formSchema.parse(form.getValues());
 
@@ -139,7 +139,7 @@ export const ImportDocumentDialog = () => {
       } else {
         setValidationResult({
           isValid: false,
-          errors: error instanceof Error ? error.message : "Unknown error occurred",
+          errors: error instanceof Error ? error.message : t`Unknown error occurred`,
         });
       }
 
