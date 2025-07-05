@@ -87,6 +87,10 @@ export class AuthService {
     });
   }
 
+  async findUserById(id: string) {
+    return this.userService.findOneById(id);
+  }
+
   async validateRefreshToken(payload: Payload, token: string) {
     const user = await this.userService.findOneById(payload.id);
     const storedRefreshToken = user.secrets?.refreshToken;
@@ -153,7 +157,7 @@ export class AuthService {
 
     const baseUrl = this.configService.get("PUBLIC_URL");
     const url = `${baseUrl}/auth/reset-password?token=${token}`;
-    const subject = "Reset your Reactive Resume password";
+    const subject = "Reset your GFAZE Resume password";
     const text = `Please click on the link below to reset your password:\n\n${url}`;
 
     await this.mailService.sendEmail({ to: email, subject, text });
@@ -270,7 +274,7 @@ export class AuthService {
     }
 
     const secret = authenticator.generateSecret();
-    const uri = authenticator.keyuri(email, "Reactive Resume", secret);
+    const uri = authenticator.keyuri(email, "GFAZE Resume", secret);
 
     await this.userService.updateByEmail(email, {
       secrets: { update: { twoFactorSecret: secret } },

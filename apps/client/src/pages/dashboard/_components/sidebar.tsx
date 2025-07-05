@@ -1,5 +1,5 @@
 import { t } from "@lingui/macro";
-import { FadersHorizontal, FileText, ReadCvLogo } from "@phosphor-icons/react";
+import { ChartBar, FadersHorizontal, FileText, ReadCvLogo, Users } from "@phosphor-icons/react";
 import { Button, KeyboardShortcut, Separator } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { motion } from "framer-motion";
@@ -106,12 +106,27 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
     },
   ];
 
+  const adminItems: SidebarItem[] = [
+    {
+      path: "/dashboard/admin/users",
+      name: t`User Management`,
+      icon: <Users />,
+    },
+    {
+      path: "/dashboard/admin/stats",
+      name: t`System Statistics`,
+      icon: <ChartBar />,
+    },
+  ];
+
+  const isAdmin = user && (user.role === "ADMIN" || user.role === "SUPER_ADMIN");
+
   return (
     <div className="flex h-full flex-col gap-y-4">
-      <div className="ml-12 flex justify-center lg:ml-0">
+      <div className="flex justify-start lg:ml-0">
         <Button asChild size="icon" variant="ghost" className="size-10 p-0">
           <Link to="/">
-            <Icon size={24} className="mx-auto hidden lg:block" />
+            <Icon size={24} className="hidden lg:block" />
           </Link>
         </Button>
       </div>
@@ -122,6 +137,20 @@ export const Sidebar = ({ setOpen }: SidebarProps) => {
         {sidebarItems.map((item) => (
           <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
         ))}
+
+        {isAdmin && (
+          <>
+            <Separator className="my-2 opacity-50" />
+            <div className="px-4 py-2">
+              <span className="text-muted-foreground text-xs font-medium uppercase tracking-wider">
+                {t`Administration`}
+              </span>
+            </div>
+            {adminItems.map((item) => (
+              <SidebarItem {...item} key={item.path} onClick={() => setOpen?.(false)} />
+            ))}
+          </>
+        )}
       </div>
 
       <div className="flex-1" />

@@ -10,3 +10,6 @@ export const RESUMES_KEY: QueryKey = ["resumes"];
 export const RESUME_PREVIEW_KEY: QueryKey = ["resume", "preview"];
 
 export const DOCUMENTS_KEY: QueryKey = ["documents"];
+
+export const ADMIN_USERS_KEY: QueryKey = ["admin", "users"];
+export const ADMIN_STATS_KEY: QueryKey = ["admin", "stats"];
