@@ -68,11 +68,7 @@ export const AuthLayout = () => {
         />
 
         <div className="absolute bottom-5 right-5 z-10 bg-primary/30 px-4 py-2 text-xs font-medium text-primary-foreground backdrop-blur-sm">
-          <a
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            href="#"
-          >
+          <a target="_blank" rel="noopener noreferrer nofollow" href="#">
             {t`Professional resume review image`}
           </a>
         </div>
