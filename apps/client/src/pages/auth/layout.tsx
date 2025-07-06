@@ -62,18 +62,18 @@ export const AuthLayout = () => {
         <img
           width={1920}
           height={1080}
-          alt="Open books on a table"
+          alt="Professional man reviewing resume"
           className="h-screen w-full object-cover object-center"
-          src="/backgrounds/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg"
+          src="/backgrounds/man-reviewing-resume.png"
         />
 
         <div className="absolute bottom-5 right-5 z-10 bg-primary/30 px-4 py-2 text-xs font-medium text-primary-foreground backdrop-blur-sm">
           <a
             target="_blank"
             rel="noopener noreferrer nofollow"
-            href="https://unsplash.com/photos/Oaqk7qqNh_c"
+            href="#"
           >
-            {t`Photograph by Patrick Tomasso`}
+            {t`Professional resume review image`}
           </a>
         </div>
       </div>
