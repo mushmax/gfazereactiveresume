@@ -7,7 +7,6 @@ import { ThemeSwitch } from "@/client/components/theme-switch";
 
 import { CssSection } from "./sections/css";
 import { ExportSection } from "./sections/export";
-import { InformationSection } from "./sections/information";
 import { LayoutSection } from "./sections/layout";
 import { NotesSection } from "./sections/notes";
 import { PageSection } from "./sections/page";
@@ -49,8 +48,6 @@ export const RightSidebar = () => {
           <ExportSection />
           <Separator />
           <NotesSection />
-          <Separator />
-          <InformationSection />
           <Separator />
           <Copyright className="text-center" />
         </div>
@@ -128,13 +125,6 @@ export const RightSidebar = () => {
             name={t`Notes`}
             onClick={() => {
               scrollIntoView("#notes");
-            }}
-          />
-          <SectionIcon
-            id="information"
-            name={t`Information`}
-            onClick={() => {
-              scrollIntoView("#information");
             }}
           />
         </div>

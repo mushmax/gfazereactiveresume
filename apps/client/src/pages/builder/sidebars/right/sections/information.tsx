@@ -19,7 +19,7 @@ const DonateCard = () => (
       <CardDescription className="space-y-2">
         <Trans>
           <p>
-            I built Reactive Resume mostly by myself during my spare time, with a lot of help from
+            I built GFAZE Resume mostly by myself during my spare time, with a lot of help from
             other great open-source contributors.
           </p>
           <p>
@@ -37,7 +37,7 @@ const DonateCard = () => (
         target="_blank"
       >
         <HandHeart size={14} weight="bold" className="mr-2" />
-        <span className="line-clamp-1">{t`Donate to Reactive Resume`}</span>
+        <span className="line-clamp-1">{t`Donate to GFAZE Resume`}</span>
       </a>
     </CardFooter>
   </Card>
@@ -84,7 +84,7 @@ const DocumentationCard = () => (
       <CardDescription className="space-y-2">
         <Trans>
           <p>
-            The community has spent a lot of time writing the documentation for Reactive Resume, and
+            The community has spent a lot of time writing the documentation for GFAZE Resume, and
             I'm sure it will help you get started with the app.
           </p>
           <p>
@@ -113,7 +113,7 @@ export const InformationSection = () => {
     <section id="information" className="grid gap-y-6">
       <header className="flex items-center justify-between">
         <div className="flex items-center gap-x-4">
-          <SectionIcon id="information" size={18} name={t`Information`} />
+          <SectionIcon id="notes" size={18} name={t`Information`} />
           <h2 className="line-clamp-1 text-2xl font-bold lg:text-3xl">{t`Information`}</h2>
         </div>
       </header>

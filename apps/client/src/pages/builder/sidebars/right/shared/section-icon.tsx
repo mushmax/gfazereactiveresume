@@ -3,7 +3,6 @@ import {
   Code,
   DiamondsFour,
   DownloadSimple,
-  Info,
   Layout,
   Note,
   Palette,
@@ -27,8 +26,7 @@ type MetadataKey =
   | "sharing"
   | "statistics"
   | "export"
-  | "notes"
-  | "information";
+  | "notes";
 
 const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
   switch (id) {
@@ -65,9 +63,6 @@ const getSectionIcon = (id: MetadataKey, props: IconProps = {}) => {
     }
     case "export": {
       return <DownloadSimple size={18} {...props} />;
-    }
-    case "information": {
-      return <Info size={18} {...props} />;
     }
 
     default: {

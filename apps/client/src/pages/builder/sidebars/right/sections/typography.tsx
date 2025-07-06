@@ -4,7 +4,7 @@ import { t } from "@lingui/macro";
 import type { ComboboxOption } from "@reactive-resume/ui";
 import { Button, Combobox, Label, Slider, Switch } from "@reactive-resume/ui";
 import { cn, fonts } from "@reactive-resume/utils";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import webfontloader from "webfontloader";
 
 import { useResumeStore } from "@/client/stores/resume";
@@ -27,14 +27,16 @@ const fontSuggestions = [
   "Roboto Condensed",
 ];
 
-const families = fonts.map((font) => ({
-  value: font.family,
-  label: font.family,
-})) satisfies ComboboxOption[];
-
-families.push(...localFonts.map((font) => ({ value: font, label: font })));
-
 export const TypographySection = () => {
+  const families = useMemo(() => {
+    const fontFamilies = fonts.map((font) => ({
+      value: font.family,
+      label: font.family,
+    })) satisfies ComboboxOption[];
+
+    fontFamilies.push(...localFonts.map((font) => ({ value: font, label: font })));
+    return fontFamilies;
+  }, []);
   const [subsets, setSubsets] = useState<ComboboxOption[]>([]);
   const [variants, setVariants] = useState<ComboboxOption[]>([]);
 
@@ -51,11 +53,11 @@ export const TypographySection = () => {
         google: { families: [font], text: font },
       });
     }
-  }, [fontSuggestions]);
+  }, []);
 
   useEffect(() => {
     loadFontSuggestions();
-  }, []);
+  }, [loadFontSuggestions]);
 
   useEffect(() => {
     const subsets = fonts.find((font) => font.family === typography.font.family)?.subsets ?? [];

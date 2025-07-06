@@ -1,9 +1,10 @@
 import { t } from "@lingui/macro";
-import { CircleNotch, FileJs, FilePdf } from "@phosphor-icons/react";
+import { CircleNotch, FileDoc, FileJs, FilePdf } from "@phosphor-icons/react";
 import { buttonVariants, Card, CardContent, CardDescription, CardTitle } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { saveAs } from "file-saver";
 
+import { useExportDocx } from "@/client/services/resume/export-docx";
 import { usePrintResume } from "@/client/services/resume/print";
 import { useResumeStore } from "@/client/stores/resume";
 
@@ -23,12 +24,19 @@ const openInNewTab = (url: string) => {
 };
 
 export const ExportSection = () => {
-  const { printResume, loading } = usePrintResume();
+  const { printResume, loading: pdfLoading } = usePrintResume();
+  const { exportDocx, loading: docxLoading } = useExportDocx();
 
   const onPdfExport = async () => {
     const { resume } = useResumeStore.getState();
     const { url } = await printResume({ id: resume.id });
 
+    openInNewTab(url);
+  };
+
+  const onDocxExport = async () => {
+    const { resume } = useResumeStore.getState();
+    const { url } = await exportDocx({ id: resume.id });
     openInNewTab(url);
   };
 
@@ -62,16 +70,34 @@ export const ExportSection = () => {
           className={cn(
             buttonVariants({ variant: "ghost" }),
             "h-auto cursor-pointer flex-row items-center gap-x-5 px-4 pb-3 pt-1",
-            loading && "pointer-events-none cursor-progress opacity-75",
+            pdfLoading && "pointer-events-none cursor-progress opacity-75",
           )}
           onClick={onPdfExport}
         >
-          {loading ? <CircleNotch size={22} className="animate-spin" /> : <FilePdf size={22} />}
+          {pdfLoading ? <CircleNotch size={22} className="animate-spin" /> : <FilePdf size={22} />}
 
           <CardContent className="flex-1">
             <CardTitle className="text-sm">{t`PDF`}</CardTitle>
             <CardDescription className="font-normal">
               {t`Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals.`}
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card
+          className={cn(
+            buttonVariants({ variant: "ghost" }),
+            "h-auto cursor-pointer flex-row items-center gap-x-5 px-4 pb-3 pt-1",
+            docxLoading && "pointer-events-none cursor-progress opacity-75",
+          )}
+          onClick={onDocxExport}
+        >
+          {docxLoading ? <CircleNotch size={22} className="animate-spin" /> : <FileDoc size={22} />}
+
+          <CardContent className="flex-1">
+            <CardTitle className="text-sm">{t`DOCX`}</CardTitle>
+            <CardDescription className="font-normal">
+              {t`Download a DOCX document of your resume. This file can be edited in Microsoft Word or other word processors and shared with recruiters.`}
             </CardDescription>
           </CardContent>
         </Card>

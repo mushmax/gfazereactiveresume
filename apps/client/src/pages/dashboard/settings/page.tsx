@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 import { AccountSettings } from "./_sections/account";
+import { AdminSettings } from "./_sections/admin";
 import { DangerZoneSettings } from "./_sections/danger";
 import { OpenAISettings } from "./_sections/openai";
 import { ProfileSettings } from "./_sections/profile";
@@ -13,7 +14,7 @@ export const SettingsPage = () => (
   <>
     <Helmet>
       <title>
-        {t`Settings`} - {t`Reactive Resume`}
+        {t`Settings`} - {t`GFAZE Resume`}
       </title>
     </Helmet>
 
@@ -33,6 +34,8 @@ export const SettingsPage = () => (
           <SecuritySettings />
           <Separator />
           <ProfileSettings />
+          <Separator />
+          <AdminSettings />
           <Separator />
           <OpenAISettings />
           <Separator />
