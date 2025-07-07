@@ -12,7 +12,7 @@ import { useResumeStore } from "@/client/stores/resume";
 export const BuilderHeader = () => {
   const { user } = useUser();
   const username = user?.username;
-  
+
   const title = useResumeStore((state) => state.resume.title);
   const slug = useResumeStore((state) => state.resume.slug);
   const locked = useResumeStore((state) => state.resume.locked);
