@@ -75,7 +75,9 @@ export class StorageService implements OnModuleInit {
       if (bucketExists) {
         try {
           await this.client.setBucketPolicy(this.bucketName, bucketPolicy);
-          this.logger.log("Successfully connected to the storage service and applied bucket policy.");
+          this.logger.log(
+            "Successfully connected to the storage service and applied bucket policy.",
+          );
         } catch {
           throw new InternalServerErrorException(
             "There was an error while applying the policy to the existing storage bucket.",

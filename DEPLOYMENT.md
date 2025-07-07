@@ -117,6 +117,7 @@ docker-compose -f tools/compose/gfaze-production.yml up -d
 After deployment, configure the following proxy hosts in NGINX Proxy Manager:
 
 #### Main Application Proxy Host
+
 - **Domain Names**: `gfazeresume.faze.pro`
 - **Scheme**: `http`
 - **Forward Hostname/IP**: `172.17.0.1` (or your server's internal IP)
@@ -127,6 +128,7 @@ After deployment, configure the following proxy hosts in NGINX Proxy Manager:
 - **SSL**: Let's Encrypt certificate with Force SSL enabled
 
 #### Storage Proxy Host
+
 - **Domain Names**: `storage.gfazeresume.faze.pro`
 - **Scheme**: `http`
 - **Forward Hostname/IP**: `172.17.0.1` (or your server's internal IP)
