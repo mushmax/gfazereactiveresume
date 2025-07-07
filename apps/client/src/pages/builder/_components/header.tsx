@@ -4,12 +4,19 @@ import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Link } from "react-router";
 
+import { ShareableUrlBox } from "@/client/components/shareable-url-box";
+import { useUser } from "@/client/services/user";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const BuilderHeader = () => {
+  const { user } = useUser();
+  const username = user?.username;
+  
   const title = useResumeStore((state) => state.resume.title);
+  const slug = useResumeStore((state) => state.resume.slug);
   const locked = useResumeStore((state) => state.resume.locked);
+  const isPublic = useResumeStore((state) => state.resume.visibility === "public");
 
   const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(
@@ -21,6 +28,8 @@ export const BuilderHeader = () => {
   const onToggle = (side: "left" | "right") => {
     toggle(side);
   };
+
+  const url = `${window.location.origin}/${username}/${slug}`;
 
   return (
     <div
@@ -71,6 +80,16 @@ export const BuilderHeader = () => {
           <SidebarSimple className="-scale-x-100" />
         </Button>
       </div>
+
+      {isPublic && (
+        <div className="absolute left-1/2 top-full z-10 mt-2 w-80 -translate-x-1/2">
+          <ShareableUrlBox
+            url={url}
+            description={t`Click here for a live and printable copy of your resume`}
+            variant="compact"
+          />
+        </div>
+      )}
     </div>
   );
 };
