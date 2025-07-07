@@ -399,9 +399,10 @@ export class PrinterService {
 
       const docxUrl = await this.storageService.uploadObject(
         resume.userId,
-        "resumes",
+        "documents",
         Buffer.from(buffer),
         `${resume.title}.docx`,
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       );
 
       this.logger.log(`Successfully generated DOCX for resume ${resume.id}`);

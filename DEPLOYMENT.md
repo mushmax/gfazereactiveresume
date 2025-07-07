@@ -1,13 +1,14 @@
 # GFAZE Resume Production Deployment Guide
 
-This guide provides step-by-step instructions for deploying GFAZE Resume to production using Docker Compose with Traefik for SSL termination and automatic certificate management.
+This guide provides step-by-step instructions for deploying GFAZE Resume to production using Docker Compose with NGINX Proxy Manager for SSL termination and domain routing.
 
 ## Prerequisites
 
 - Docker and Docker Compose installed on your server
+- NGINX Proxy Manager already configured and running
 - Domain name: `gfazeresume.faze.pro` with DNS access
 - Server with public IP address
-- Ports 80 and 443 available on your server
+- Ports 3030, 9090, and 3033 available for container exposure
 
 ## DNS Configuration
 
@@ -16,10 +17,9 @@ Before deployment, configure the following DNS A records to point to your server
 ```
 gfazeresume.faze.pro          → YOUR_SERVER_IP
 storage.gfazeresume.faze.pro  → YOUR_SERVER_IP
-printer.gfazeresume.faze.pro  → YOUR_SERVER_IP
 ```
 
-**Note**: All subdomains must resolve to the same server IP address for Traefik to properly route requests.
+**Note**: All subdomains must resolve to the same server IP address for NGINX Proxy Manager to properly route requests.
 
 ## Deployment Steps
 
@@ -105,11 +105,37 @@ OPENID_USER_INFO_URL: https://your-provider.com/userinfo
 ### 4. Deploy the Application
 
 ```bash
+# Stop existing containers if running
+docker-compose -f tools/compose/simple.yml down -v
+
 # Deploy using the production configuration
 docker-compose -f tools/compose/gfaze-production.yml up -d
 ```
 
-### 5. Verify Deployment
+### 5. Configure NGINX Proxy Manager
+
+After deployment, configure the following proxy hosts in NGINX Proxy Manager:
+
+#### Main Application Proxy Host
+
+- **Domain Names**: `gfazeresume.faze.pro`
+- **Scheme**: `http`
+- **Forward Hostname/IP**: `172.17.0.1` (or your server's internal IP)
+- **Forward Port**: `3030`
+- **Cache Assets**: Enabled
+- **Block Common Exploits**: Enabled
+- **Websockets Support**: Enabled
+- **SSL**: Let's Encrypt certificate with Force SSL enabled
+
+#### Storage Proxy Host
+
+- **Domain Names**: `storage.gfazeresume.faze.pro`
+- **Scheme**: `http`
+- **Forward Hostname/IP**: `172.17.0.1` (or your server's internal IP)
+- **Forward Port**: `9090`
+- **SSL**: Let's Encrypt certificate with Force SSL enabled
+
+### 6. Verify Deployment
 
 Check that all services are running:
 
@@ -125,32 +151,38 @@ docker-compose -f tools/compose/gfaze-production.yml logs -f
 
 ## SSL Certificate Setup
 
-SSL certificates are automatically provisioned and renewed by Let's Encrypt through Traefik. The configuration:
+SSL certificates are automatically managed by NGINX Proxy Manager through Let's Encrypt integration:
 
-- Uses TLS Challenge for certificate validation
-- Automatically redirects HTTP to HTTPS
-- Stores certificates in the `letsencrypt_data` Docker volume
-- Renews certificates automatically before expiration
+- Automatic certificate provisioning for configured domains
+- Automatic renewal before expiration
+- Force SSL redirect from HTTP to HTTPS
+- Modern SSL/TLS configuration
 
-**Certificate provisioning may take a few minutes on first deployment.**
+**Certificate provisioning may take a few minutes when first configuring proxy hosts.**
 
 ## Service Architecture
 
 The deployment includes the following services:
 
-- **app**: Main GFAZE Resume application (port 3000)
-- **postgres**: PostgreSQL database for application data
-- **minio**: S3-compatible storage for file uploads
-- **chrome**: Headless Chrome for PDF generation and previews
-- **traefik**: Reverse proxy with automatic SSL termination
+- **app**: Main GFAZE Resume application (exposed on port 3030)
+- **postgres**: PostgreSQL database for application data (internal port 5432)
+- **minio**: S3-compatible storage for file uploads (exposed on port 9090)
+- **chrome**: Headless Chrome for PDF generation and previews (exposed on port 3033)
+
+## Port Configuration
+
+The following ports are exposed for NGINX Proxy Manager routing:
+
+- **3030**: Main application (maps to internal port 3000)
+- **9090**: MinIO storage interface (maps to internal port 9000)
+- **3033**: Chrome browser service (maps to internal port 3000)
 
 ## Accessing the Application
 
-Once deployed and DNS is configured:
+Once deployed and NGINX Proxy Manager is configured:
 
 - **Main Application**: https://gfazeresume.faze.pro
 - **Storage Interface**: https://storage.gfazeresume.faze.pro (MinIO console)
-- **PDF Generation**: https://printer.gfazeresume.faze.pro (Chrome service)
 
 ## Maintenance Commands
 
@@ -180,7 +212,8 @@ docker-compose -f tools/compose/gfaze-production.yml logs
 
 # View specific service logs
 docker-compose -f tools/compose/gfaze-production.yml logs app
-docker-compose -f tools/compose/gfaze-production.yml logs traefik
+docker-compose -f tools/compose/gfaze-production.yml logs minio
+docker-compose -f tools/compose/gfaze-production.yml logs chrome
 ```
 
 ### Stop Services
@@ -198,27 +231,36 @@ docker-compose -f tools/compose/gfaze-production.yml down -v
 ### SSL Certificate Issues
 
 - Ensure DNS records are properly configured and propagated
-- Check Traefik logs: `docker-compose -f tools/compose/gfaze-production.yml logs traefik`
-- Verify ports 80 and 443 are accessible from the internet
+- Check NGINX Proxy Manager logs and SSL certificate status
+- Verify domains resolve to the correct server IP address
 
 ### Application Not Loading
 
 - Check application logs: `docker-compose -f tools/compose/gfaze-production.yml logs app`
 - Verify database connectivity: `docker-compose -f tools/compose/gfaze-production.yml logs postgres`
 - Ensure all services are running: `docker-compose -f tools/compose/gfaze-production.yml ps`
+- Verify NGINX Proxy Manager configuration for correct ports (3030, 9090)
 
 ### Storage Issues
 
 - Check MinIO logs: `docker-compose -f tools/compose/gfaze-production.yml logs minio`
 - Verify storage credentials match between app and MinIO configuration
+- Ensure NGINX Proxy Manager routes storage.gfazeresume.faze.pro to port 9090
+
+### Chrome/PDF Generation Issues
+
+- Check Chrome logs: `docker-compose -f tools/compose/gfaze-production.yml logs chrome`
+- Verify Chrome service is accessible on port 3033
+- Ensure CHROME_URL environment variable points to internal service
 
 ## Security Considerations
 
 1. **Change Default Passwords**: Update all default passwords in the configuration
-2. **Firewall Configuration**: Only expose ports 80 and 443 to the internet
+2. **Firewall Configuration**: Only expose necessary ports (3030, 9090, 3033) and secure with NGINX Proxy Manager
 3. **Regular Updates**: Keep Docker images updated with security patches
 4. **Backup Strategy**: Implement regular backups of database and storage volumes
 5. **Monitor Logs**: Set up log monitoring for security events
+6. **NGINX Security**: Configure NGINX Proxy Manager with proper security headers and rate limiting
 
 ## Support
 
@@ -231,4 +273,4 @@ For deployment issues or questions:
 
 ---
 
-**Note**: This deployment configuration is optimized for production use with ARM-64 compatibility and includes all necessary security configurations for the gfazeresume.faze.pro domain.
+**Note**: This deployment configuration is optimized for production use with ARM-64 compatibility and NGINX Proxy Manager integration for the gfazeresume.faze.pro domain. The configuration exposes specific ports for NGINX routing while keeping internal services secure.
