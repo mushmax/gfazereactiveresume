@@ -1,5 +1,6 @@
 import { t } from "@lingui/macro";
 import type { ResumeDto } from "@reactive-resume/dto";
+import { cn } from "@reactive-resume/utils";
 import { useCallback, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import type { LoaderFunction } from "react-router";
@@ -16,6 +17,7 @@ export const BuilderPage = () => {
 
   const resume = useResumeStore((state) => state.resume);
   const title = useResumeStore((state) => state.resume.title);
+  const isPublic = useResumeStore((state) => state.resume.visibility === "public");
 
   const syncResumeToArtboard = useCallback(() => {
     setImmediate(() => {
@@ -65,8 +67,8 @@ export const BuilderPage = () => {
         ref={setFrameRef}
         title={resume.id}
         src="/artboard/builder"
-        className="mt-16 w-screen"
-        style={{ height: `calc(100vh - 64px)` }}
+        className={cn("w-screen", isPublic ? "mt-24" : "mt-16")}
+        style={{ height: isPublic ? `calc(100vh - 96px)` : `calc(100vh - 64px)` }}
       />
     </>
   );
