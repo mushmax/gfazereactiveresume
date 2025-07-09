@@ -35,11 +35,12 @@ export const BuilderHeader = () => {
     <div
       style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
       className={cn(
-        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        "fixed inset-x-0 top-0 z-[60] bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
         !isDragging && "transition-[left,right]",
+        isPublic ? "h-24" : "h-16",
       )}
     >
-      <div className="flex h-full items-center justify-between px-4">
+      <div className="flex h-16 items-center justify-between px-4">
         <Button
           size="icon"
           variant="ghost"
@@ -82,7 +83,7 @@ export const BuilderHeader = () => {
       </div>
 
       {isPublic && (
-        <div className="absolute left-1/2 top-full z-10 mt-2 w-80 -translate-x-1/2">
+        <div className="px-4 pb-2">
           <ShareableUrlBox
             url={url}
             description={t`Click here for a live and printable copy of your resume`}
