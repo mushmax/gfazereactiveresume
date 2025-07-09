@@ -35,9 +35,8 @@ export const BuilderHeader = () => {
     <div
       style={{ left: `${leftPanelSize}%`, right: `${rightPanelSize}%` }}
       className={cn(
-        "fixed inset-x-0 top-0 z-[60] bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
+        "fixed inset-x-0 top-0 z-[60] h-16 bg-secondary-accent/50 backdrop-blur-lg lg:z-20",
         !isDragging && "transition-[left,right]",
-        isPublic ? "h-24" : "h-16",
       )}
     >
       <div className="flex h-16 items-center justify-between px-4">
@@ -68,6 +67,12 @@ export const BuilderHeader = () => {
               <Lock size={14} className="ml-2 opacity-75" />
             </Tooltip>
           )}
+
+          {isPublic && (
+            <div className="ml-3">
+              <ShareableUrlBox url={url} variant="inline" />
+            </div>
+          )}
         </div>
 
         <Button
@@ -81,16 +86,6 @@ export const BuilderHeader = () => {
           <SidebarSimple className="-scale-x-100" />
         </Button>
       </div>
-
-      {isPublic && (
-        <div className="px-4 pb-2">
-          <ShareableUrlBox
-            url={url}
-            description={t`Click here for a live and printable copy of your resume`}
-            variant="compact"
-          />
-        </div>
-      )}
     </div>
   );
 };

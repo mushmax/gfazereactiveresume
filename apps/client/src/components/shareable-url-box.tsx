@@ -6,7 +6,7 @@ import { cn } from "@reactive-resume/utils";
 export type ShareableUrlBoxProps = {
   url: string;
   description?: string;
-  variant?: "default" | "compact";
+  variant?: "default" | "compact" | "inline";
   className?: string;
 };
 
@@ -19,6 +19,21 @@ export const ShareableUrlBox = ({
   const handleClick = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  if (variant === "inline") {
+    return (
+      <button
+        className={cn(
+          "flex items-center gap-x-1.5 text-xs text-primary transition-colors hover:text-primary/80",
+          className,
+        )}
+        onClick={handleClick}
+      >
+        <ArrowSquareOut size={12} className="shrink-0" />
+        <span>{t`Live Resume Link`}</span>
+      </button>
+    );
+  }
 
   return (
     <Card
