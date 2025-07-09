@@ -3,6 +3,7 @@ import { CopySimple } from "@phosphor-icons/react";
 import { Button, Input, Label, Switch, Tooltip } from "@reactive-resume/ui";
 import { AnimatePresence, motion } from "framer-motion";
 
+import { ShareableUrlBox } from "@/client/components/shareable-url-box";
 import { useToast } from "@/client/hooks/use-toast";
 import { useUser } from "@/client/services/user";
 import { useResumeStore } from "@/client/stores/resume";
@@ -65,22 +66,30 @@ export const SharingSection = () => {
           {isPublic && (
             <motion.div
               layout
-              className="space-y-1.5"
+              className="space-y-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <Label htmlFor="resume-url">{t`URL`}</Label>
+              <div className="space-y-1.5">
+                <Label htmlFor="resume-url">{t`URL`}</Label>
 
-              <div className="flex gap-x-1.5">
-                <Input readOnly id="resume-url" value={url} className="flex-1" />
+                <div className="flex gap-x-1.5">
+                  <Input readOnly id="resume-url" value={url} className="flex-1" />
 
-                <Tooltip content={t`Copy to Clipboard`}>
-                  <Button size="icon" variant="ghost" onClick={onCopy}>
-                    <CopySimple />
-                  </Button>
-                </Tooltip>
+                  <Tooltip content={t`Copy to Clipboard`}>
+                    <Button size="icon" variant="ghost" onClick={onCopy}>
+                      <CopySimple />
+                    </Button>
+                  </Tooltip>
+                </div>
               </div>
+
+              <ShareableUrlBox
+                url={url}
+                description={t`Click here for a live and printable copy of your resume`}
+                variant="default"
+              />
             </motion.div>
           )}
         </AnimatePresence>

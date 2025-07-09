@@ -52,7 +52,7 @@ export class ResumeService {
     return this.prisma.resume.create({
       data: {
         userId,
-        visibility: "private",
+        visibility: "public",
         data: importResumeDto.data,
         title: importResumeDto.title ?? randomTitle,
         slug: importResumeDto.slug ?? slugify(randomTitle),
