@@ -45,7 +45,13 @@ export const PublicResumePage = () => {
 
     const handleMessage = (event: MessageEvent) => {
       if (!frameRef.current?.contentWindow) return;
-      if (event.origin !== window.location.origin) return;
+      const isAllowedOrigin =
+        event.origin === window.location.origin ||
+        (window.location.hostname === "localhost" && event.origin.includes("localhost")) ||
+        event.origin.startsWith("http://localhost") ||
+        event.origin.startsWith("https://localhost");
+
+      if (!isAllowedOrigin) return;
 
       if (event.data.type === "PAGE_LOADED") {
         frameRef.current.width = event.data.payload.width;
