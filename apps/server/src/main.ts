@@ -40,7 +40,7 @@ async function bootstrap() {
   const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
   app.enableCors({
     credentials: true,
-    origin: isHTTPS ? true : (allowedOrigins.length > 0 ? allowedOrigins : true),
+    origin: isHTTPS ? true : allowedOrigins.length > 0 ? allowedOrigins : true,
   });
 
   // Helmet - configure for iframe embedding
