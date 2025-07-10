@@ -38,19 +38,25 @@ async function bootstrap() {
   );
 
   const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
-  const corsOrigin = allowedOrigins.length > 0 ? allowedOrigins : true;
+  const gigafazeOrigins = ["https://gigafaze.com", "https://www.gigafaze.com"];
+  const allAllowedOrigins = [...allowedOrigins, ...gigafazeOrigins];
+  const corsOrigin = allAllowedOrigins.length > 0 ? allAllowedOrigins : true;
 
   app.enableCors({
     credentials: true,
     origin: corsOrigin,
   });
 
-  // Helmet - configure for iframe embedding
+  // Helmet - configure for iframe embedding with gigafaze.com support
   if (isHTTPS) {
     app.use(
       helmet({
-        contentSecurityPolicy: false,
-        frameguard: { action: "sameorigin" },
+        contentSecurityPolicy: {
+          directives: {
+            frameAncestors: ["'self'", "https://gigafaze.com", "https://www.gigafaze.com"],
+          },
+        },
+        frameguard: false, // Disable frameguard since we're using CSP frame-ancestors
       }),
     );
   }
