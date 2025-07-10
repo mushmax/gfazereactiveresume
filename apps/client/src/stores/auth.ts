@@ -83,6 +83,7 @@ export const useAuthStore = create<AuthState & AuthActions>()(
 
           window.parent.postMessage(message, "*");
         } catch {
+          // Ignore postMessage errors in cross-origin contexts
         }
       },
 
