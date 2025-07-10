@@ -38,14 +38,8 @@ async function bootstrap() {
   );
 
   const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
-  let corsOrigin: boolean | string[];
-  if (isHTTPS) {
-    corsOrigin = true;
-  } else if (allowedOrigins.length > 0) {
-    corsOrigin = allowedOrigins;
-  } else {
-    corsOrigin = true;
-  }
+  const corsOrigin = allowedOrigins.length > 0 ? allowedOrigins : true;
+
   app.enableCors({
     credentials: true,
     origin: corsOrigin,
