@@ -38,9 +38,17 @@ async function bootstrap() {
   );
 
   const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
+  let corsOrigin: boolean | string[];
+  if (isHTTPS) {
+    corsOrigin = true;
+  } else if (allowedOrigins.length > 0) {
+    corsOrigin = allowedOrigins;
+  } else {
+    corsOrigin = true;
+  }
   app.enableCors({
     credentials: true,
-    origin: isHTTPS ? true : allowedOrigins.length > 0 ? allowedOrigins : true,
+    origin: corsOrigin,
   });
 
   // Helmet - configure for iframe embedding
