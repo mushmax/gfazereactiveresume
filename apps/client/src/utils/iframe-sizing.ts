@@ -68,7 +68,7 @@ export const setupResponsiveIframe = (
   const { containerSelector } = options;
 
   const containerElement = containerSelector
-    ? document.querySelector(containerSelector)
+    ? (document.querySelector(containerSelector) as HTMLElement | null)
     : iframe.parentElement;
 
   if (!containerElement) {
