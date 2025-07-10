@@ -11,7 +11,13 @@ export const Providers = () => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return;
+      const isAllowedOrigin =
+        event.origin === window.location.origin ||
+        (window.location.hostname === "localhost" && event.origin.includes("localhost")) ||
+        event.origin.startsWith("http://localhost") ||
+        event.origin.startsWith("https://localhost");
+
+      if (!isAllowedOrigin) return;
       if (event.data.type === "SET_RESUME") setResume(event.data.payload);
     };
 

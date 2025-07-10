@@ -4,12 +4,19 @@ import { Button, Tooltip } from "@reactive-resume/ui";
 import { cn } from "@reactive-resume/utils";
 import { Link } from "react-router";
 
+import { ShareableUrlBox } from "@/client/components/shareable-url-box";
+import { useUser } from "@/client/services/user";
 import { useBuilderStore } from "@/client/stores/builder";
 import { useResumeStore } from "@/client/stores/resume";
 
 export const BuilderHeader = () => {
+  const { user } = useUser();
+  const username = user?.username;
+
   const title = useResumeStore((state) => state.resume.title);
+  const slug = useResumeStore((state) => state.resume.slug);
   const locked = useResumeStore((state) => state.resume.locked);
+  const isPublic = useResumeStore((state) => state.resume.visibility === "public");
 
   const toggle = useBuilderStore((state) => state.toggle);
   const isDragging = useBuilderStore(
@@ -21,6 +28,8 @@ export const BuilderHeader = () => {
   const onToggle = (side: "left" | "right") => {
     toggle(side);
   };
+
+  const url = `${window.location.origin}/${username}/${slug}`;
 
   return (
     <div
@@ -57,6 +66,12 @@ export const BuilderHeader = () => {
             <Tooltip content={t`This resume is locked, please unlock to make further changes.`}>
               <Lock size={14} className="ml-2 opacity-75" />
             </Tooltip>
+          )}
+
+          {isPublic && (
+            <div className="ml-3">
+              <ShareableUrlBox url={url} variant="inline" />
+            </div>
           )}
         </div>
 

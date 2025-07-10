@@ -37,11 +37,23 @@ async function bootstrap() {
     }),
   );
 
-  // CORS
-  app.enableCors({ credentials: true, origin: isHTTPS });
+  const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
+  const corsOrigin = allowedOrigins.length > 0 ? allowedOrigins : true;
 
-  // Helmet - enabled only in production
-  if (isHTTPS) app.use(helmet({ contentSecurityPolicy: false }));
+  app.enableCors({
+    credentials: true,
+    origin: corsOrigin,
+  });
+
+  // Helmet - configure for iframe embedding
+  if (isHTTPS) {
+    app.use(
+      helmet({
+        contentSecurityPolicy: false,
+        frameguard: { action: "sameorigin" },
+      }),
+    );
+  }
 
   // Global Prefix
   const globalPrefix = "api";

@@ -50,7 +50,13 @@ export const BuilderLayout = () => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return;
+      const isAllowedOrigin =
+        event.origin === window.location.origin ||
+        (window.location.hostname === "localhost" && event.origin.includes("localhost")) ||
+        event.origin.startsWith("http://localhost") ||
+        event.origin.startsWith("https://localhost");
+
+      if (!isAllowedOrigin) return;
 
       if (event.data.type === "ZOOM_IN") transformRef.current?.zoomIn(0.2);
       if (event.data.type === "ZOOM_OUT") transformRef.current?.zoomOut(0.2);
