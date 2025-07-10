@@ -67,9 +67,13 @@ export const setupResponsiveIframe = (
 ): (() => void) => {
   const { containerSelector } = options;
 
-  const containerElement = containerSelector
-    ? (document.querySelector(containerSelector) as HTMLElement | null)
-    : iframe.parentElement;
+  let containerElement: HTMLElement | null = null;
+  if (containerSelector) {
+    const element = document.querySelector(containerSelector);
+    containerElement = element instanceof HTMLElement ? element : null;
+  } else {
+    containerElement = iframe.parentElement;
+  }
 
   if (!containerElement) {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
