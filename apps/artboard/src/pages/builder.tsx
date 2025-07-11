@@ -26,30 +26,41 @@ export const BuilderLayout = () => {
       return [];
     }
 
-    return layout.map((page) => {
-      if (!Array.isArray(page)) return [];
+    try {
+      const result = layout.map((page) => {
+        if (!Array.isArray(page)) {
+          return [];
+        }
 
-      return page.map((column) => {
-        if (!Array.isArray(column)) return [];
+        return page.map((column) => {
+          if (!Array.isArray(column)) {
+            return [];
+          }
 
-        return column
-          .filter((section: string | Record<string, unknown>) => {
-            if (typeof section === "string") return true;
-            return (
-              typeof section === "object" &&
-              "visible" in section &&
-              (section as { visible: boolean }).visible
-            );
-          })
-          .map((section: string | Record<string, unknown>) => {
-            if (typeof section === "string") return section;
-            return typeof section === "object" && "id" in section
-              ? (section as { id: string }).id
-              : null;
-          })
-          .filter((item): item is string => typeof item === "string");
+          return column
+            .filter((section: string | Record<string, unknown>) => {
+              if (!section) return false;
+              if (typeof section === "string") return true;
+              return (
+                typeof section === "object" &&
+                "visible" in section &&
+                (section as { visible: boolean }).visible
+              );
+            })
+            .map((section: string | Record<string, unknown>) => {
+              if (typeof section === "string") return section;
+              return typeof section === "object" && "id" in section
+                ? (section as { id: string }).id
+                : null;
+            })
+            .filter((item): item is string => typeof item === "string");
+        });
       });
-    });
+
+      return result;
+    } catch {
+      return [];
+    }
   }, [layout]);
 
   useEffect(() => {
