@@ -22,6 +22,10 @@ export const BuilderLayout = () => {
   const Template = useMemo(() => getTemplate(template), [template]);
 
   const transformedLayout = useMemo(() => {
+    if (!Array.isArray(layout)) {
+      return [];
+    }
+
     return layout.map((page) => {
       if (!Array.isArray(page)) return [];
 

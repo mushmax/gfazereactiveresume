@@ -30,7 +30,7 @@ export const ShareableUrlBox = ({
         onClick={handleClick}
       >
         <ArrowSquareOut size={12} className="shrink-0" />
-        <span>{t`Live Resume Page`}</span>
+        <span>{t`Live Resume Link`}</span>
       </button>
     );
   }
@@ -53,13 +53,10 @@ export const ShareableUrlBox = ({
         <div className="min-w-0 flex-1">
           <div className="mb-1 flex items-center gap-x-2">
             <ArrowSquareOut size={16} className="shrink-0 text-primary" />
-            <span className="text-sm font-medium text-primary">{t`Live Resume Page`}</span>
+            <span className="text-sm font-medium text-primary">{t`Live Resume Link`}</span>
           </div>
           <p className="truncate text-xs text-gray-500">{url}</p>
           {description && <p className="mt-1 text-xs text-gray-500">{description}</p>}
-          <p className="mt-2 text-xs text-gray-600">
-            {t`You can print your resume into PDF from the Live Resume Page. Then use the converter application on GigaFaze to convert the PDF into Word if you need to.`}
-          </p>
         </div>
         <Button
           size="sm"
