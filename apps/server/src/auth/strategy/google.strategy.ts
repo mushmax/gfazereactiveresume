@@ -48,6 +48,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy, "google") {
           picture,
           locale: "en-US",
           provider: "google",
+          role: "USER", // Add explicit role assignment
           name: displayName || createId(),
           emailVerified: true, // auto-verify emails
           username: processUsername(username ?? email.split("@")[0]),

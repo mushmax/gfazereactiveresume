@@ -75,6 +75,7 @@ export class AuthController {
     response: Response,
     isTwoFactorAuth = false,
     redirect = false,
+    popup = false,
   ) {
     let status = "authenticated";
 
@@ -96,8 +97,40 @@ export class AuthController {
 
     redirectUrl.searchParams.set("status", status);
 
-    if (redirect) response.redirect(redirectUrl.toString());
-    else response.status(200).send(responseData);
+    if (popup) {
+      const popupHtml = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Authentication Success</title>
+          <script>
+            window.addEventListener('load', function() {
+              const authData = ${JSON.stringify(responseData)};
+              
+              if (window.opener) {
+                window.opener.postMessage({
+                  type: 'OAUTH_SUCCESS',
+                  data: authData
+                }, '*');
+                window.close();
+              } else {
+                window.location.href = '${redirectUrl.toString()}';
+              }
+            });
+          </script>
+        </head>
+        <body>
+          <p>Authentication successful. This window should close automatically.</p>
+        </body>
+        </html>
+      `;
+      response.setHeader("Content-Type", "text/html");
+      response.status(200).send(popupHtml);
+    } else if (redirect) {
+      response.redirect(redirectUrl.toString());
+    } else {
+      response.status(200).send(responseData);
+    }
   }
 
   @Post("register")
@@ -151,6 +184,16 @@ export class AuthController {
     @Res({ passthrough: true }) response: Response,
   ) {
     return this.handleAuthenticationResponse(user, response, false, true);
+  }
+
+  @ApiTags("OAuth", "Google")
+  @Get("google/popup/callback")
+  @UseGuards(GoogleGuard)
+  async googlePopupCallback(
+    @User() user: UserWithSecrets,
+    @Res({ passthrough: true }) response: Response,
+  ) {
+    return this.handleAuthenticationResponse(user, response, false, false, true);
   }
 
   @ApiTags("OAuth", "OpenID")

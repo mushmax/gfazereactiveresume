@@ -564,7 +564,7 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Rhyhorn = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
 
   return (
     <div className="p-custom space-y-4">

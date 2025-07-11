@@ -63,6 +63,9 @@ export const configSchema = z.object({
     .default("false")
     .transform((s) => s !== "false" && s !== "0"),
 
+  // Iframe Embedding (Optional)
+  ALLOWED_IFRAME_ORIGINS: z.string().optional(),
+
   // GitHub (OAuth, Optional)
   GITHUB_CLIENT_ID: z.string().optional(),
   GITHUB_CLIENT_SECRET: z.string().optional(),

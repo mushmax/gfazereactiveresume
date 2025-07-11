@@ -592,7 +592,10 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div>
@@ -605,7 +608,7 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
 
       <div className="grid grid-cols-3">
         <div className="sidebar p-custom group space-y-4">
-          {sidebar.map((section) => (
+          {safeSidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
@@ -613,10 +616,10 @@ export const Ditto = ({ columns, isFirstPage = false }: TemplateProps) => {
         <div
           className={cn(
             "main p-custom group space-y-4",
-            sidebar.length > 0 ? "col-span-2" : "col-span-3",
+            safeSidebar.length > 0 ? "col-span-2" : "col-span-3",
           )}
         >
-          {main.map((section) => (
+          {safeMain.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>

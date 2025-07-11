@@ -37,11 +37,29 @@ async function bootstrap() {
     }),
   );
 
-  // CORS
-  app.enableCors({ credentials: true, origin: isHTTPS });
+  const allowedOrigins = configService.get("ALLOWED_IFRAME_ORIGINS")?.split(",") || [];
+  const gigafazeOrigins = ["https://gigafaze.com", "https://www.gigafaze.com"];
+  const allAllowedOrigins = [...allowedOrigins, ...gigafazeOrigins];
+  const corsOrigin = allAllowedOrigins.length > 0 ? allAllowedOrigins : true;
 
-  // Helmet - enabled only in production
-  if (isHTTPS) app.use(helmet({ contentSecurityPolicy: false }));
+  app.enableCors({
+    credentials: true,
+    origin: corsOrigin,
+  });
+
+  // Helmet - configure for iframe embedding with gigafaze.com support
+  if (isHTTPS) {
+    app.use(
+      helmet({
+        contentSecurityPolicy: {
+          directives: {
+            frameAncestors: ["'self'", "https://gigafaze.com", "https://www.gigafaze.com"],
+          },
+        },
+        frameguard: false, // Disable frameguard since we're using CSP frame-ancestors
+      }),
+    );
+  }
 
   // Global Prefix
   const globalPrefix = "api";

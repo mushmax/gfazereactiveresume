@@ -25,6 +25,8 @@ export const ArtboardPage = () => {
         const height = window.document.body.offsetHeight;
         const message = { type: "PAGE_LOADED", payload: { width, height } };
         window.postMessage(message, "*");
+
+        window.parent.postMessage({ type: "IFRAME_READY" }, "*");
       },
     });
   }, [fontString]);
