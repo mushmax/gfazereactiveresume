@@ -80,20 +80,20 @@ const Header = () => {
             </>
           )}
           {basics.customFields.map((item) => (
-              <Fragment key={item.id}>
-                <div className="flex items-center gap-x-1.5">
-                  <i className={cn(`ph ph-bold ph-${item.icon}`)} />
-                  {isUrl(item.value) ? (
-                    <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
-                      {item.name || item.value}
-                    </a>
-                  ) : (
-                    <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-                  )}
-                </div>
-                <div className="size-1 rounded-full bg-background last:hidden" />
-              </Fragment>
-            ))}
+            <Fragment key={item.id}>
+              <div className="flex items-center gap-x-1.5">
+                <i className={cn(`ph ph-bold ph-${item.icon}`)} />
+                {isUrl(item.value) ? (
+                  <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                    {item.name || item.value}
+                  </a>
+                ) : (
+                  <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                )}
+              </div>
+              <div className="size-1 rounded-full bg-background last:hidden" />
+            </Fragment>
+          ))}
         </div>
       </div>
     </div>
@@ -610,9 +610,7 @@ export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
         ))}
       </div>
 
-      <div
-        className={cn("main group space-y-4", sidebar.length > 0 ? "col-span-2" : "col-span-3")}
-      >
+      <div className={cn("main group space-y-4", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
         {isFirstPage && <Header />}
 
         {main.map((section) => (

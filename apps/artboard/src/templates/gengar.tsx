@@ -567,16 +567,18 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
-
   const primaryColor = useArtboardStore((state) => state.resume.metadata.theme.primary);
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div className="grid min-h-[inherit] grid-cols-3">
       <div
         className={cn(
           "sidebar group flex flex-col",
-          !(isFirstPage || sidebar.length > 0) && "hidden",
+          !(isFirstPage || safeSidebar.length > 0) && "hidden",
         )}
       >
         {isFirstPage && <Header />}
@@ -585,17 +587,17 @@ export const Gengar = ({ columns, isFirstPage = false }: TemplateProps) => {
           className="p-custom flex-1 space-y-4"
           style={{ backgroundColor: hexToRgb(primaryColor, 0.2) }}
         >
-          {sidebar.map((section) => (
+          {safeSidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
       </div>
 
-      <div className={cn("main group", sidebar.length > 0 ? "col-span-2" : "col-span-3")}>
+      <div className={cn("main group", safeSidebar.length > 0 ? "col-span-2" : "col-span-3")}>
         {isFirstPage && <Summary />}
 
         <div className="p-custom space-y-4">
-          {main.map((section) => (
+          {safeMain.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>

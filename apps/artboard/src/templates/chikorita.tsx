@@ -565,19 +565,22 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div className="grid min-h-[inherit] grid-cols-3">
       <div
         className={cn(
           "main p-custom group space-y-4",
-          sidebar.length > 0 ? "col-span-2" : "col-span-3",
+          safeSidebar.length > 0 ? "col-span-2" : "col-span-3",
         )}
       >
         {isFirstPage && <Header />}
 
-        {main.map((section) => (
+        {safeMain.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
       </div>
@@ -585,10 +588,10 @@ export const Chikorita = ({ columns, isFirstPage = false }: TemplateProps) => {
       <div
         className={cn(
           "sidebar p-custom group h-full space-y-4 bg-primary text-background",
-          sidebar.length === 0 && "hidden",
+          safeSidebar.length === 0 && "hidden",
         )}
       >
-        {sidebar.map((section) => (
+        {safeSidebar.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
       </div>

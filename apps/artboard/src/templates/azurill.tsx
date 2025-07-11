@@ -550,12 +550,8 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
-  if (!columns || !Array.isArray(columns)) {
-    return <div>Loading template...</div>;
-  }
-  
   const [main = [], sidebar = []] = columns;
-  
+
   const safeMain = Array.isArray(main) ? main : [];
   const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
@@ -571,7 +567,10 @@ export const Azurill = ({ columns, isFirstPage = false }: TemplateProps) => {
         </div>
 
         <div
-          className={cn("main group space-y-4", safeSidebar.length > 0 ? "col-span-2" : "col-span-3")}
+          className={cn(
+            "main group space-y-4",
+            safeSidebar.length > 0 ? "col-span-2" : "col-span-3",
+          )}
         >
           {safeMain.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
