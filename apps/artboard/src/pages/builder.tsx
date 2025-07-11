@@ -19,47 +19,60 @@ export const BuilderLayout = () => {
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
-  const Template = useMemo(() => getTemplate(template), [template]);
+  if (!layout || !Array.isArray(layout) || layout.length === 0) {
+    return <div>Loading resume layout...</div>;
+  }
+
+  const Template = useMemo(() => {
+    try {
+      return getTemplate(template);
+    } catch (error) {
+      console.error("Template loading error:", error);
+      return null;
+    }
+  }, [template]);
+  
+  if (!Template) {
+    return <div>Template loading error</div>;
+  }
 
   const transformedLayout = useMemo(() => {
-    if (!Array.isArray(layout)) {
-      return [];
-    }
-
     try {
-      const result = layout.map((page) => {
+      if (!layout || !Array.isArray(layout)) {
+        return [];
+      }
+      
+      return layout.map((page) => {
         if (!Array.isArray(page)) {
-          return [];
+          return [[], []]; // Default to two empty columns
         }
-
-        return page.map((column) => {
+        
+        const normalizedPage = [...page];
+        while (normalizedPage.length < 2) {
+          normalizedPage.push([]);
+        }
+        
+        return normalizedPage.map((column) => {
           if (!Array.isArray(column)) {
             return [];
           }
-
+          
           return column
             .filter((section: string | Record<string, unknown>) => {
               if (!section) return false;
               if (typeof section === "string") return true;
-              return (
-                typeof section === "object" &&
-                "visible" in section &&
-                (section as { visible: boolean }).visible
-              );
+              return section && typeof section === "object" && (section as { visible?: boolean }).visible !== false;
             })
             .map((section: string | Record<string, unknown>) => {
               if (typeof section === "string") return section;
-              return typeof section === "object" && "id" in section
-                ? (section as { id: string }).id
-                : null;
+              return section && typeof section === "object" && (section as { id?: string }).id ? (section as { id: string }).id : null;
             })
             .filter((item): item is string => typeof item === "string");
         });
       });
-
-      return result;
-    } catch {
-      return [];
+    } catch (error) {
+      console.error("Layout transformation error:", error);
+      return [[[],[]]]; // Return a single page with two empty columns as fallback
     }
   }, [layout]);
 
@@ -112,19 +125,25 @@ export const BuilderLayout = () => {
         }}
       >
         <AnimatePresence>
-          {transformedLayout.map((columns, pageIndex) => (
-            <motion.div
-              key={pageIndex}
-              layout
-              initial={{ opacity: 0, x: -200, y: 0 }}
-              animate={{ opacity: 1, x: 0, transition: { delay: pageIndex * 0.3 } }}
-              exit={{ opacity: 0, x: -200 }}
-            >
-              <Page mode="builder" pageNumber={pageIndex + 1}>
-                <Template isFirstPage={pageIndex === 0} columns={columns as SectionKey[][]} />
-              </Page>
-            </motion.div>
-          ))}
+          {transformedLayout.map((columns, pageIndex) => {
+            const safeColumns = Array.isArray(columns) && columns.length >= 2 
+              ? columns.map(col => Array.isArray(col) ? col : [])
+              : [[], []];
+            
+            return (
+              <motion.div
+                key={pageIndex}
+                layout
+                initial={{ opacity: 0, x: -200, y: 0 }}
+                animate={{ opacity: 1, x: 0, transition: { delay: pageIndex * 0.3 } }}
+                exit={{ opacity: 0, x: -200 }}
+              >
+                <Page mode="builder" pageNumber={pageIndex + 1}>
+                  <Template isFirstPage={pageIndex === 0} columns={safeColumns as SectionKey[][]} />
+                </Page>
+              </motion.div>
+            );
+          })}
         </AnimatePresence>
       </TransformComponent>
     </TransformWrapper>
