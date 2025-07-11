@@ -67,20 +67,20 @@ const Header = () => {
 
         <div className="flex flex-wrap gap-x-3 text-sm">
           {basics.customFields.map((item) => (
-            <div key={item.id} className="flex items-center gap-x-1.5">
-              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              {isUrl(item.value) ? (
-                <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
-                  {item.name || item.value}
-                </a>
-              ) : (
-                <>
-                  <span className="text-primary">{item.name}</span>
-                  <span>{item.value}</span>
-                </>
-              )}
-            </div>
-          ))}
+              <div key={item.id} className="flex items-center gap-x-1.5">
+                <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+                {isUrl(item.value) ? (
+                  <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                    {item.name || item.value}
+                  </a>
+                ) : (
+                  <>
+                    <span className="text-primary">{item.name}</span>
+                    <span>{item.value}</span>
+                  </>
+                )}
+              </div>
+            ))}
         </div>
       </div>
     </div>
@@ -572,7 +572,7 @@ const mapSectionToComponent = (section: SectionKey) => {
 export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
   const name = useArtboardStore((state) => state.resume.basics.name);
 
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
 
   return (
     <div className="p-custom space-y-6">

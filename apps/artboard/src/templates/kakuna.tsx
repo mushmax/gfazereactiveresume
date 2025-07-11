@@ -63,35 +63,35 @@ const Header = () => {
         <Link url={basics.url} />
 
         {basics.customFields.map((item) => (
-          <div key={item.id} className="flex items-center gap-x-1.5">
-            <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-            {isUrl(item.value) ? (
-              <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
-                {item.name || item.value}
-              </a>
-            ) : (
-              <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-            )}
-          </div>
-        ))}
+            <div key={item.id} className="flex items-center gap-x-1.5">
+              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+              {isUrl(item.value) ? (
+                <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                  {item.name || item.value}
+                </a>
+              ) : (
+                <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+              )}
+            </div>
+          ))}
       </div>
 
       {profiles.visible && profiles.items.length > 0 && (
-        <div className="flex items-center gap-x-3 gap-y-0.5">
-          {profiles.items
-            .filter((item) => item.visible)
-            .map((item) => (
-              <div key={item.id} className="flex items-center gap-x-2">
-                <Link
-                  url={item.url}
-                  label={item.username}
-                  className="text-sm"
-                  icon={<BrandIcon slug={item.icon} />}
-                />
-              </div>
-            ))}
-        </div>
-      )}
+          <div className="flex items-center gap-x-3 gap-y-0.5">
+            {profiles.items
+              .filter((item) => item.visible)
+              .map((item) => (
+                <div key={item.id} className="flex items-center gap-x-2">
+                  <Link
+                    url={item.url}
+                    label={item.username}
+                    className="text-sm"
+                    icon={<BrandIcon slug={item.icon} />}
+                  />
+                </div>
+              ))}
+          </div>
+        )}
     </div>
   );
 };
@@ -521,18 +521,21 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div className="p-custom space-y-4">
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
-        {main.map((section) => (
+        {safeMain.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
 
-        {sidebar.map((section) => (
+        {safeSidebar.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
       </div>

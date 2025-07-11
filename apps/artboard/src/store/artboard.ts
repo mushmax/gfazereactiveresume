@@ -10,10 +10,6 @@ export type ArtboardStore = {
 export const useArtboardStore = create<ArtboardStore>()((set) => ({
   resume: defaultResumeData,
   setResume: (resume) => {
-    if (resume && resume.metadata && resume.metadata.layout) {
-      set({ resume });
-    } else {
-      set({ resume: defaultResumeData });
-    }
+    set({ resume });
   },
 }));

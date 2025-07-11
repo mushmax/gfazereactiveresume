@@ -77,17 +77,17 @@ const Header = () => {
           )}
           <Link url={basics.url} />
           {basics.customFields.map((item) => (
-            <div key={item.id} className="flex items-center gap-x-1.5">
-              <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
-              {isUrl(item.value) ? (
-                <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
-                  {item.name || item.value}
-                </a>
-              ) : (
-                <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
-              )}
-            </div>
-          ))}
+              <div key={item.id} className="flex items-center gap-x-1.5">
+                <i className={cn(`ph ph-bold ph-${item.icon}`, "text-primary")} />
+                {isUrl(item.value) ? (
+                  <a href={item.value} target="_blank" rel="noreferrer noopener nofollow">
+                    {item.name || item.value}
+                  </a>
+                ) : (
+                  <span>{[item.name, item.value].filter(Boolean).join(": ")}</span>
+                )}
+              </div>
+            ))}
         </div>
 
         {profiles.visible && profiles.items.length > 0 && (
@@ -513,21 +513,24 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div>
       {isFirstPage && <Header />}
 
       <div className="p-custom grid grid-cols-2 items-start space-x-6">
-        <div className={cn("grid gap-y-4", sidebar.length === 0 && "col-span-2")}>
-          {main.map((section) => (
+        <div className={cn("grid gap-y-4", safeSidebar.length === 0 && "col-span-2")}>
+          {safeMain.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
 
-        <div className={cn("grid gap-y-4", sidebar.length === 0 && "hidden")}>
-          {sidebar.map((section) => (
+        <div className={cn("grid gap-y-4", safeSidebar.length === 0 && "hidden")}>
+          {safeSidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>

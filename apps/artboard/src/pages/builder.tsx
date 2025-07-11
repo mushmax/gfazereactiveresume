@@ -19,60 +19,54 @@ export const BuilderLayout = () => {
   const format = useArtboardStore((state) => state.resume.metadata.page.format);
   const template = useArtboardStore((state) => state.resume.metadata.template as Template);
 
-  if (!layout || !Array.isArray(layout) || layout.length === 0) {
-    return <div>Loading resume layout...</div>;
-  }
-
   const Template = useMemo(() => {
     try {
       return getTemplate(template);
-    } catch (error) {
-      console.error("Template loading error:", error);
+    } catch {
       return null;
     }
   }, [template]);
-  
-  if (!Template) {
-    return <div>Template loading error</div>;
-  }
 
   const transformedLayout = useMemo(() => {
     try {
-      if (!layout || !Array.isArray(layout)) {
-        return [];
+      if (!Array.isArray(layout)) {
+        return [[[], []]]; // Return a single page with two empty columns as fallback
       }
-      
+
       return layout.map((page) => {
         if (!Array.isArray(page)) {
           return [[], []]; // Default to two empty columns
         }
-        
+
         const normalizedPage = [...page];
         while (normalizedPage.length < 2) {
           normalizedPage.push([]);
         }
-        
+
         return normalizedPage.map((column) => {
           if (!Array.isArray(column)) {
             return [];
           }
-          
+
           return column
             .filter((section: string | Record<string, unknown>) => {
               if (!section) return false;
               if (typeof section === "string") return true;
-              return section && typeof section === "object" && (section as { visible?: boolean }).visible !== false;
+              return (
+                typeof section === "object" && (section as { visible?: boolean }).visible !== false
+              );
             })
             .map((section: string | Record<string, unknown>) => {
               if (typeof section === "string") return section;
-              return section && typeof section === "object" && (section as { id?: string }).id ? (section as { id: string }).id : null;
+              return typeof section === "object" && (section as { id?: string }).id
+                ? (section as { id: string }).id
+                : null;
             })
             .filter((item): item is string => typeof item === "string");
         });
       });
-    } catch (error) {
-      console.error("Layout transformation error:", error);
-      return [[[],[]]]; // Return a single page with two empty columns as fallback
+    } catch {
+      return [[[], []]]; // Return a single page with two empty columns as fallback
     }
   }, [layout]);
 
@@ -105,6 +99,10 @@ export const BuilderLayout = () => {
     };
   }, [transformRef]);
 
+  if (!Array.isArray(layout) || layout.length === 0 || !Template) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <TransformWrapper
       ref={transformRef}
@@ -126,10 +124,11 @@ export const BuilderLayout = () => {
       >
         <AnimatePresence>
           {transformedLayout.map((columns, pageIndex) => {
-            const safeColumns = Array.isArray(columns) && columns.length >= 2 
-              ? columns.map(col => Array.isArray(col) ? col : [])
-              : [[], []];
-            
+            const safeColumns =
+              Array.isArray(columns) && columns.length >= 2
+                ? columns.map((col) => (Array.isArray(col) ? col : []))
+                : [[], []];
+
             return (
               <motion.div
                 key={pageIndex}
