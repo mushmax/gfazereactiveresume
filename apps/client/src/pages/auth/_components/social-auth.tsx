@@ -118,7 +118,11 @@ export const SocialAuth = () => {
 
       <div className="grid grid-cols-2 gap-4">
         {providers.includes("github") && (
-          <Button asChild size="lg" className="w-full !bg-[#24292e] !text-white !border-2 !border-[#24292e] hover:!bg-[#1a1e22] hover:!border-[#1a1e22] !font-semibold !shadow-md hover:!shadow-lg !transition-all !duration-200">
+          <Button
+            asChild
+            size="lg"
+            className="w-full !border-2 !border-[#24292e] !bg-[#24292e] !font-semibold !text-white !shadow-md !transition-all !duration-200 hover:!border-[#1a1e22] hover:!bg-[#1a1e22] hover:!shadow-lg"
+          >
             <a href="/api/auth/github">
               <GithubLogo className="mr-3 size-5" />
               {t`Continue with GitHub`}
@@ -129,7 +133,7 @@ export const SocialAuth = () => {
         {providers.includes("google") && (
           <Button
             size="lg"
-            className="w-full !bg-white !text-gray-700 !border-2 !border-gray-300 hover:!bg-gray-50 hover:!border-gray-400 !font-semibold !shadow-md hover:!shadow-lg !transition-all !duration-200"
+            className="w-full !border-2 !border-gray-300 !bg-white !font-semibold !text-gray-700 !shadow-md !transition-all !duration-200 hover:!border-gray-400 hover:!bg-gray-50 hover:!shadow-lg"
             disabled={isLoading === "google"}
             onClick={handleGoogleAuth}
           >
