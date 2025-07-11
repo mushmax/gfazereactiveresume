@@ -15,7 +15,7 @@ export const importResumeSchema = z.object({
       return slug;
     })
     .optional(),
-  visibility: z.enum(["public", "private"]).default("private").optional(),
+  visibility: z.enum(["public", "private"]).default("public").optional(),
   data: resumeDataSchema,
 });
 
