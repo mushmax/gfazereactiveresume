@@ -28,9 +28,7 @@ export const HeroCTA = () => {
 
   return (
     <>
-      <Button size="lg">
-        {t`Get Started`}
-      </Button>
+      <Button size="lg">{t`Get Started`}</Button>
 
       <Button asChild size="lg" variant="link">
         <a href="https://docs.rxresu.me" target="_blank" rel="noopener noreferrer nofollow">
