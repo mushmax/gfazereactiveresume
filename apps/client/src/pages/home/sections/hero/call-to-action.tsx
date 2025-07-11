@@ -28,8 +28,8 @@ export const HeroCTA = () => {
 
   return (
     <>
-      <Button asChild size="lg">
-        <Link to="/auth/login">{t`Get Started`}</Link>
+      <Button size="lg">
+        {t`Get Started`}
       </Button>
 
       <Button asChild size="lg" variant="link">
