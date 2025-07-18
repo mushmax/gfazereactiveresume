@@ -30,7 +30,35 @@ git clone https://github.com/mushmax/gfazereactiveresume.git
 cd gfazereactiveresume
 ```
 
-### 2. Environment Configuration
+### 2. Build Custom Docker Image (Required for GFAZE Enhancements)
+
+**Important**: The public Docker image `amruthpillai/reactive-resume:latest` does not contain GFAZE customizations. You must build a custom image from the current branch to include all GFAZE enhancements (branding, admin panel, Google OAuth popup mode, etc.).
+
+```bash
+# Build custom Docker image with GFAZE enhancements
+docker build -t gfaze-resume:custom .
+
+# Verify the image was built successfully
+docker images | grep gfaze-resume
+```
+
+**Update Docker Compose Configuration:**
+
+Before deploying, update your Docker Compose file to use the custom image instead of the public image:
+
+```yaml
+# In your docker-compose.yml file, change:
+app:
+  image: amruthpillai/reactive-resume:latest  # ❌ Missing GFAZE enhancements
+
+# To:
+app:
+  image: gfaze-resume:custom  # ✅ Includes all GFAZE customizations
+```
+
+**For NGINX Proxy Manager deployment**, use the provided `tools/compose/gfaze-prod-compose.yml` file which is pre-configured with the custom image.
+
+### 3. Environment Configuration
 
 The production Docker Compose file (`tools/compose/gfaze-production.yml`) is pre-configured for the gfazeresume.faze.pro domain.
 
@@ -68,7 +96,7 @@ STORAGE_SECRET_KEY: your_secure_minio_password
 openssl rand -base64 32
 ```
 
-### 3. Optional: OAuth Configuration
+### 4. Optional: OAuth Configuration
 
 If you want to enable social authentication, uncomment and configure the following sections in `tools/compose/gfaze-production.yml`:
 
@@ -102,14 +130,14 @@ OPENID_TOKEN_URL: https://your-provider.com/token
 OPENID_USER_INFO_URL: https://your-provider.com/userinfo
 ```
 
-### 4. Deploy the Application
+### 5. Deploy the Application
 
 ```bash
 # Deploy using the production configuration
 docker-compose -f tools/compose/gfaze-production.yml up -d
 ```
 
-### 5. Verify Deployment
+### 6. Verify Deployment
 
 Check that all services are running:
 

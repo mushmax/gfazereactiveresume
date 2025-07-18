@@ -1,0 +1,152 @@
+# GFAZE Resume Docker Compose configuration for NGINX Proxy Manager deployment
+# This configuration exposes specific ports for NGINX Proxy Manager to route traffic
+# App: 3030:3000, MinIO: 9090:9000, Chrome: 3033:3000
+# Postgres runs internally on 5432 without external exposure
+
+# Database credentials (lines 16-18)
+# POSTGRES_USER: gfazepostgreuse
+# POSTGRES_PASSWORD: GFazepostgre!@2025
+# POSTGRES_DB: gfaze_resume_db
+
+# MinIO storage credentials (lines 33-34)
+# MINIO_ROOT_USER: gfazeminio
+# MINIO_ROOT_PASSWORD: GFazeminio!@2025
+
+# Application secrets (lines 83-84)
+# ACCESS_TOKEN_SECRET: GFazeaccess!@2025
+# REFRESH_TOKEN_SECRET: GFazerefresh!@2025
+
+# Chrome browser token (lines 48, 76)
+# TOKEN: GFazetoken
+# CHROME_TOKEN: GFazechrometoken
+
+# MinIO access credentials (lines 95-96)
+# STORAGE_ACCESS_KEY: GFazeminioaccess!@2025
+# STORAGE_SECRET_KEY: GFazeminisecret!@2025
+
+version: "3.8"
+
+services:
+  # Database (Postgres)
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: gfaze_resume_db
+      POSTGRES_USER: gfazepostgreuse
+      POSTGRES_PASSWORD: GFazepostgre!@2025
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gfazepostgreuse -d gfaze_resume_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Storage (for image uploads)
+  minio:
+    image: minio/minio:latest
+    restart: unless-stopped
+    command: server /data
+    ports:
+      - "9090:9000"
+    volumes:
+      - minio_data:/data
+    environment:
+      MINIO_ROOT_USER: gfazeminio
+      MINIO_ROOT_PASSWORD: GFazeminio!@2025
+
+  # Chrome Browser (for printing and previews)
+  chrome:
+    image: ghcr.io/browserless/chromium:latest
+    restart: unless-stopped
+    ports:
+      - "3033:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      HEALTH: "true"
+      TOKEN: GFazetoken
+      PROXY_HOST: "app"
+      PROXY_PORT: 3000
+      PROXY_SSL: "false"
+
+  app:
+    image: gfaze-resume:custom
+    restart: unless-stopped
+    ports:
+      - "3030:3000"
+    depends_on:
+      - postgres
+      - minio
+      - chrome
+    environment:
+      # -- Environment Variables --
+      PORT: 3000
+      NODE_ENV: production
+
+      # -- URLs --
+      PUBLIC_URL: https://gfazeresume.faze.pro
+      STORAGE_URL: https://storage.gfazeresume.faze.pro
+
+      # -- Printer (Chrome) --
+      CHROME_TOKEN: GFazechrometoken
+      CHROME_URL: ws://chrome:3000
+
+      # -- Database (Postgres) --
+      DATABASE_URL: postgresql://gfazepostgreuse:GFazepostgre!@2025@postgres:5432/gfaze_resume_db
+
+      # -- Auth --
+      ACCESS_TOKEN_SECRET: GFazeaccess!@2025
+      REFRESH_TOKEN_SECRET: GFazerefresh!@2025
+
+      # -- Emails --
+      MAIL_FROM: noreply@gfazeresume.faze.pro
+      # SMTP_URL: smtp://user:pass@smtp:587 # Optional
+
+      # -- Storage (Minio) --
+      STORAGE_ENDPOINT: minio
+      STORAGE_PORT: 9000
+      # STORAGE_REGION: us-east-1 # Optional
+      STORAGE_BUCKET: default
+      STORAGE_ACCESS_KEY: gfazeminio
+      STORAGE_SECRET_KEY: GFazeminio!@2025
+      STORAGE_USE_SSL: "false"
+      STORAGE_SKIP_BUCKET_CHECK: "false"
+
+      # -- Crowdin (Optional) --
+      # CROWDIN_PROJECT_ID:
+      # CROWDIN_PERSONAL_TOKEN:
+
+      # -- Feature Flags (Optional) --
+      # DISABLE_SIGNUPS: "false"
+      # DISABLE_EMAIL_AUTH: "false"
+
+      # -- Iframe Embedding (Optional) --
+      # ALLOWED_IFRAME_ORIGINS: https://gigafaze.com
+
+      # -- GitHub (Optional) --
+      # GITHUB_CLIENT_ID: github_client_id
+      # GITHUB_CLIENT_SECRET: github_client_secret
+      # GITHUB_CALLBACK_URL: https://gfazeresume.faze.pro/api/auth/github/callback
+
+      # -- Google (Optional) --
+      # GOOGLE_CLIENT_ID: google_client_id
+      # GOOGLE_CLIENT_SECRET: google_client_secret
+      # GOOGLE_CALLBACK_URL: https://gfazeresume.faze.pro/api/auth/google/callback
+      # GOOGLE_POPUP_CALLBACK_URL: https://gfazeresume.faze.pro/api/auth/google/popup/callback
+
+      # -- OpenID (Optional) --
+      # VITE_OPENID_NAME: OpenID
+      # OPENID_AUTHORIZATION_URL:
+      # OPENID_CALLBACK_URL: https://gfazeresume.faze.pro/api/auth/openid/callback
+      # OPENID_CLIENT_ID:
+      # OPENID_CLIENT_SECRET:
+      # OPENID_ISSUER:
+      # OPENID_SCOPE: openid profile email
+      # OPENID_TOKEN_URL:
+      # OPENID_USER_INFO_URL:
+
+volumes:
+  minio_data:
+  postgres_data:
