@@ -240,6 +240,57 @@ docker-compose -f tools/compose/gfaze-production.yml down -v
 - Check MinIO logs: `docker-compose -f tools/compose/gfaze-production.yml logs minio`
 - Verify storage credentials match between app and MinIO configuration
 
+### Docker Cache Issues (Missing GFAZE Enhancements)
+
+If your Docker container deployment is missing GFAZE customizations (logos, branding, admin panel, etc.) while the development server shows them correctly, this is likely caused by Docker's layer caching mechanism using outdated cached layers.
+
+**Symptoms:**
+- Docker container shows default Reactive Resume branding instead of GFAZE branding
+- Missing custom logos (`/logo/gfaze-logo.png`, `/logo/gigafaze-logo-new.jpg`)
+- Default hero text instead of "GFAZE Resume is the most versatile AI Powered Resume Builder..."
+- Missing admin panel and other GFAZE enhancements
+
+**Solution:**
+
+1. **Stop and remove existing containers:**
+   ```bash
+   docker-compose -f tools/compose/gfaze-prod-compose.yml down
+   docker rmi gfaze-resume:custom
+   ```
+
+2. **Rebuild Docker image with no cache:**
+   ```bash
+   # Force complete rebuild without using cached layers
+   docker build --no-cache -t gfaze-resume:custom .
+   ```
+
+3. **Verify the rebuilt image contains GFAZE assets:**
+   ```bash
+   # Check for GFAZE logo files
+   docker run --rm gfaze-resume:custom ls -la /app/dist/apps/client/logo/
+   
+   # Verify GFAZE branding in HTML
+   docker run --rm gfaze-resume:custom grep -r "GFAZE Resume" /app/dist/apps/client/index.html
+   ```
+
+4. **Restart containers with the rebuilt image:**
+   ```bash
+   docker-compose -f tools/compose/gfaze-prod-compose.yml up -d
+   ```
+
+5. **Test the deployment:**
+   - Navigate to your Docker container URL (e.g., http://localhost:3030)
+   - Verify GFAZE logos appear in the header
+   - Check that custom hero text is displayed
+   - Confirm admin panel access (if applicable)
+
+**Prevention:**
+- Always use `--no-cache` flag when rebuilding after significant code changes
+- Consider using unique image tags for different versions instead of overwriting `gfaze-resume:custom`
+- Regularly clean up Docker build cache: `docker builder prune`
+
+**Important:** The `--no-cache` flag forces Docker to rebuild all layers from scratch, ensuring that all current source code changes (including GFAZE customizations) are properly included in the final image.
+
 ## Security Considerations
 
 1. **Change Default Passwords**: Update all default passwords in the configuration
