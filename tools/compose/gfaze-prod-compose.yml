@@ -86,8 +86,8 @@ services:
       NODE_ENV: production
 
       # -- URLs --
-      PUBLIC_URL: https://gfazeresume.faze.pro
-      STORAGE_URL: https://storage.gfazeresume.faze.pro
+      PUBLIC_URL: http://localhost:3030
+      STORAGE_URL: http://localhost:9090
 
       # -- Printer (Chrome) --
       CHROME_TOKEN: GFazechrometoken
@@ -131,10 +131,10 @@ services:
       # GITHUB_CALLBACK_URL: https://gfazeresume.faze.pro/api/auth/github/callback
 
       # -- Google (Optional) --
-      GOOGLE_CLIENT_ID: google_client_id
-      GOOGLE_CLIENT_SECRET: google_client_secret
-      GOOGLE_CALLBACK_URL: http://localhost:3030/api/auth/google/callback
-      GOOGLE_POPUP_CALLBACK_URL: http://localhost:3030/api/auth/google/popup/callback
+      # GOOGLE_CLIENT_ID: your_google_client_id
+      # GOOGLE_CLIENT_SECRET: your_google_client_secret
+      # GOOGLE_CALLBACK_URL: http://localhost:3030/api/auth/google/callback
+      # GOOGLE_POPUP_CALLBACK_URL: http://localhost:3030/api/auth/google/popup/callback
 
       # -- OpenID (Optional) --
       # VITE_OPENID_NAME: OpenID
