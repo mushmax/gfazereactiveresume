@@ -54,24 +54,22 @@ msgstr "<0>Xác thực hai yếu tố hiện bị tắt.</0> Bạn có thể kí
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Chứng thực hai yếu tố được kích hoạt.</0> Bạn sẽ được yêu cầu nhập mã mỗi khi đăng nhập."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "A free and open-source resume builder"
-msgstr "Công cụ xây dựng sơ yếu lý lịch miễn phí và mã nguồn mở"
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:160
+msgid "2.4 GB"
+msgstr ""
 
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Trình tạo sơ yếu lý lịch mã nguồn mở và miễn phí giúp đơn giản hóa quá trình tạo, cập nhật và chia sẻ sơ yếu lý lịch của bạn."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "A link has been copied to your clipboard."
 msgstr "Liên kết đã được sao chép vào bộ nhớ tạm."
 
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Một dự án tâm huyết của <0>Amruth Pillai</0>"
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:313
+msgid "A list of all users in the system with their roles and status."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -89,14 +87,24 @@ msgstr "Địa chỉ email hoặc tên người dùng này đã tồn tại."
 msgid "A4"
 msgstr "Khổ giấy A4"
 
+#. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf, .doc, or .docx.
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:317
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:335
 msgid "Accepts only {accept} files"
 msgstr "Chỉ chấp nhận tệp {accept}"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
 msgstr "Tài khoản"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:327
+msgid "Actions"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:155
+msgid "Active Sessions"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
@@ -117,19 +125,55 @@ msgstr "Thêm mục mới"
 msgid "Add a new section"
 msgstr "Thêm một phần mới"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:212
+msgid "Add a new user to the system with specified role and permissions."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
 msgstr "Thêm một trang mới"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:285
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:489
+msgid "Admin"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:106
+msgid "Admin and Super Admin users"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:18
+msgid "Administration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:20
+msgid "Administrative tools and system management options for authorized users."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:104
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:132
+msgid "Administrators"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
 msgstr "AI"
 
+#: apps/client/src/pages/home/page.tsx:18
+msgid "AI Powered Resume Builder"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:94
+msgid "All registered users"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Bạn đã có tài khoản?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:184
 msgid "An error occurred while validating the file."
 msgstr "Đã xảy ra lỗi trong quá trình xác thực tập tin."
 
@@ -145,12 +189,12 @@ msgstr ""
 msgid "and many more..."
 msgstr "cùng nhiều nội dung khác nữa..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:58
 msgid "Anyone with the link can view and download the resume."
 msgstr "Bất kỳ ai có liên kết đều có thể xem và tải xuống sơ yếu lý lịch."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Bất kỳ ai có liên kết này đều có thể xem và tải xuống sơ yếu lý lịch. Chia sẻ nó trên hồ sơ của bạn hoặc với nhà tuyển dụng."
 
@@ -158,9 +202,17 @@ msgstr "Bất kỳ ai có liên kết này đều có thể xem và tải xuốn
 msgid "Apply Custom CSS"
 msgstr ""
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:243
+msgid "Are you sure you want to delete this document?"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
 msgstr "Bạn có chắc bạn muốn xóa mục này?"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:538
+msgid "Are you sure you want to delete this user? This action cannot be undone and will permanently remove the user and all their data."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
@@ -187,9 +239,52 @@ msgstr "Bạn có chắc không?"
 msgid "Area of Study"
 msgstr "Lĩnh vực học tập"
 
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:74
+msgid "As a Super Administrator, you can manage all users, view system statistics, and access advanced administrative features."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
 msgstr "Tỷ lệ khung hình"
+
+#: apps/client/src/stores/auth.ts:97
+msgid "auth-domain={domain}; path=/; domain=.faze.pro; secure; samesite=none"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:141
+msgid "Authenticating..."
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:58
+msgid "Authentication Cancelled"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:34
+#: apps/client/src/pages/auth/_components/social-auth.tsx:37
+#: apps/client/src/services/auth/popup-oauth.ts:92
+#: apps/client/src/services/auth/popup-oauth.ts:137
+msgid "Authentication failed"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:59
+msgid "Authentication Failed"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:85
+msgid "Authentication failed - invalid response"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:50
+msgid "Authentication timeout"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:57
+msgid "Authentication Timeout"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:58
+msgid "Authentication was cancelled by the user"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
@@ -238,16 +333,27 @@ msgstr "Viền"
 msgid "Border Radius"
 msgstr "Bo viền"
 
-#: apps/client/src/pages/public/page.tsx:93
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:121
+msgid "Breakdown of users by role type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:49
+msgid "Build your personal website"
+msgstr ""
+
+#: apps/client/src/pages/public/page.tsx:99
 msgid "Built with"
 msgstr "Xây dựng với"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Bởi cộng đồng, vì cộng đồng."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:299
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:518
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:542
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:250
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
@@ -272,6 +378,10 @@ msgstr "Thay đổi mật khẩu"
 msgid "Change Tone"
 msgstr "Thay Đổi Tông"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:281
+msgid "Changed your mind about the name or type? Update it here."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Đã thay đổi ý kiến về tên? Đặt tên mới cho nó."
@@ -283,6 +393,10 @@ msgstr "Kiểm tra email để nhận liên kết cập nhật địa chỉ emai
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
 msgstr "Vòng tròn"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:90
+msgid "Click here for a live and printable copy of your resume"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
@@ -314,6 +428,14 @@ msgstr "Tự tin"
 msgid "Continue"
 msgstr "Tiếp tục"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:128
+msgid "Continue with GitHub"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:141
+msgid "Continue with Google"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
 msgid "Copy"
 msgstr "Sao chép"
@@ -322,11 +444,21 @@ msgstr "Sao chép"
 msgid "Copy Link to Resume"
 msgstr "Sao chép Liên kết đến Sơ yếu lý lịch"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:80
 msgid "Copy to Clipboard"
 msgstr "Sao chép vào bộ nhớ tạm"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:161
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:201
+msgid "Cover Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/page.tsx:48
+msgid "Cover Letters"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:353
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 msgid "Create"
 msgstr "Tạo"
@@ -336,30 +468,103 @@ msgstr "Tạo"
 msgid "Create a new account"
 msgstr "Tạo tài khoản mới"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:23
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:22
+msgid "Create a new cover letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:272
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:32
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:31
+msgid "Create a new document"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Create a new item"
 msgstr "Tạo mục mới"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:26
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:25
+msgid "Create a new resignation letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:20
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:19
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
 msgstr "Tạo sơ yếu lý lịch mới"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:29
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:28
+msgid "Create a new website"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:203
+msgid "Create Cover Letter with AI"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:210
+msgid "Create New User"
+msgstr ""
+
 #: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Tạo ngay"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:187
+msgid "Create Resume with AI"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:197
+msgid "Create Sample Cover Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:213
+msgid "Create Sample Resignation Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:181
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Tạo sơ yếu lý lịch mẫu"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:223
+msgid "Create Sample Website"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:205
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:302
+msgid "Create User"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:33
+msgid "Create, edit, and manage user accounts and permissions"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:325
+msgid "Created"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:100
+msgid "Created resumes"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:302
+msgid "Creating..."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:146
+msgid "Current system status and metrics"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:90
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
@@ -389,6 +594,10 @@ msgstr "Vùng nguy hiểm"
 msgid "Dark"
 msgstr "Tối"
 
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:151
+msgid "Database Status"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:67
@@ -404,6 +613,11 @@ msgid "Date or Date Range"
 msgstr "Ngày hoặc Khoảng ngày"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:252
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:69
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:100
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:68
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
@@ -415,6 +629,15 @@ msgstr "Xóa"
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Delete Account"
 msgstr "Xóa tài khoản"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:536
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:548
+msgid "Delete User"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:548
+msgid "Deleting..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
@@ -436,16 +659,44 @@ msgstr "Tắt"
 msgid "Disable 2FA"
 msgstr "Tắt xác thực 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:379
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:387
+msgid "Disabled"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:349
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:367
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Hủy"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:170
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:210
+msgid "Document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:173
+msgid "Document imported successfully."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:237
+msgid "Document Title"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:323
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:251
+msgid "Document Type"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
 msgid "Documentation"
 msgstr "Tài liệu"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:98
+msgid "DOCX"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
@@ -463,11 +714,22 @@ msgstr "Không thấy ngôn ngữ của bạn? <0>Giúp dịch ứng dụng.</0>
 msgid "Donate to GFAZE Resume"
 msgstr "Đóng góp cho GFAZE Resume"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:63
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:94
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:62
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:93
+msgid "Download"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:100
+msgid "Download a DOCX document of your resume. This file can be edited in Microsoft Word or other word processors and shared with recruiters."
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:64
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Tải xuống bản JSON sơ yếu lý lịch của bạn. Tệp này có thể được sử dụng để nhập hồ sơ của bạn trong tương lai, hoặc thậm chí có thể được chia sẻ với người khác để cộng tác."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:82
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Tải xuống bản PDF sơ yếu lý lịch của bạn. Tệp này có thể được sử dụng để in sơ yếu lý lịch của bạn, gửi cho nhà tuyển dụng hoặc tải lên các cổng thông tin việc làm."
 
@@ -479,13 +741,22 @@ msgstr "Tải xuống PDF"
 msgid "Downloads"
 msgstr "Tải về"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:46
+msgid "Draft a professional resignation"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:355
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Tạo bản sao"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:274
+msgid "Duplicate an existing document"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
@@ -496,8 +767,16 @@ msgid "Duplicate an existing resume"
 msgstr "Sao chép sơ yếu lý lịch hiện có"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:66
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:97
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:65
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:96
 msgid "Edit"
 msgstr "Chỉnh sửa"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:428
+msgid "Edit User"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
@@ -507,6 +786,9 @@ msgstr "Hiệu ứng"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:231
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:322
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:449
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "Email"
@@ -515,9 +797,18 @@ msgstr "Email"
 msgid "Enable 2FA"
 msgstr "Bật xác thực 2FA"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:379
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:387
+msgid "Enabled"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
 msgstr "Nhập mật khẩu mới bên dưới và đảm bảo mật khẩu đó an toàn."
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:239
+msgid "Enter document title"
+msgstr ""
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
@@ -543,7 +834,16 @@ msgstr "Nhập địa chỉ email của bạn, chúng tôi sẽ gửi cho bạn 
 msgid "Error {statusCode}"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:36
+msgid "Error loading statistics"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:346
+msgid "Error loading users. Please try again."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:330
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
 msgid "Errors"
 msgstr "Lỗi"
 
@@ -555,41 +855,42 @@ msgstr "Ngay cả khi bạn không có khả năng đóng góp tài chính, bạ
 msgid "Explore the templates available in GFAZE Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Khám phá các mẫu có sẵn trong GFAZE Resume và xem các sơ yếu lý lịch được tạo bằng chúng. Các mẫu này là ý tưởng tuyệt vời giúp tạo sơ yếu lý lịch của bạn."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:121
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:118
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:47
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:48
 msgid "Export"
 msgstr "Xuất"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
 msgid "File"
 msgstr "Tệp"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:279
+msgid "File Type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:282
 msgid "Filetype"
 msgstr "Loại tệp"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Cuối cùng,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
 msgstr "Sửa chữa Chính tả và ngữ pháp"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Family"
 msgstr "Kiểu Font"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:148
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:150
 msgid "Font Size"
 msgstr "Kích thước Font"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:122
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:124
 msgid "Font Subset"
 msgstr "Phụ bộ Font"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:136
 msgid "Font Variants"
 msgstr "Biến thể Font"
 
@@ -631,6 +932,10 @@ msgstr "Thân thiện"
 msgid "Full Name"
 msgstr "Họ và tên"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:297
+msgid "Generate a random title for your document"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
 msgstr "Tạo tiêu đề ngẫu nhiên cho sơ yếu lý lịch của bạn"
@@ -639,13 +944,55 @@ msgstr "Tạo tiêu đề ngẫu nhiên cho sơ yếu lý lịch của bạn"
 msgid "Get Started"
 msgstr "Bắt đầu"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:18
-msgid "GitHub"
-msgstr "GitHub"
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:59
+#: apps/client/src/pages/dashboard/documents/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
+#: apps/client/src/pages/home/components/footer.tsx:18
+#: apps/client/src/pages/public/page.tsx:80
+#: apps/client/src/pages/public/page.tsx:101
+msgid "GFAZE Resume"
+msgstr "GFAZE Resume"
+
+#: apps/client/src/pages/home/components/header.tsx:22
+#: apps/client/src/pages/home/page.tsx:18
+msgid "GFAZE Resume - Powered by GigaFaze"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "GFAZE Resume has helped people land jobs at these great companies:"
+msgstr "GFAZE Resume đã giúp mọi người có việc làm tại những công ty tuyệt vời này:"
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/hero/index.tsx:26
+msgid "GFAZE Resume is the most versatile AI Powered Resume Builder offered by GigaFaze to help you land your next dream Job"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
 msgstr "Sao GitHub"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:282
+msgid "Give your document copy a new name."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
@@ -660,14 +1007,11 @@ msgstr "Đi đến bảng điều khiển"
 msgid "Go to home"
 msgstr ""
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:31
-msgid "Google"
-msgstr "Google"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
 msgstr "Thang độ xám"
 
+#: apps/client/src/pages/dashboard/documents/page.tsx:67
 #: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
 msgstr "Lưới"
@@ -675,6 +1019,10 @@ msgstr "Lưới"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Headline"
 msgstr "Tiêu đề"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:152
+msgid "Healthy"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
@@ -694,7 +1042,7 @@ msgstr "Ẩn"
 msgid "Hide"
 msgstr "Ẩn đi"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:192
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:194
 msgid "Hide Icons"
 msgstr "Ẩn biểu tượng"
 
@@ -721,6 +1069,10 @@ msgstr "Tôi luôn mong muốn nhận được phản hồi hoặc hỗ trợ t�
 msgid "Icon"
 msgstr "Icon"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:106
+msgid "If the popup doesn't appear, check if it was blocked by your browser."
+msgstr ""
+
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Nếu ứng dụng này đã giúp bạn tìm việc, hãy cho tôi biết bằng cách liên hệ qua <0>biểu mẫu liên hệ này</0>."
@@ -733,15 +1085,45 @@ msgstr "Nếu bạn tắt xác thực hai yếu tố, bạn sẽ không còn ph�
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Nếu bạn sử dụng được nhiều ngôn ngữ, chúng tôi mong nhận được sự trợ giúp của bạn trong việc đưa ứng dụng đến với nhiều ngôn ngữ và cộng đồng hơn. Đừng lo lắng nếu bạn không thấy ngôn ngữ của mình trong danh sách - chỉ cần gửi lời cảm ơn cho tôi trên GitHub và tôi chắc chắn sẽ đưa ngôn ngữ đó vào. Sẵn sàng để bắt đầu? Chuyển sang bản dịch tại Crowdin bằng cách nhấp vào liên kết bên dưới."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:356
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:374
 msgid "Import"
 msgstr "Nhập"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:224
+msgid "Import an existing document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:269
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
 msgstr "Nhập sơ yếu lý lịch hiện có"
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:22
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:21
+msgid "Import cover letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:31
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:30
+msgid "Import document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:25
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:24
+msgid "Import resignation letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:19
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:18
+msgid "Import resume"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:28
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:27
+msgid "Import website"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:85
 msgid "Improve Writing"
@@ -759,7 +1141,6 @@ msgstr "Trong phần này, bạn có thể thay đổi mật khẩu và bật/t�
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "Trong phần này, bạn có thể xóa tài khoản của mình và tất cả dữ liệu được liên kết với người dùng của bạn, nhưng xin lưu ý rằng <0>hành động này không thể đảo ngược</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
@@ -816,7 +1197,7 @@ msgctxt "Localized version of a placeholder email. For example, max.mustermann@e
 msgid "john.doe@example.com"
 msgstr "john.doe@example.com"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:62
 msgid "JSON"
 msgstr "JSON"
 
@@ -841,15 +1222,19 @@ msgstr "Ngôn ngữ"
 msgid "Last updated {lastUpdated}"
 msgstr "Cập nhật lần cuối {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:69
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Bố cục"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:37
 msgid "Learn more"
 msgstr "Tìm hiểu thêm"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:502
+msgid "Leave empty to keep current password"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
 msgid "Letter"
@@ -860,10 +1245,6 @@ msgstr "Chữ cái"
 msgid "Level"
 msgstr "Cấp độ"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Được cấp phép theo <0>MIT</0>"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "Sáng"
@@ -872,7 +1253,7 @@ msgstr "Sáng"
 msgid "Light or dark theme"
 msgstr "Chủ đề sáng hoặc tối"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:165
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:167
 msgid "Line Height"
 msgstr "Chiều cao giữa các dòng"
 
@@ -881,9 +1262,23 @@ msgstr "Chiều cao giữa các dòng"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON Resume, hoặc tương tự."
 
+#: apps/client/src/pages/dashboard/documents/page.tsx:71
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "Danh sách"
+
+#: apps/client/src/components/shareable-url-box.tsx:33
+#: apps/client/src/components/shareable-url-box.tsx:56
+msgid "Live Resume Link"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:20
+msgid "Loading statistics..."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:336
+msgid "Loading users..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -912,6 +1307,10 @@ msgstr "Khóa sơ yếu lý lịch sẽ ngăn chặn mọi thay đổi trong tư
 msgid "Logout"
 msgstr "Đăng xuất"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:65
+msgid "Look for a popup blocker icon in your browser's address bar."
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:64
 msgid "Lost your device?"
 msgstr "Bạn bị mất thiết bị?"
@@ -923,6 +1322,14 @@ msgstr "Chính"
 #: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
 msgstr "Quản lý các sơ yếu lý lịch"
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:38
+msgid "Manage Users"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:199
+msgid "Manage users, roles, and permissions"
+msgstr ""
 
 #. The month and year should be uniform across all languages.
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
@@ -954,6 +1361,12 @@ msgstr "Giấy phép MIT"
 msgid "Model"
 msgstr ""
 
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:97
+#: apps/client/src/pages/dashboard/documents/page.tsx:22
+#: apps/client/src/pages/dashboard/documents/page.tsx:32
+msgid "My Documents"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
@@ -963,6 +1376,9 @@ msgstr ""
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:218
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:321
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:436
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Tên"
@@ -980,19 +1396,35 @@ msgstr "Mạng"
 msgid "New Password"
 msgstr "Mật khẩu mới"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:496
+msgid "New Password (optional)"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:112
+msgid "New users in last 30 days"
+msgstr ""
+
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "Không tìm thấy kết quả"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:53
+msgid "No statistics available"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
 msgstr "Không theo dõi người dùng hoặc quảng cáo"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:356
+msgid "No users found."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Lưu ý: Điều này sẽ làm cho tài khoản của bạn ít an toàn hơn."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
@@ -1004,7 +1436,9 @@ msgstr "Mật khẩu sử dụng một lần"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:30
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:249
+#: apps/client/src/services/resume/export-docx.ts:26
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Rất tiếc, máy chủ đã trả về lỗi."
@@ -1037,8 +1471,12 @@ msgstr ""
 msgid "OpenAI/Ollama Integration"
 msgstr ""
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:102
+msgid "Opening authentication popup..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:184
 msgid "Options"
 msgstr "Tùy chọn"
 
@@ -1051,7 +1489,14 @@ msgstr "hoặc tiếp tục với"
 msgid "Organization"
 msgstr "Tổ chức"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:16
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:32
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:49
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:87
+msgid "Overview of system usage and user activity"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:97
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
@@ -1064,13 +1509,18 @@ msgstr ""
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:258
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:80
 msgid "PDF"
 msgstr "PDF"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:376
+msgid "Pending"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
@@ -1079,10 +1529,6 @@ msgstr "Ghi chú cá nhân cho mỗi sơ yếu lý lịch"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 msgid "Phone"
 msgstr "Điện thoại"
-
-#: apps/client/src/pages/auth/layout.tsx:76
-msgid "Photograph by Patrick Tomasso"
-msgstr "Ảnh của Patrick Tomasso"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
@@ -1097,13 +1543,26 @@ msgstr "Hình ảnh"
 msgid "Please note that this step is completely optional."
 msgstr "Xin lưu ý rằng bước này là hoàn toàn tùy chọn."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:283
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:286
 msgid "Please select a file type"
 msgstr "Vui lòng chọn loại tập tin"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Vui lòng lưu trữ mã dự phòng của bạn ở một vị trí an toàn. Bạn có thể sử dụng một trong những mã sử dụng một lần này để đăng nhập trong trường hợp bạn mất quyền truy cập vào ứng dụng xác thực của mình."
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:37
+msgid "Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:56
+msgid "Popup Blocked"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:128
+msgid "Popup blocked. Please allow popups for this site and try again."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
@@ -1139,11 +1598,15 @@ msgstr "Chính sách Bảo mật"
 msgid "Professional"
 msgstr "Chuyên nghiệp"
 
+#: apps/client/src/pages/auth/layout.tsx:72
+msgid "Professional resume review image"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:66
 msgid "Profile"
 msgstr "Hồ sơ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:56
 msgid "Public"
 msgstr "Công khai"
 
@@ -1155,43 +1618,21 @@ msgstr "Nhà xuất bản"
 msgid "Raise an issue"
 msgstr "Đưa ra một vấn đề"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:74
-#: apps/client/src/pages/public/page.tsx:95
-msgid "GFAZE Resume"
-msgstr "GFAZE Resume"
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:110
+msgid "Recent Users"
+msgstr ""
 
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "GFAZE Resume has helped people land jobs at these great companies:"
-msgstr "GFAZE Resume đã giúp mọi người có việc làm tại những công ty tuyệt vời này:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "Reactive Resume là một dự án mã nguồn mở và miễn phí được tạo ra chủ yếu bởi tôi, và sự ủng hộ từ bạn. Nếu bạn có khả năng đóng góp, hãy xem xét việc quyên góp thông qua phương thức bất kỳ được liệt kê. Hơn nữa, các khoản quyên góp cho Reactive Resume qua Open Collective sẽ không chịu thuế vì dự án được chủ động tài chính bởi Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "Reactive Resume là một dự án tâm huyết của hơn 3 năm làm việc, các ý tưởng và tính năng được liên tục phát triển để xây dựng đến mức (gần) như hoàn hảo."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "Reactive Resume phát triển mạnh nhờ cộng đồng sôi động. Dự án này có được sự tiến bộ nhờ có nhiều cá nhân đã cống hiến thời gian và kỹ năng của mình. Dưới đây, chúng tôi tôn vinh những lập trình viên đã cải tiến các tính năng của nó trên GitHub và những nhà ngôn ngữ học có bản dịch trên Crowdin đã giúp tiếp cận nhiều người hơn."
+#: apps/client/src/pages/auth/_components/social-auth.tsx:102
+msgid "Redirecting to Google..."
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
 msgstr "Làm lại"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:126
+msgid "Regular Users"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
@@ -1230,7 +1671,22 @@ msgstr "Đặt lại mật khẩu"
 msgid "Reset Zoom"
 msgstr "Đặt lại thu phóng"
 
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:164
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:204
+msgid "Resignation Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/page.tsx:51
+msgid "Resignation Letters"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:158
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:198
+msgid "Resume"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
+#: apps/client/src/pages/dashboard/documents/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:37
 msgid "Resumes"
@@ -1244,11 +1700,18 @@ msgstr "Sơ yếu lý lịch được tạo"
 msgid "Rich in features, not in pricing."
 msgstr "Tính năng phong phú, không quan trọng giá cả."
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:272
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:324
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:476
+msgid "Role"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
 msgstr "Làm tròn"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:354
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
@@ -1280,15 +1743,15 @@ msgstr ""
 msgid "Scroll to Zoom"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font family"
 msgstr "Tìm kiếm font chữ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:128
 msgid "Search for a font subset"
 msgstr "Tìm kiếm phụ bộ font"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:139
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:141
 msgid "Search for a font variant"
 msgstr "Tìm kiếm biến thể font"
 
@@ -1303,6 +1766,16 @@ msgstr "Bảo mật với xác thực hai yếu tố"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Bảo mật"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:327
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:255
+msgid "Select document type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:281
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:485
+msgid "Select role"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1321,9 +1794,9 @@ msgid "Separate Links"
 msgstr "Liên kết riêng biệt"
 
 #: apps/client/src/components/user-options.tsx:32
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:103
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
+#: apps/client/src/pages/dashboard/settings/page.tsx:27
 msgid "Settings"
 msgstr "Cài đặt"
 
@@ -1331,9 +1804,9 @@ msgstr "Cài đặt"
 msgid "Setup two-factor authentication on your account"
 msgstr "Thiết lập xác thực hai yếu tố trên tài khoản của bạn"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:104
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:40
 msgid "Sharing"
 msgstr "Chia sẻ"
 
@@ -1417,6 +1890,8 @@ msgstr "Đã xảy ra lỗi khi xử lý sơ yếu lý lịch của bạn. Vui l
 msgid "Square"
 msgstr "Vuông"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:40
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:46
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:23
 msgid "Start building from scratch"
@@ -1426,7 +1901,15 @@ msgstr "Bắt đầu xây dựng từ đầu"
 msgid "Start building your resume by giving it a name."
 msgstr "Bắt đầu xây dựng hồ sơ của bạn bằng cách đặt tên cho nó."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:52
+msgid "Start creating your document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:280
+msgid "Start creating your document by giving it a name and selecting its type."
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:111
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
@@ -1435,6 +1918,14 @@ msgstr "Thống kê"
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:38
 msgid "Statistics are available only for public resumes."
 msgstr "Số liệu thống kê chỉ có sẵn cho sơ yếu lý lịch công khai."
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:326
+msgid "Status"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:159
+msgid "Storage Usage"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
@@ -1452,13 +1943,26 @@ msgstr "Lưu trữ mã dự phòng của bạn một cách an toàn"
 msgid "Summary"
 msgstr "Tóm tắt"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:286
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:490
+msgid "Super Admin"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:67
+msgid "Super Administrator"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:136
+msgid "Super Administrators"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
 msgstr "Hãy ủng hộ ứng dụng bằng cách quyên góp những gì bạn có thể!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "Ủng hộ Reactive Resume"
+msgid "Supporting GFAZE Resume"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1468,7 +1972,20 @@ msgstr "Hỗ trợ định dạng trang A4/Letter"
 msgid "System"
 msgstr "Hệ thống"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:145
+msgid "System Health"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:117
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:15
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:31
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:48
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:86
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:48
+msgid "System Statistics"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
@@ -1486,6 +2003,10 @@ msgstr "Lời nhận xét"
 msgid "Text Color"
 msgstr "Màu chữ"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:68
+msgid "The authentication process took too long. Please try again."
+msgstr ""
+
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
 msgstr ""
@@ -1498,7 +2019,7 @@ msgstr ""
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "Sơ yếu lý lịch bạn muốn cập nhật đã bị khóa, vui lòng mở khóa nếu bạn muốn thực hiện bất kỳ thay đổi nào đối với nó."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
@@ -1513,6 +2034,10 @@ msgstr "Đã xảy ra lỗi khi kết nối với trình duyệt. Hãy đảm b�
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Hành động này có thể được hoàn nguyên bằng cách nhấp vào nút hoàn tác trên thanh công cụ nổi."
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:245
+msgid "This action cannot be undone. This will permanently delete your document and cannot be recovered."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Hành động này không thể được hoàn tác. Sơ yếu lý lịch của bạn sẽ bị xóa vĩnh viễn và không thể phục hồi được."
@@ -1521,13 +2046,17 @@ msgstr "Hành động này không thể được hoàn tác. Sơ yếu lý lịc
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr "Địa chỉ email này được liên kết với tài khoản OAuth. Vui lòng đăng nhập bằng nhà cung cấp OAuth của bạn."
 
-#: apps/client/src/pages/builder/_components/header.tsx:57
+#: apps/client/src/pages/builder/_components/header.tsx:66
 msgid "This resume is locked, please unlock to make further changes."
 msgstr "Sơ yếu lý lịch này đã bị khóa, vui lòng mở khóa để thực hiện thay đổi."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Phần này được dành riêng cho những ghi chú của bạn về sơ yếu lý lịch này. Nội dung ở đây vẫn ở chế độ riêng tư và không được chia sẻ với bất kỳ ai khác."
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:311
+msgid "Tip: You can name the document referring to its purpose or content."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
@@ -1538,6 +2067,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Tiêu đề"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:291
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
 msgstr "Tiêu đề"
@@ -1549,6 +2079,14 @@ msgstr "Chuyển đổi dòng ngắt trang"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
 msgstr "Chuyển đổi số trang"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:98
+msgid "Total Resumes"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:92
+msgid "Total Users"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
@@ -1568,6 +2106,10 @@ msgstr "Xác thực hai yếu tố đã được bật cho tài khoản này."
 msgid "Two-factor authentication is not enabled for this account."
 msgstr "Xác thực hai yếu tố không được kích hoạt cho tài khoản này."
 
+#: apps/client/src/services/auth/popup-oauth.ts:80
+msgid "Two-factor authentication is required. Please complete authentication in the main window."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
 msgid "Type <0>delete</0> to confirm deleting your account."
 msgstr "Gõ <0>delete</0> để xác nhận việc xóa tài khoản của bạn."
@@ -1577,19 +2119,23 @@ msgstr "Gõ <0>delete</0> để xác nhận việc xóa tài khoản của bạn
 msgid "Type of Study"
 msgstr "Bằng cấp"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:76
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:77
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:79
 msgid "Typography"
 msgstr "Kiểu chữ"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:203
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:205
 msgid "Underline Links"
 msgstr "Gạch chân Liên kết"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
 msgstr "Hoàn tác"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:142
+msgid "Unknown error occurred"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
@@ -1606,6 +2152,10 @@ msgstr "Mở khóa sơ yếu lý lịch sẽ cho phép bạn điều chỉnh tha
 msgid "Unverified"
 msgstr "Chưa xác minh"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:273
+msgid "Update an existing document"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
 msgstr "Cập nhật một mục hiện có"
@@ -1614,11 +2164,37 @@ msgstr "Cập nhật một mục hiện có"
 msgid "Update an existing resume"
 msgstr "Cập nhật sơ yếu lý lịch hiện có"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
-msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Tải tệp lên từ một trong các nguồn được chấp nhận để phân tích dữ liệu hiện có và nhập tệp đó vào Reactive Resume để chỉnh sửa dễ dàng hơn."
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:526
+msgid "Update User"
+msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:430
+msgid "Update user information and role permissions."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:114
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:78
+msgid "Updated"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:525
+msgid "Updating..."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
+msgid "Upload a file from one of the accepted sources to parse existing data and import it into GFAZE Resume for easier editing."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:228
+msgid "Upload a PDF, DOC, or DOCX file to import it into your documents collection."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:52
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:39
+msgid "Upload PDF, DOC, or DOCX"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:75
 msgid "URL"
 msgstr "URL"
 
@@ -1631,25 +2207,53 @@ msgstr "URL cần bắt đầu với https://"
 msgid "Use your backup code"
 msgstr "Sử dụng mã dự phòng của bạn"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:284
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:488
+msgid "User"
+msgstr ""
+
 #: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "Người dùng không có bản ghi 'bí mật' liên quan. Vui lòng báo cáo vấn đề này trên GitHub."
 
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:112
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:31
+msgid "User Management"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:120
+msgid "User Roles Distribution"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:245
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:323
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:463
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
 msgid "Username"
 msgstr "Tên Người Dùng"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:311
+msgid "Users"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:13
 msgid "Users Signed Up"
 msgstr "Người dùng đã đăng ký"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
+#: apps/client/src/pages/auth/_components/social-auth.tsx:162
+msgid "Using popup authentication for iframe compatibility"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:343
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:361
 msgid "Validate"
 msgstr "Xác thực"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:361
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
 msgid "Validated"
 msgstr "Đã xác thực"
 
@@ -1657,6 +2261,7 @@ msgstr "Đã xác thực"
 msgid "Value"
 msgstr "Giá trị"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:376
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
 msgstr "Đã xác minh"
@@ -1670,9 +2275,20 @@ msgstr "Xác minh xác thực hai yếu tố đã được thiết lập chính 
 msgid "Verify your email address"
 msgstr "Xác nhận địa chỉ email"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "Phiên bản 4"
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:59
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:90
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:58
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:89
+msgid "View Document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:55
+msgid "View Statistics"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:50
+msgid "View system usage, user activity, and performance metrics"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
@@ -1701,12 +2317,18 @@ msgstr "Chúng tôi chỉ xác minh địa chỉ email của bạn để đảm 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:167
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:207
 msgid "Website"
 msgstr "Trang web"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "Có gì mới trong phiên bản mới nhất"
+#: apps/client/src/pages/dashboard/documents/page.tsx:54
+msgid "Websites"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:43
+msgid "Write a compelling cover letter"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1735,17 +2357,25 @@ msgstr "Bạn có thể sử dụng API OpenAI để giúp bạn tạo nội dun
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Bạn có thể theo dõi số lượt xem sơ yếu lý lịch của bạn hoặc số người đã tải xuống bằng cách bật chia sẻ công khai."
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:70
+msgid "You cancelled the authentication process. Click the button below to try again."
+msgstr ""
+
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
 msgstr ""
 
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:69
+msgid "You have full system access and administrative privileges."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "Bạn có tùy chọn <0>lấy Key API OpenAI của bạn</0>. Key này cho phép bạn tận dụng API phù hợp với bạn. Ngoài ra, nếu bạn muốn tắt hoàn toàn các tính năng AI trong Reactive Resume, bạn chỉ cần xóa Key khỏi cài đặt của mình."
+msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in GFAZE Resume altogether, you can simply remove the key from your settings."
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
-msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "Bạn hẳn đã nhận được email từ <0>Reactive Resume</0> với một liên kết để xác minh tài khoản của bạn."
+msgid "You should have received an email from <0>GFAZE Resume</0> with a link to verify your account."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
@@ -1759,6 +2389,10 @@ msgstr "Tài khoản của bạn và tất cả dữ liệu của bạn đã đ�
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Key API của bạn được lưu trữ an toàn trong bộ nhớ cục bộ của trình duyệt và chỉ được sử dụng khi gửi yêu cầu tới OpenAI thông qua SDK chính thức của họ. Hãy yên tâm rằng Key của bạn không được truyền đến bất kỳ máy chủ bên ngoài nào ngoại trừ khi tương tác với các dịch vụ của OpenAI."
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:64
+msgid "Your browser blocked the authentication popup. Please allow popups for this site and try again."
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
@@ -1779,4 +2413,3 @@ msgstr "Phóng to"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Thu nhỏ"
-

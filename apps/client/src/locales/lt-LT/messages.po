@@ -54,24 +54,22 @@ msgstr "<0>Šiuo metu dviejų veiksnių autentifikavimas yra išjungtas.</0> Jį
 msgid "<0>Two-factor authentication is enabled.</0> You will be asked to enter a code every time you sign in."
 msgstr "<0>Įjungtas dviejų veiksnių autentifikavimas.</0> Kiekvieną kartą prisijungdami turėsite įvesti kodą."
 
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/home/sections/hero/index.tsx:40
-msgid "A free and open-source resume builder"
-msgstr "Nemokamas atvirojo kodo gyvenimo aprašymų kūrėjas"
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:160
+msgid "2.4 GB"
+msgstr ""
 
 #: apps/client/src/pages/home/components/footer.tsx:21
-#: apps/client/src/pages/home/sections/hero/index.tsx:45
 msgid "A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume."
 msgstr "Nemokama atvirojo kodo Cv kūrimo priemonė, supaprastinanti gyvenimo aprašymo kūrimo, atnaujinimo ir bendrinimo procesą."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:59
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:29
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
 msgid "A link has been copied to your clipboard."
 msgstr "Nuoroda nukopijuota į iškarpinę."
 
-#: apps/client/src/components/copyright.tsx:29
-msgid "A passion project by <0>Amruth Pillai</0>"
-msgstr "Aistros projektas, kurį sukūrė <0>Amruth Pillai</0>"
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:313
+msgid "A list of all users in the system with their roles and status."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:57
 msgid "A password reset link should have been sent to your inbox, if an account existed with the email you provided."
@@ -89,14 +87,24 @@ msgstr "Naudotojas, turintis šį el. pašto adresą ir/arba naudotojo vardą, j
 msgid "A4"
 msgstr "A4"
 
+#. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf, .doc, or .docx.
 #. Helper text to let the user know what filetypes are accepted. {accept} can be .pdf or .json.
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:270
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:317
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:335
 msgid "Accepts only {accept} files"
 msgstr "Priimami tik {accept} failai"
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:105
 msgid "Account"
 msgstr "Paskyra"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:327
+msgid "Actions"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:155
+msgid "Active Sessions"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:175
 msgid "Add a custom field"
@@ -117,19 +125,55 @@ msgstr "Pridėti naują elementą"
 msgid "Add a new section"
 msgstr "Pridėti naują skyrių"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:212
+msgid "Add a new user to the system with specified role and permissions."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:261
 msgid "Add New Page"
 msgstr "Pridėti naują puslapį"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:285
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:489
+msgid "Admin"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:106
+msgid "Admin and Super Admin users"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:146
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:18
+msgid "Administration"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:20
+msgid "Administrative tools and system management options for authorized users."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:104
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:132
+msgid "Administrators"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:79
 msgid "AI"
 msgstr "AI"
 
+#: apps/client/src/pages/home/page.tsx:18
+msgid "AI Powered Resume Builder"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:94
+msgid "All registered users"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:71
 msgid "Already have an account?"
 msgstr "Jau turite paskyrą?"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:144
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:148
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:184
 msgid "An error occurred while validating the file."
 msgstr "Patvirtinant failą įvyko klaida."
 
@@ -145,12 +189,12 @@ msgstr ""
 msgid "and many more..."
 msgstr "ir dar daugiau..."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:57
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:58
 msgid "Anyone with the link can view and download the resume."
 msgstr "Bet kuris nuorodą turintis asmuo gali peržiūrėti ir atsisiųsti gyvenimo aprašymą."
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:60
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:30
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:31
 msgid "Anyone with this link can view and download the resume. Share it on your profile or with recruiters."
 msgstr "Kiekvienas, pasinaudojęs šia nuoroda, gali peržiūrėti ir atsisiųsti gyvenimo aprašymą. Pasidalykite juo savo profilyje arba su įdarbintojais."
 
@@ -158,9 +202,17 @@ msgstr "Kiekvienas, pasinaudojęs šia nuoroda, gali peržiūrėti ir atsisiųst
 msgid "Apply Custom CSS"
 msgstr "Taikyti pasirinktinį CSS"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:243
+msgid "Are you sure you want to delete this document?"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:128
 msgid "Are you sure you want to delete this item?"
 msgstr "Ar tikrai norite ištrinti šį elementą?"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:538
+msgid "Are you sure you want to delete this user? This action cannot be undone and will permanently remove the user and all their data."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:149
 msgid "Are you sure you want to delete your resume?"
@@ -187,9 +239,52 @@ msgstr "Ar esate tikras?"
 msgid "Area of Study"
 msgstr "Studijų sritis"
 
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:74
+msgid "As a Super Administrator, you can manage all users, view system statistics, and access advanced administrative features."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:79
 msgid "Aspect Ratio"
 msgstr "Vaizdo santykis"
+
+#: apps/client/src/stores/auth.ts:97
+msgid "auth-domain={domain}; path=/; domain=.faze.pro; secure; samesite=none"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:141
+msgid "Authenticating..."
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:58
+msgid "Authentication Cancelled"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:34
+#: apps/client/src/pages/auth/_components/social-auth.tsx:37
+#: apps/client/src/services/auth/popup-oauth.ts:92
+#: apps/client/src/services/auth/popup-oauth.ts:137
+msgid "Authentication failed"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:59
+msgid "Authentication Failed"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:85
+msgid "Authentication failed - invalid response"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:50
+msgid "Authentication timeout"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:57
+msgid "Authentication Timeout"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:58
+msgid "Authentication was cancelled by the user"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:51
 msgid "Available in {languagesCount} languages"
@@ -238,16 +333,27 @@ msgstr "Rėmelis"
 msgid "Border Radius"
 msgstr "Rėmelio spindulys"
 
-#: apps/client/src/pages/public/page.tsx:93
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:121
+msgid "Breakdown of users by role type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:49
+msgid "Build your personal website"
+msgstr ""
+
+#: apps/client/src/pages/public/page.tsx:99
 msgid "Built with"
 msgstr "Pastatytas su"
 
-#: apps/client/src/components/copyright.tsx:27
 #: apps/client/src/pages/home/sections/contributors/index.tsx:20
 msgid "By the community, for the community."
 msgstr "Bendruomenės ir bendruomenei."
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:135
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:299
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:518
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:542
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:250
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:49
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:156
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:137
@@ -272,6 +378,10 @@ msgstr "Keisti slaptažodį"
 msgid "Change Tone"
 msgstr "Keisti toną"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:281
+msgid "Changed your mind about the name or type? Update it here."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:186
 msgid "Changed your mind about the name? Give it a new one."
 msgstr "Pakeitėte nuomonę dėl pavadinimo? Suteikite jam naują."
@@ -283,6 +393,10 @@ msgstr "Patikrinkite savo el. laišką, kad gautumėte patvirtinimo nuorodą ir 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:144
 msgid "Circle"
 msgstr "Apskritimas"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:90
+msgid "Click here for a live and printable copy of your resume"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:249
 msgid "Close"
@@ -314,6 +428,14 @@ msgstr "Pasitikintis savimi"
 msgid "Continue"
 msgstr "Tęsti"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:128
+msgid "Continue with GitHub"
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:141
+msgid "Continue with Google"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:96
 msgid "Copy"
 msgstr "Kopijuoti"
@@ -322,11 +444,21 @@ msgstr "Kopijuoti"
 msgid "Copy Link to Resume"
 msgstr "Nukopijuokite nuorodą į gyvenimo aprašymą"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:80
 msgid "Copy to Clipboard"
 msgstr "Kopijuoti į iškarpinę"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:161
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:201
+msgid "Cover Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/page.tsx:48
+msgid "Cover Letters"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:179
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:353
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:244
 msgid "Create"
 msgstr "Sukurti"
@@ -336,30 +468,103 @@ msgstr "Sukurti"
 msgid "Create a new account"
 msgstr "Sukurti naują paskyrą"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:23
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:22
+msgid "Create a new cover letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:272
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:32
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:31
+msgid "Create a new document"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:163
 msgid "Create a new item"
 msgstr "Sukurti naują elementą"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:26
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:25
+msgid "Create a new resignation letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:20
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:19
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:178
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:18
 msgid "Create a new resume"
 msgstr "Sukurti naują gyvenimo aprašymą"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:29
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:28
+msgid "Create a new website"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:203
+msgid "Create Cover Letter with AI"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:210
+msgid "Create New User"
+msgstr ""
+
 #: apps/client/src/pages/auth/login/page.tsx:65
 msgctxt "This is a link to create a new account"
 msgid "Create one now"
 msgstr "Sukurkite jį dabar"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:187
+msgid "Create Resume with AI"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:197
+msgid "Create Sample Cover Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:213
+msgid "Create Sample Resignation Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:181
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:259
 msgid "Create Sample Resume"
 msgstr "Sukurti pavyzdinį gyvenimo aprašymą"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:223
+msgid "Create Sample Website"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:205
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:302
+msgid "Create User"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:33
+msgid "Create, edit, and manage user accounts and permissions"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:325
+msgid "Created"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:100
+msgid "Created resumes"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:302
+msgid "Creating..."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:82
 msgid "Current Password"
 msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:93
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:146
+msgid "Current system status and metrics"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:90
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:27
 #: apps/client/src/pages/builder/sidebars/right/sections/css.tsx:28
 msgid "Custom CSS"
@@ -389,6 +594,10 @@ msgstr "Pavojinga zona"
 msgid "Dark"
 msgstr "Tamsus"
 
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:151
+msgid "Database Status"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/certifications.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/publications.tsx:67
@@ -404,6 +613,11 @@ msgid "Date or Date Range"
 msgstr "Data arba datos intervalas"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:137
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:252
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:69
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:100
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:68
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:99
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:158
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:121
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:127
@@ -415,6 +629,15 @@ msgstr "Ištrinti"
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:94
 msgid "Delete Account"
 msgstr "Ištrinti paskyrą"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:536
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:548
+msgid "Delete User"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:548
+msgid "Deleting..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:73
 #: apps/client/src/pages/builder/sidebars/left/dialogs/languages.tsx:50
@@ -436,16 +659,44 @@ msgstr "Išjungti"
 msgid "Disable 2FA"
 msgstr "Išjungti 2FA"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:379
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:387
+msgid "Disabled"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:349
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:367
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:220
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:134
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:118
 msgid "Discard"
 msgstr "Išmesti"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:170
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:210
+msgid "Document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:173
+msgid "Document imported successfully."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:237
+msgid "Document Title"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:323
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:251
+msgid "Document Type"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:105
 msgid "Documentation"
 msgstr "Dokumentacija"
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:98
+msgid "DOCX"
+msgstr ""
 
 #: apps/client/src/pages/auth/login/page.tsx:62
 msgid "Don't have an account?"
@@ -463,11 +714,22 @@ msgstr "Nematote savo kalbos? <0>Padėkite išversti programą.</0>"
 msgid "Donate to GFAZE Resume"
 msgstr "Paaukoti \"GFAZE Resume\""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:56
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:63
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:94
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:62
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:93
+msgid "Download"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:100
+msgid "Download a DOCX document of your resume. This file can be edited in Microsoft Word or other word processors and shared with recruiters."
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:64
 msgid "Download a JSON snapshot of your resume. This file can be used to import your resume in the future, or can even be shared with others to collaborate."
 msgstr "Atsisiųskite savo gyvenimo aprašymo JSON momentinę nuotrauką. Šį failą galite naudoti ateityje importuodami savo gyvenimo aprašymą arba net bendrinti su kitais, kad galėtumėte bendradarbiauti."
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:74
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:82
 msgid "Download a PDF of your resume. This file can be used to print your resume, send it to recruiters, or upload on job portals."
 msgstr "Atsisiųskite savo gyvenimo aprašymą PDF formatu. Šis failas gali būti naudojamas atspausdinti savo gyvenimo aprašymą, išsiųsti jį įdarbintojams arba įkelti į darbo portalus."
 
@@ -479,13 +741,22 @@ msgstr "Atsisiųsti PDF"
 msgid "Downloads"
 msgstr "Atsisiuntimai"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:46
+msgid "Draft a professional resignation"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:181
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:355
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:246
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:105
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:95
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/resume-item.tsx:156
 msgid "Duplicate"
 msgstr "Dublikatas"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:274
+msgid "Duplicate an existing document"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:165
 msgid "Duplicate an existing item"
@@ -496,8 +767,16 @@ msgid "Duplicate an existing resume"
 msgstr "Dubliuoti esamą gyvenimo aprašymą"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:92
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:66
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:97
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:65
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:96
 msgid "Edit"
 msgstr "Redaguoti"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:428
+msgid "Edit User"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:169
 msgid "Effects"
@@ -507,6 +786,9 @@ msgstr "Efektai"
 #: apps/client/src/pages/auth/login/page.tsx:90
 #: apps/client/src/pages/auth/register/page.tsx:141
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:54
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:231
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:322
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:449
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:181
 msgid "Email"
 msgstr "El. paštas"
@@ -515,9 +797,18 @@ msgstr "El. paštas"
 msgid "Enable 2FA"
 msgstr "Įjungti 2FA"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:379
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:387
+msgid "Enabled"
+msgstr ""
+
 #: apps/client/src/pages/auth/reset-password/page.tsx:67
 msgid "Enter a new password below, and make sure it's secure."
 msgstr "Toliau įveskite naują slaptažodį ir įsitikinkite, kad jis yra saugus."
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:239
+msgid "Enter document title"
+msgstr ""
 
 #: apps/client/src/pages/auth/backup-otp/page.tsx:59
 msgid "Enter one of the 10 backup codes you saved when you enabled two-factor authentication."
@@ -543,7 +834,16 @@ msgstr "Įveskite savo el. pašto adresą ir mes atsiųsime jums nuorodą, kad i
 msgid "Error {statusCode}"
 msgstr ""
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:283
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:36
+msgid "Error loading statistics"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:346
+msgid "Error loading users. Please try again."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:330
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:348
 msgid "Errors"
 msgstr "Klaidos"
 
@@ -555,41 +855,42 @@ msgstr "Net jei negalite prisidėti finansiškai, vis tiek galite kažką pakeis
 msgid "Explore the templates available in GFAZE Resume and view the resumes crafted with them. They could also serve as examples to help guide the creation of your next resume."
 msgstr "Išnagrinėkite \"GFAZE Resume\" esančius šablonus ir peržiūrėkite pagal juos sukurtus gyvenimo aprašymus. Jie taip pat gali būti pavyzdžiai, kuriais vadovaudamiesi galėsite kurti kitą savo gyvenimo aprašymą."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:121
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:39
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:40
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:118
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:47
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:48
 msgid "Export"
 msgstr "Eksportuoti"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:255
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:302
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:320
 msgid "File"
 msgstr "Failas"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:221
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:279
+msgid "File Type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:282
 msgid "Filetype"
 msgstr "Failo tipas"
-
-#: apps/client/src/pages/home/sections/hero/index.tsx:38
-msgid "Finally,"
-msgstr "Pagaliau,"
 
 #: apps/client/src/components/ai-actions.tsx:90
 msgid "Fix Spelling & Grammar"
 msgstr "Taisyti rašybą ir gramatiką"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:107
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:109
 msgid "Font Family"
 msgstr "Šriftų šeima"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:148
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:150
 msgid "Font Size"
 msgstr "Šrifto dydis"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:122
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:124
 msgid "Font Subset"
 msgstr "Šriftų pogrupis"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:134
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:136
 msgid "Font Variants"
 msgstr "Šrifto variantai"
 
@@ -631,6 +932,10 @@ msgstr "Draugiškas"
 msgid "Full Name"
 msgstr "Pilnas vardas"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:297
+msgid "Generate a random title for your document"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:202
 msgid "Generate a random title for your resume"
 msgstr "Sugeneruokite atsitiktinį savo gyvenimo aprašymo pavadinimą"
@@ -639,13 +944,55 @@ msgstr "Sugeneruokite atsitiktinį savo gyvenimo aprašymo pavadinimą"
 msgid "Get Started"
 msgstr "Pradėkite"
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:18
-msgid "GitHub"
-msgstr "GitHub"
+#: apps/client/src/pages/auth/backup-otp/page.tsx:52
+#: apps/client/src/pages/auth/forgot-password/page.tsx:49
+#: apps/client/src/pages/auth/login/page.tsx:55
+#: apps/client/src/pages/auth/register/page.tsx:64
+#: apps/client/src/pages/auth/reset-password/page.tsx:60
+#: apps/client/src/pages/auth/verify-email/page.tsx:43
+#: apps/client/src/pages/auth/verify-otp/page.tsx:52
+#: apps/client/src/pages/builder/page.tsx:59
+#: apps/client/src/pages/dashboard/documents/page.tsx:22
+#: apps/client/src/pages/dashboard/resumes/page.tsx:20
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
+#: apps/client/src/pages/home/components/footer.tsx:18
+#: apps/client/src/pages/public/page.tsx:80
+#: apps/client/src/pages/public/page.tsx:101
+msgid "GFAZE Resume"
+msgstr "\"GFAZE Resume\""
+
+#: apps/client/src/pages/home/components/header.tsx:22
+#: apps/client/src/pages/home/page.tsx:18
+msgid "GFAZE Resume - Powered by GigaFaze"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
+msgid "GFAZE Resume has helped people land jobs at these great companies:"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/support/index.tsx:12
+msgid "GFAZE Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to GFAZE Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/features/index.tsx:107
+msgid "GFAZE Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
+msgstr ""
+
+#: apps/client/src/pages/home/sections/hero/index.tsx:26
+msgid "GFAZE Resume is the most versatile AI Powered Resume Builder offered by GigaFaze to help you land your next dream Job"
+msgstr ""
+
+#: apps/client/src/pages/home/sections/contributors/index.tsx:22
+msgid "GFAZE Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:12
 msgid "GitHub Stars"
 msgstr "GitHub žvaigždės"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:282
+msgid "Give your document copy a new name."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:187
 msgid "Give your old resume a new name."
@@ -660,14 +1007,11 @@ msgstr "Eikite į prietaisų skydelį"
 msgid "Go to home"
 msgstr ""
 
-#: apps/client/src/pages/auth/_components/social-auth.tsx:31
-msgid "Google"
-msgstr "Google"
-
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:202
 msgid "Grayscale"
 msgstr "Pilka skalė"
 
+#: apps/client/src/pages/dashboard/documents/page.tsx:67
 #: apps/client/src/pages/dashboard/resumes/page.tsx:43
 msgid "Grid"
 msgstr "Tinklelis"
@@ -675,6 +1019,10 @@ msgstr "Tinklelis"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:43
 msgid "Headline"
 msgstr "Antraštė"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:152
+msgid "Healthy"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:107
 msgid "Here, you can update your account information such as your profile picture, name and username."
@@ -694,7 +1042,7 @@ msgstr "Paslėptas"
 msgid "Hide"
 msgstr "Paslėpti"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:192
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:194
 msgid "Hide Icons"
 msgstr "Paslėpti piktogramas"
 
@@ -721,6 +1069,10 @@ msgstr "Visada džiaugiuosi galėdamas išgirsti \"GFAZE Resume\" naudotojų ats
 msgid "Icon"
 msgstr "Ikona"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:106
+msgid "If the popup doesn't appear, check if it was blocked by your browser."
+msgstr ""
+
 #: apps/client/src/pages/home/sections/logo-cloud/index.tsx:47
 msgid "If this app has helped you with your job hunt, let me know by reaching out through <0>this contact form</0>."
 msgstr "Jei ši programa padėjo jums ieškant darbo, praneškite man apie tai per <0>šią kontaktinę formą</0>."
@@ -733,15 +1085,45 @@ msgstr "Jei išjungsite dviejų veiksnių autentifikavimą, prisijungiant nebere
 msgid "If you're multilingual, we'd love your help in bringing the app to more languages and communities. Don't worry if you don't see your language on the list - just give me a shout-out on GitHub, and I'll make sure to include it. Ready to get started? Jump into translation over at Crowdin by clicking the link below."
 msgstr "Jei kalbate keliomis kalbomis, norėtume, kad padėtumėte programėlę įdiegti daugiau kalbų ir bendruomenių. Nesijaudinkite, jei sąraše nematote savo kalbos - tiesiog praneškite man apie tai \"GitHub\", ir aš pasirūpinsiu, kad ji būtų įtraukta. Ar esate pasiruošę pradėti? Pereikite prie vertimo \"Crowdin\" svetainėje spustelėję toliau pateiktą nuorodą."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:309
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:356
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:374
 msgid "Import"
 msgstr "Importas"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:208
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:224
+msgid "Import an existing document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:269
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/import-card.tsx:28
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/import-item.tsx:17
 msgid "Import an existing resume"
 msgstr "Importuoti esamą gyvenimo aprašymą"
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:22
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:21
+msgid "Import cover letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:31
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:30
+msgid "Import document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:25
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:24
+msgid "Import resignation letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:19
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:18
+msgid "Import resume"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:28
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:27
+msgid "Import website"
+msgstr ""
 
 #: apps/client/src/components/ai-actions.tsx:85
 msgid "Improve Writing"
@@ -759,7 +1141,6 @@ msgstr "Šiame skyriuje galite pakeisti slaptažodį ir įjungti / išjungti dvi
 msgid "In this section, you can delete your account and all the data associated to your user, but please keep in mind that <0>this action is irreversible</0>."
 msgstr "Šiame skyriuje galite ištrinti savo paskyrą ir visus su naudotoju susijusius duomenis, tačiau nepamirškite, kad <0>šis veiksmas yra negrįžtamas</0>."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:135
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:116
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:117
 msgid "Information"
@@ -816,7 +1197,7 @@ msgctxt "Localized version of a placeholder email. For example, max.mustermann@e
 msgid "john.doe@example.com"
 msgstr "jonas.jonaitis@pavyzdys.com"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:54
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:62
 msgid "JSON"
 msgstr "JSON"
 
@@ -841,15 +1222,19 @@ msgstr "Kalba"
 msgid "Last updated {lastUpdated}"
 msgstr "Paskutinį kartą atnaujinta {lastUpdated}"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:69
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:197
 #: apps/client/src/pages/builder/sidebars/right/sections/layout.tsx:198
 msgid "Layout"
 msgstr "Išdėstymas"
 
-#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:38
+#: apps/client/src/pages/home/sections/hero/call-to-action.tsx:37
 msgid "Learn more"
 msgstr "Sužinokite daugiau"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:502
+msgid "Leave empty to keep current password"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:44
 msgid "Letter"
@@ -860,10 +1245,6 @@ msgstr "Laiškas"
 msgid "Level"
 msgstr "Lygis"
 
-#: apps/client/src/components/copyright.tsx:16
-msgid "Licensed under <0>MIT</0>"
-msgstr "Licencijuota pagal <0>MIT</0>"
-
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:86
 msgid "Light"
 msgstr "Šviesa"
@@ -872,7 +1253,7 @@ msgstr "Šviesa"
 msgid "Light or dark theme"
 msgstr "Šviesi arba tamsi tema"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:165
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:167
 msgid "Line Height"
 msgstr "Linijos aukštis"
 
@@ -881,9 +1262,23 @@ msgstr "Linijos aukštis"
 msgid "LinkedIn, JSON Resume, etc."
 msgstr "LinkedIn, JSON CV ir kt."
 
+#: apps/client/src/pages/dashboard/documents/page.tsx:71
 #: apps/client/src/pages/dashboard/resumes/page.tsx:47
 msgid "List"
 msgstr "Sąrašas"
+
+#: apps/client/src/components/shareable-url-box.tsx:33
+#: apps/client/src/components/shareable-url-box.tsx:56
+msgid "Live Resume Link"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:20
+msgid "Loading statistics..."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:336
+msgid "Loading users..."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:101
 #: apps/client/src/pages/builder/sidebars/left/dialogs/experience.tsx:86
@@ -912,6 +1307,10 @@ msgstr "Užrakinus gyvenimo aprašymą, jame nebus galima atlikti jokių tolesni
 msgid "Logout"
 msgstr "Atsijungti"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:65
+msgid "Look for a popup blocker icon in your browser's address bar."
+msgstr ""
+
 #: apps/client/src/pages/auth/verify-otp/page.tsx:64
 msgid "Lost your device?"
 msgstr "Praradote įrenginį?"
@@ -923,6 +1322,14 @@ msgstr "Pagrindinis"
 #: apps/client/src/pages/home/sections/features/index.tsx:59
 msgid "Manage multiple resumes"
 msgstr "Tvarkykite kelis gyvenimo aprašymus"
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:38
+msgid "Manage Users"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:199
+msgid "Manage users, roles, and permissions"
+msgstr ""
 
 #. The month and year should be uniform across all languages.
 #: apps/client/src/pages/builder/sidebars/left/dialogs/awards.tsx:71
@@ -954,6 +1361,12 @@ msgstr "MIT licencija"
 msgid "Model"
 msgstr "Modelis"
 
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:97
+#: apps/client/src/pages/dashboard/documents/page.tsx:22
+#: apps/client/src/pages/dashboard/documents/page.tsx:32
+msgid "My Documents"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:98
 #: apps/client/src/pages/builder/sidebars/left/dialogs/custom-section.tsx:59
 #: apps/client/src/pages/builder/sidebars/left/dialogs/interests.tsx:48
@@ -963,6 +1376,9 @@ msgstr "Modelis"
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:39
 #: apps/client/src/pages/builder/sidebars/left/dialogs/skills.tsx:49
 #: apps/client/src/pages/builder/sidebars/left/sections/custom/section.tsx:88
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:218
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:321
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:436
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:153
 msgid "Name"
 msgstr "Vardas"
@@ -980,19 +1396,35 @@ msgstr "Tinklas"
 msgid "New Password"
 msgstr "Naujas slaptažodis"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:496
+msgid "New Password (optional)"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:112
+msgid "New users in last 30 days"
+msgstr ""
+
 #: apps/client/src/components/locale-combobox.tsx:45
 msgid "No results found"
 msgstr "Rezultatų nerasta"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:53
+msgid "No statistics available"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:49
 msgid "No user tracking or advertising"
 msgstr "Jokio naudotojų sekimo ar reklamos"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:356
+msgid "No users found."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:133
 msgid "Note: This will make your account less secure."
 msgstr "Pastaba: dėl to jūsų paskyra taps mažiau saugi."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:128
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:125
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:16
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:17
 msgid "Notes"
@@ -1004,7 +1436,9 @@ msgstr "Vienkartinis slaptažodis"
 
 #: apps/client/src/components/ai-actions.tsx:56
 #: apps/client/src/libs/axios.ts:30
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:188
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:180
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:249
+#: apps/client/src/services/resume/export-docx.ts:26
 #: apps/client/src/services/resume/print.tsx:26
 msgid "Oops, the server returned an error."
 msgstr "Oi, serveris grąžino klaidą."
@@ -1037,8 +1471,12 @@ msgstr "\"OpenAI/Ollama\" API raktas"
 msgid "OpenAI/Ollama Integration"
 msgstr "\"OpenAI/Ollama\" integracija"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:102
+msgid "Opening authentication popup..."
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:67
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:182
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:184
 msgid "Options"
 msgstr "Parinktys"
 
@@ -1051,7 +1489,14 @@ msgstr "arba tęsti su"
 msgid "Organization"
 msgstr "Organizacija"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:100
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:16
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:32
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:49
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:87
+msgid "Overview of system usage and user activity"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:97
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:25
 #: apps/client/src/pages/builder/sidebars/right/sections/page.tsx:26
 msgid "Page"
@@ -1064,13 +1509,18 @@ msgstr "Puslapis {pageNumber}"
 #: apps/client/src/pages/auth/login/page.tsx:110
 #: apps/client/src/pages/auth/register/page.tsx:163
 #: apps/client/src/pages/auth/reset-password/page.tsx:83
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:258
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:73
 msgid "Password"
 msgstr "Slaptažodis"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:72
+#: apps/client/src/pages/builder/sidebars/right/sections/export.tsx:80
 msgid "PDF"
 msgstr "PDF"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:376
+msgid "Pending"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:63
 msgid "Personal notes for each resume"
@@ -1079,10 +1529,6 @@ msgstr "Asmeninės pastabos prie kiekvieno gyvenimo aprašymo"
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:81
 msgid "Phone"
 msgstr "Telefonas"
-
-#: apps/client/src/pages/auth/layout.tsx:76
-msgid "Photograph by Patrick Tomasso"
-msgstr "Patrick Tomasso nuotrauka"
 
 #: apps/client/src/pages/home/sections/features/index.tsx:66
 msgid "Pick any font from Google Fonts"
@@ -1097,13 +1543,26 @@ msgstr "Paveikslėlis"
 msgid "Please note that this step is completely optional."
 msgstr "Atkreipkite dėmesį, kad šis veiksmas yra visiškai neprivalomas."
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:225
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:283
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:286
 msgid "Please select a file type"
 msgstr "Pasirinkite failo tipą"
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:228
 msgid "Please store your backup codes in a secure location. You can use one of these one-time use codes to login in case you lose access to your authenticator app."
 msgstr "Atsarginius kodus saugokite saugioje vietoje. Vieną iš šių vienkartinių kodų galite naudoti prisijungimui tuo atveju, jei prarastumėte prieigą prie autentifikatoriaus programėlės."
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:37
+msgid "Please try refreshing the page."
+msgstr ""
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:56
+msgid "Popup Blocked"
+msgstr ""
+
+#: apps/client/src/services/auth/popup-oauth.ts:128
+msgid "Popup blocked. Please allow popups for this site and try again."
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:99
 msgid "Portrait"
@@ -1139,11 +1598,15 @@ msgstr "Privatumo politika"
 msgid "Professional"
 msgstr "Profesionalus"
 
+#: apps/client/src/pages/auth/layout.tsx:72
+msgid "Professional resume review image"
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:66
 msgid "Profile"
 msgstr "Profilis"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:55
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:56
 msgid "Public"
 msgstr "Viešas"
 
@@ -1155,43 +1618,21 @@ msgstr "Leidėjas"
 msgid "Raise an issue"
 msgstr "Iškelti problemą"
 
-#: apps/client/src/components/copyright.tsx:35
-#: apps/client/src/pages/auth/backup-otp/page.tsx:52
-#: apps/client/src/pages/auth/forgot-password/page.tsx:49
-#: apps/client/src/pages/auth/login/page.tsx:55
-#: apps/client/src/pages/auth/register/page.tsx:64
-#: apps/client/src/pages/auth/reset-password/page.tsx:60
-#: apps/client/src/pages/auth/verify-email/page.tsx:43
-#: apps/client/src/pages/auth/verify-otp/page.tsx:52
-#: apps/client/src/pages/builder/page.tsx:60
-#: apps/client/src/pages/dashboard/resumes/page.tsx:20
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/home/components/footer.tsx:18
-#: apps/client/src/pages/home/page.tsx:24
-#: apps/client/src/pages/public/page.tsx:74
-#: apps/client/src/pages/public/page.tsx:95
-msgid "GFAZE Resume"
-msgstr "\"GFAZE Resume\""
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:110
+msgid "Recent Users"
+msgstr ""
 
-#: apps/client/src/pages/home/sections/logo-cloud/index.tsx:39
-msgid "Reactive Resume has helped people land jobs at these great companies:"
-msgstr "\"GFAZE Resume\" padėjo žmonėms gauti darbą šiose puikiose įmonėse:"
-
-#: apps/client/src/pages/home/sections/support/index.tsx:12
-msgid "Reactive Resume is a free and open-source project crafted mostly by me, and your support would be greatly appreciated. If you're inclined to contribute, and only if you can afford to, consider making a donation through any of the listed platforms. Additionally, donations to Reactive Resume through Open Collective are tax-exempt, as the project is fiscally hosted by Open Collective Europe."
-msgstr "\"GFAZE Resume\" yra nemokamas atvirojo kodo projektas, kurį daugiausia sukūriau aš, ir jūsų parama būtų labai dėkinga. Jei esate linkęs prisidėti ir tik tuo atveju, jei galite sau tai leisti, apsvarstykite galimybę paaukoti per bet kurią iš išvardytų platformų. Be to, aukos GFAZE Resume per Open Collective yra neapmokestinamos, nes projektą fiskališkai organizuoja Open Collective Europe."
-
-#: apps/client/src/pages/home/sections/features/index.tsx:107
-msgid "Reactive Resume is a passion project of over 3 years of hard work, and with that comes a number of re-iterated ideas and features that have been built to (near) perfection."
-msgstr "\"GFAZE Resume\" yra daugiau nei trejus metus trukusio sunkaus darbo projektas, o kartu su juo - daugybė pakartotinai įgyvendintų idėjų ir funkcijų, kurios buvo sukurtos iki (beveik) tobulumo."
-
-#: apps/client/src/pages/home/sections/contributors/index.tsx:22
-msgid "Reactive Resume thrives thanks to its vibrant community. This project owes its progress to numerous individuals who've dedicated their time and skills. Below, we celebrate the coders who've enhanced its features on GitHub and the linguists whose translations on Crowdin have made it accessible to a broader audience."
-msgstr "\"GFAZE Resume\" klesti dėl savo gyvybingos bendruomenės. Šis projektas už savo pažangą skolingas daugybei žmonių, kurie skyrė savo laiką ir įgūdžius. Toliau džiaugiamės programuotojais, kurie tobulino funkcijas per GitHub, ir kalbininkus, kurių vertimai „Crowdin" padarė jį prieinamą platesnei auditorijai."."
+#: apps/client/src/pages/auth/_components/social-auth.tsx:102
+msgid "Redirecting to Google..."
+msgstr ""
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:89
 msgid "Redo"
 msgstr "Grąžinti"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:126
+msgid "Regular Users"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-list-item.tsx:100
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-options.tsx:157
@@ -1230,7 +1671,22 @@ msgstr "Iš naujo nustatyti slaptažodį"
 msgid "Reset Zoom"
 msgstr "Iš naujo nustatyti priartinimą"
 
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:86
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:164
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:204
+msgid "Resignation Letter"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/page.tsx:51
+msgid "Resignation Letters"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:158
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:198
+msgid "Resume"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:91
+#: apps/client/src/pages/dashboard/documents/page.tsx:45
 #: apps/client/src/pages/dashboard/resumes/page.tsx:20
 #: apps/client/src/pages/dashboard/resumes/page.tsx:37
 msgid "Resumes"
@@ -1244,11 +1700,18 @@ msgstr "Sukurti gyvenimo aprašymai"
 msgid "Rich in features, not in pricing."
 msgstr "Turtingas funkcijomis, bet ne kainomis."
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:272
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:324
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:476
+msgid "Role"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/picture/options.tsx:138
 msgid "Rounded"
 msgstr "Suapvalintas"
 
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:180
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:354
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:245
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:217
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:131
@@ -1280,15 +1743,15 @@ msgstr "Slinkite prie Pan"
 msgid "Scroll to Zoom"
 msgstr "Slinkti į priartinimą"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:111
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:113
 msgid "Search for a font family"
 msgstr "Šriftų šeimos paieška"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:126
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:128
 msgid "Search for a font subset"
 msgstr "Šrifto poaibio paieška"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:139
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:141
 msgid "Search for a font variant"
 msgstr "Šrifto varianto paieška"
 
@@ -1303,6 +1766,16 @@ msgstr "Apsaugokite naudodami dviejų veiksnių autentifikavimą"
 #: apps/client/src/pages/dashboard/settings/_sections/security.tsx:65
 msgid "Security"
 msgstr "Apsauga"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:327
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:255
+msgid "Select document type"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:281
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:485
+msgid "Select role"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:50
 msgid "Self-host with Docker"
@@ -1321,9 +1794,9 @@ msgid "Separate Links"
 msgstr "Kitos nuorodos"
 
 #: apps/client/src/components/user-options.tsx:32
-#: apps/client/src/pages/dashboard/_components/sidebar.tsx:92
-#: apps/client/src/pages/dashboard/settings/page.tsx:16
-#: apps/client/src/pages/dashboard/settings/page.tsx:26
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:103
+#: apps/client/src/pages/dashboard/settings/page.tsx:17
+#: apps/client/src/pages/dashboard/settings/page.tsx:27
 msgid "Settings"
 msgstr "Nustatymai"
 
@@ -1331,9 +1804,9 @@ msgstr "Nustatymai"
 msgid "Setup two-factor authentication on your account"
 msgstr "Nustatykite dviejų veiksnių autentifikavimą savo paskyroje"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:107
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:38
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:104
 #: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:39
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:40
 msgid "Sharing"
 msgstr "Dalijimasis"
 
@@ -1417,6 +1890,8 @@ msgstr "Tvarkydami jūsų užklausą kažkas suklydo. Prašome pabandyti vėliau
 msgid "Square"
 msgstr "Kvadratinis"
 
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:40
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/create-item.tsx:46
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/create-card.tsx:33
 #: apps/client/src/pages/dashboard/resumes/_layouts/list/_components/create-item.tsx:23
 msgid "Start building from scratch"
@@ -1426,7 +1901,15 @@ msgstr "Pradėkite kurti nuo nulio"
 msgid "Start building your resume by giving it a name."
 msgstr "Pradėkite kurti savo gyvenimo aprašymą suteikdami jam pavadinimą."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:114
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:52
+msgid "Start creating your document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:280
+msgid "Start creating your document by giving it a name and selecting its type."
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:111
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:22
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:23
 msgid "Statistics"
@@ -1435,6 +1918,14 @@ msgstr "Statistika"
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:38
 msgid "Statistics are available only for public resumes."
 msgstr "Statistika prieinama tik viešiems gyvenimo aprašymams."
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:326
+msgid "Status"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:159
+msgid "Storage Usage"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/settings/_dialogs/two-factor.tsx:162
 msgid "Store your backup codes securely"
@@ -1452,13 +1943,26 @@ msgstr "Saugiai saugokite atsarginių kopijų kodus"
 msgid "Summary"
 msgstr "Santrauka"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:286
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:490
+msgid "Super Admin"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:67
+msgid "Super Administrator"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:136
+msgid "Super Administrators"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/right/sections/information.tsx:18
 msgid "Support the app by donating what you can!"
 msgstr "Palaikykite programėlę paaukodami tai, ką galite!"
 
 #: apps/client/src/pages/home/sections/support/index.tsx:9
-msgid "Supporting Reactive Resume"
-msgstr "\"GFAZE Resume\" palaikymas"
+msgid "Supporting GFAZE Resume"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:65
 msgid "Supports A4/Letter page formats"
@@ -1468,7 +1972,20 @@ msgstr "Palaikomi A4/laiško puslapių formatai"
 msgid "System"
 msgstr "Sistema"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:65
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:145
+msgid "System Health"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:117
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:15
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:31
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:48
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:86
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:48
+msgid "System Statistics"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:62
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:18
 #: apps/client/src/pages/builder/sidebars/right/sections/template.tsx:19
 msgid "Template"
@@ -1486,6 +2003,10 @@ msgstr "Atsiliepimai"
 msgid "Text Color"
 msgstr "Teksto spalva"
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:68
+msgid "The authentication process took too long. Please try again."
+msgstr ""
+
 #: apps/client/src/pages/public/error.tsx:17
 msgid "The page you're looking for doesn't exist."
 msgstr ""
@@ -1498,7 +2019,7 @@ msgstr ""
 msgid "The resume you want to update is locked, please unlock if you wish to make any changes to it."
 msgstr "Gyvenimo aprašymas, kurį norite atnaujinti, yra užrakintas, jei norite jį keisti, atrakinkite jį."
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:86
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:83
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:19
 #: apps/client/src/pages/builder/sidebars/right/sections/theme.tsx:20
 #: apps/client/src/pages/dashboard/settings/_sections/profile.tsx:79
@@ -1513,6 +2034,10 @@ msgstr "Įvyko prisijungimo prie naršyklės klaida. Įsitikinkite, kad 'chrome'
 msgid "This action can be reverted by clicking on the undo button in the floating toolbar."
 msgstr "Šį veiksmą galima atšaukti slankiojoje įrankių juostoje spustelėjus anuliavimo mygtuką."
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:245
+msgid "This action cannot be undone. This will permanently delete your document and cannot be recovered."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:151
 msgid "This action cannot be undone. This will permanently delete your resume and cannot be recovered."
 msgstr "Šio veiksmo negalima atšaukti. Tai visam laikui ištrins jūsų gyvenimo aprašymą ir jo nebus galima atkurti."
@@ -1521,13 +2046,17 @@ msgstr "Šio veiksmo negalima atšaukti. Tai visam laikui ištrins jūsų gyveni
 msgid "This email address is associated with an OAuth account. Please sign in with your OAuth provider."
 msgstr "Šis el. pašto adresas susietas su OAuth paskyra. Prisijunkite naudodami OAuth teikėją."
 
-#: apps/client/src/pages/builder/_components/header.tsx:57
+#: apps/client/src/pages/builder/_components/header.tsx:66
 msgid "This resume is locked, please unlock to make further changes."
 msgstr "Šis gyvenimo aprašymas yra užrakintas, norėdami atlikti tolesnius pakeitimus, jį atrakinkite."
 
 #: apps/client/src/pages/builder/sidebars/right/sections/notes.tsx:23
 msgid "This section is reserved for your personal notes specific to this resume. The content here remains private and is not shared with anyone else."
 msgstr "Šis skyrius skirtas jūsų asmeninėms pastaboms, susijusioms su šiuo gyvenimo aprašymu. Čia pateiktas turinys lieka privatus ir niekam kitam neteikiamas."
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:311
+msgid "Tip: You can name the document referring to its purpose or content."
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:216
 msgid "Tip: You can name the resume referring to the position you are applying for."
@@ -1538,6 +2067,7 @@ msgctxt "Name of the Award"
 msgid "Title"
 msgstr "Pavadinimas"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:291
 #: apps/client/src/pages/dashboard/resumes/_dialogs/resume.tsx:196
 msgid "Title"
 msgstr "Pavadinimas"
@@ -1549,6 +2079,14 @@ msgstr "Perjungti puslapio lūžio liniją"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:150
 msgid "Toggle Page Numbers"
 msgstr "Perjungti puslapių numerius"
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:98
+msgid "Total Resumes"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:92
+msgid "Total Users"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/features/index.tsx:68
 msgid "Track views and downloads"
@@ -1568,6 +2106,10 @@ msgstr "Šiai paskyrai jau įjungtas dviejų veiksnių autentifikavimas."
 msgid "Two-factor authentication is not enabled for this account."
 msgstr "Šiai paskyrai neįjungtas dviejų veiksnių autentifikavimas."
 
+#: apps/client/src/services/auth/popup-oauth.ts:80
+msgid "Two-factor authentication is required. Please complete authentication in the main window."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/danger.tsx:84
 msgid "Type <0>delete</0> to confirm deleting your account."
 msgstr "Įveskite <0>ištrinti</0> kad patvirtintumėte paskyros ištrynimą."
@@ -1577,19 +2119,23 @@ msgstr "Įveskite <0>ištrinti</0> kad patvirtintumėte paskyros ištrynimą."
 msgid "Type of Study"
 msgstr "Studijų tipas"
 
-#: apps/client/src/pages/builder/sidebars/right/index.tsx:79
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:76
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:77
+#: apps/client/src/pages/builder/sidebars/right/index.tsx:76
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:78
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:79
 msgid "Typography"
 msgstr "Tipografija"
 
-#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:203
+#: apps/client/src/pages/builder/sidebars/right/sections/typography.tsx:205
 msgid "Underline Links"
 msgstr "Pabraukite nuorodas"
 
 #: apps/client/src/pages/builder/_components/toolbar.tsx:76
 msgid "Undo"
 msgstr "Anuliuoti"
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:142
+msgid "Unknown error occurred"
+msgstr ""
 
 #: apps/client/src/pages/dashboard/resumes/_dialogs/lock.tsx:52
 #: apps/client/src/pages/dashboard/resumes/_layouts/grid/_components/resume-card.tsx:110
@@ -1606,6 +2152,10 @@ msgstr "Atrakinę gyvenimo aprašymą galėsite vėl jį keisti."
 msgid "Unverified"
 msgstr "Nepatikrintas"
 
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:273
+msgid "Update an existing document"
+msgstr ""
+
 #: apps/client/src/pages/builder/sidebars/left/sections/shared/section-dialog.tsx:164
 msgid "Update an existing item"
 msgstr "Atnaujinti esamą elementą"
@@ -1614,11 +2164,37 @@ msgstr "Atnaujinti esamą elementą"
 msgid "Update an existing resume"
 msgstr "Atnaujinti esamą gyvenimo aprašymą"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:212
-msgid "Upload a file from one of the accepted sources to parse existing data and import it into Reactive Resume for easier editing."
-msgstr "Įkelkite failą iš vieno iš priimtų šaltinių, kad išanalizuoti esamus duomenis ir importuoti jį į \"GFAZE Resume\", kad būtų lengviau redaguoti."
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:526
+msgid "Update User"
+msgstr ""
 
-#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:73
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:430
+msgid "Update user information and role permissions."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:114
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:78
+msgid "Updated"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:525
+msgid "Updating..."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:273
+msgid "Upload a file from one of the accepted sources to parse existing data and import it into GFAZE Resume for easier editing."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:228
+msgid "Upload a PDF, DOC, or DOCX file to import it into your documents collection."
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/import-card.tsx:52
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/import-item.tsx:39
+msgid "Upload PDF, DOC, or DOCX"
+msgstr ""
+
+#: apps/client/src/pages/builder/sidebars/right/sections/sharing.tsx:75
 msgid "URL"
 msgstr "URL"
 
@@ -1631,25 +2207,53 @@ msgstr "URL turi prasidėti https://"
 msgid "Use your backup code"
 msgstr "Naudokite atsarginį kodą"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:284
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:488
+msgid "User"
+msgstr ""
+
 #: apps/client/src/services/errors/translate-error.ts:13
 msgid "User does not have an associated 'secrets' record. Please report this issue on GitHub."
 msgstr "Vartotojas neturi susieto „paslapčių“ įrašo. Praneškite apie šią problemą GitHub platformoje."
 
+#: apps/client/src/pages/dashboard/_components/sidebar.tsx:112
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:198
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:31
+msgid "User Management"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/admin/stats/page.tsx:120
+msgid "User Roles Distribution"
+msgstr ""
+
 #: apps/client/src/pages/auth/register/page.tsx:119
 #: apps/client/src/pages/builder/sidebars/left/dialogs/profiles.tsx:55
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:245
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:323
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:463
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:167
 msgid "Username"
 msgstr "Vartotojo vardas"
+
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:311
+msgid "Users"
+msgstr ""
 
 #: apps/client/src/pages/home/sections/statistics/index.tsx:13
 msgid "Users Signed Up"
 msgstr "Prisiregistravę vartotojai"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:296
+#: apps/client/src/pages/auth/_components/social-auth.tsx:162
+msgid "Using popup authentication for iframe compatibility"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:343
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:361
 msgid "Validate"
 msgstr "Patvirtinti"
 
-#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:314
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:361
+#: apps/client/src/pages/dashboard/resumes/_dialogs/import.tsx:379
 msgid "Validated"
 msgstr "Patvirtinta"
 
@@ -1657,6 +2261,7 @@ msgstr "Patvirtinta"
 msgid "Value"
 msgstr "Vertė"
 
+#: apps/client/src/pages/dashboard/admin/users/page.tsx:376
 #: apps/client/src/pages/dashboard/settings/_sections/account.tsx:192
 msgid "Verified"
 msgstr "Patikrinta"
@@ -1670,9 +2275,20 @@ msgstr "Patikrinkite, ar teisingai nustatytas dviejų veiksnių autentiškumo pa
 msgid "Verify your email address"
 msgstr "Patvirtinti savo el. pašto adresą"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:26
-msgid "Version 4"
-msgstr "4 versija"
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:59
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/document-card.tsx:90
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:58
+#: apps/client/src/pages/dashboard/documents/_layouts/list/_components/document-item.tsx:89
+msgid "View Document"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:55
+msgid "View Statistics"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:50
+msgid "View system usage, user activity, and performance metrics"
+msgstr ""
 
 #: apps/client/src/pages/builder/sidebars/right/sections/statistics.tsx:51
 msgid "Views"
@@ -1701,12 +2317,18 @@ msgstr "Jūsų el. pašto adresą tikriname tik tam, kad galėtume atsiųsti sla
 #: apps/client/src/pages/builder/sidebars/left/dialogs/references.tsx:67
 #: apps/client/src/pages/builder/sidebars/left/dialogs/volunteer.tsx:95
 #: apps/client/src/pages/builder/sidebars/left/sections/basics.tsx:69
+#: apps/client/src/pages/dashboard/documents/_dialogs/document.tsx:167
+#: apps/client/src/pages/dashboard/documents/_dialogs/import.tsx:207
 msgid "Website"
 msgstr "Tinklalapis"
 
-#: apps/client/src/pages/home/sections/hero/index.tsx:32
-msgid "What's new in the latest version"
-msgstr "Kas naujo naujausioje versijoje"
+#: apps/client/src/pages/dashboard/documents/page.tsx:54
+msgid "Websites"
+msgstr ""
+
+#: apps/client/src/pages/dashboard/documents/_layouts/grid/_components/create-card.tsx:43
+msgid "Write a compelling cover letter"
+msgstr ""
 
 #: apps/client/src/pages/public/error.tsx:26
 msgid "You are not authorized to access this page."
@@ -1735,17 +2357,25 @@ msgstr "Galite naudoti OpenAI API, kad padėtumėte generuoti turinį arba patob
 msgid "You can track the number of views your resume has received, or how many people have downloaded the resume by enabling public sharing."
 msgstr "Įjungę viešą bendrinimą galite stebėti, kiek peržiūrų sulaukė jūsų gyvenimo aprašymas arba kiek žmonių jį atsisiuntė."
 
+#: apps/client/src/pages/auth/_components/social-auth.tsx:70
+msgid "You cancelled the authentication process. Click the button below to try again."
+msgstr ""
+
 #: apps/client/src/pages/public/error.tsx:20
 msgid "You don't have permission to access this page."
 msgstr ""
 
+#: apps/client/src/pages/dashboard/settings/_sections/admin.tsx:69
+msgid "You have full system access and administrative privileges."
+msgstr ""
+
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:87
-msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in Reactive Resume altogether, you can simply remove the key from your settings."
-msgstr "Galite <0>gauti savo \"OpenAI\" API raktą</0>. Šis raktas suteikia jums teisę naudoti API, kaip jums atrodo tinkama. Arba, jei norite visiškai išjungti dirbtinio intelekto funkcijas programoje \"Reactive Resume\", galite tiesiog pašalinti raktą iš savo nustatymų."
+msgid "You have the option to <0>obtain your own OpenAI API key</0>. This key empowers you to leverage the API as you see fit. Alternatively, if you wish to disable the AI features in GFAZE Resume altogether, you can simply remove the key from your settings."
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:50
-msgid "You should have received an email from <0>Reactive Resume</0> with a link to verify your account."
-msgstr "Turėjote gauti el. laišką iš <0>\"Reactive Resume\"</0> su nuoroda, kad patvirtintumėte paskyrą."
+msgid "You should have received an email from <0>GFAZE Resume</0> with a link to verify your account."
+msgstr ""
 
 #: apps/client/src/pages/auth/forgot-password/page.tsx:49
 #: apps/client/src/pages/auth/forgot-password/page.tsx:54
@@ -1759,6 +2389,10 @@ msgstr "Jūsų paskyra ir visi duomenys buvo sėkmingai ištrinti. Viso gero!"
 #: apps/client/src/pages/dashboard/settings/_sections/openai.tsx:191
 msgid "Your API key is securely stored in the browser's local storage and is only utilized when making requests to OpenAI via their official SDK. Rest assured that your key is not transmitted to any external server except when interacting with OpenAI's services."
 msgstr "Jūsų API raktas saugiai saugomas naršyklės vietinėje saugykloje ir naudojamas tik teikiant užklausas \"OpenAI\" per oficialų SDK. Galite būti tikri, kad jūsų raktas nėra perduodamas jokiam išoriniam serveriui, išskyrus atvejus, kai sąveikaujama su \"OpenAI\" paslaugomis."
+
+#: apps/client/src/pages/auth/_components/social-auth.tsx:64
+msgid "Your browser blocked the authentication popup. Please allow popups for this site and try again."
+msgstr ""
 
 #: apps/client/src/pages/auth/verify-email/page.tsx:28
 msgid "Your email address has been verified successfully."
@@ -1779,4 +2413,3 @@ msgstr "Priartinti"
 #: apps/client/src/pages/builder/_components/toolbar.tsx:118
 msgid "Zoom Out"
 msgstr "Tolinti"
-

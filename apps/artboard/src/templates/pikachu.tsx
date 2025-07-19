@@ -598,7 +598,7 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Pikachu = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
 
   return (
     <div className="p-custom grid grid-cols-3 space-x-6">

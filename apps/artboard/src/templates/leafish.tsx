@@ -513,21 +513,24 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Leafish = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div>
       {isFirstPage && <Header />}
 
       <div className="p-custom grid grid-cols-2 items-start space-x-6">
-        <div className={cn("grid gap-y-4", sidebar.length === 0 && "col-span-2")}>
-          {main.map((section) => (
+        <div className={cn("grid gap-y-4", safeSidebar.length === 0 && "col-span-2")}>
+          {safeMain.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>
 
-        <div className={cn("grid gap-y-4", sidebar.length === 0 && "hidden")}>
-          {sidebar.map((section) => (
+        <div className={cn("grid gap-y-4", safeSidebar.length === 0 && "hidden")}>
+          {safeSidebar.map((section) => (
             <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
           ))}
         </div>

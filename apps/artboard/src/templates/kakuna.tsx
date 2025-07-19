@@ -521,18 +521,21 @@ const mapSectionToComponent = (section: SectionKey) => {
 };
 
 export const Kakuna = ({ columns, isFirstPage = false }: TemplateProps) => {
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
+
+  const safeMain = Array.isArray(main) ? main : [];
+  const safeSidebar = Array.isArray(sidebar) ? sidebar : [];
 
   return (
     <div className="p-custom space-y-4">
       {isFirstPage && <Header />}
 
       <div className="space-y-4">
-        {main.map((section) => (
+        {safeMain.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
 
-        {sidebar.map((section) => (
+        {safeSidebar.map((section) => (
           <Fragment key={section}>{mapSectionToComponent(section)}</Fragment>
         ))}
       </div>

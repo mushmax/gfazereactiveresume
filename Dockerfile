@@ -23,6 +23,7 @@ COPY . .
 
 ENV NX_CLOUD_ACCESS_TOKEN=$NX_CLOUD_ACCESS_TOKEN
 
+RUN pnpm messages:extract
 RUN pnpm run build
 
 # --- Release Image ---

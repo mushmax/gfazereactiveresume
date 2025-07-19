@@ -572,7 +572,7 @@ const mapSectionToComponent = (section: SectionKey) => {
 export const Nosepass = ({ columns, isFirstPage = false }: TemplateProps) => {
   const name = useArtboardStore((state) => state.resume.basics.name);
 
-  const [main, sidebar] = columns;
+  const [main = [], sidebar = []] = columns;
 
   return (
     <div className="p-custom space-y-6">

@@ -36,19 +36,18 @@ export const BuilderPage = () => {
     };
   }, [frameRef]);
 
-  // Persistently check if iframe has loaded using setInterval
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (frameRef?.contentWindow?.document.readyState === "complete") {
+    const handleIframeMessage = (event: MessageEvent) => {
+      if (event.data.type === "IFRAME_READY") {
         syncResumeToArtboard();
-        clearInterval(interval);
       }
-    }, 100);
-
-    return () => {
-      clearInterval(interval);
     };
-  }, [frameRef]);
+
+    window.addEventListener("message", handleIframeMessage);
+    return () => {
+      window.removeEventListener("message", handleIframeMessage);
+    };
+  }, [syncResumeToArtboard]);
 
   // Send resume data to iframe on change of resume data
   useEffect(syncResumeToArtboard, [resume.data]);
